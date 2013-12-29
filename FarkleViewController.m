@@ -47,6 +47,8 @@
     [self togglePassButton];
     [self toggleRollButton];
     [self updateDice];
+    [self redrawDice];
+    
     
 	// Do any additional setup after loading the view.
 
@@ -114,6 +116,10 @@
     
     Farkle *farkle = [Farkle sharedManager];
     
+    // hack
+   // if (!farkle.turns) {
+        
+    
     if ([sender isSelected]) {
 		[self enableDie:sender];
 	} else {
@@ -122,6 +128,7 @@
     //[farkle gameLoop];
     [farkle toggleDie];
 	[self updateUI];
+//    }
 }
 
 - (IBAction)passed:(id)sender {
@@ -246,7 +253,7 @@
 - (void)hideDice {
     
 	for (int i = 0; i <= 5; i++) {
-		[[_diceButtons objectAtIndex:i] setAlpha:0.0];
+		[[self.diceButtons objectAtIndex:i] setAlpha:0.0];
 		[[self.diceButtons objectAtIndex:i] setEnabled:NO];
 		[[self.diceButtons objectAtIndex:i] setSelected:NO];
 		//[[self.diceButtons objectAtIndex:i] setTitle:@""
@@ -286,7 +293,40 @@
                                             forState:UIControlStateNormal];
 		[[self.diceButtons objectAtIndex:i] setEnabled:NO]; // ???
 	}
-    
+}
+
+- (void)redrawDice {
+    Farkle *farkle = [Farkle sharedManager];
+ //   [farkle passed];
+    [self hideDice];
+    [self updateScoreLabel];
+    [self updatePassButton];
+    [self updateTurnsProgress];
+  //  [self enableRollButton]; // hack
+  
+	for (int i = 0; i <= 5; i++) {
+        if ([[farkle.dice objectAtIndex:i] isLocked] && ![[farkle.dice objectAtIndex:i] isScored] ) {
+            [[self.diceButtons objectAtIndex:i] setAlpha:0.4];
+            [[self.diceButtons objectAtIndex:i] setEnabled:YES];
+            [[self.diceButtons objectAtIndex:i] setSelected:YES];
+            [[self.diceButtons objectAtIndex:i] setTitle:[[farkle.dice objectAtIndex:i] sideUp]
+                                                forState:UIControlStateNormal];
+        }
+        else if ([[farkle.dice objectAtIndex:i] isScored]) {
+            [[self.diceButtons objectAtIndex:i] setAlpha:0.1];
+            [[self.diceButtons objectAtIndex:i] setEnabled:NO];
+            [[self.diceButtons objectAtIndex:i] setSelected:YES];
+            [[self.diceButtons objectAtIndex:i] setTitle:[[farkle.dice objectAtIndex:i] sideUp]
+                                                forState:UIControlStateNormal];
+        }
+        else if ( (!farkle.isNewGame) || (!farkle.isGameOver) ) {
+            [[self.diceButtons objectAtIndex:i] setAlpha:1];
+            [[self.diceButtons objectAtIndex:i] setEnabled:YES];
+            [[self.diceButtons objectAtIndex:i] setSelected:NO];
+            [[self.diceButtons objectAtIndex:i] setTitle:[[farkle.dice objectAtIndex:i] sideUp]
+                                                forState:UIControlStateNormal];
+        }
+	}
 }
 
 // replace this with 3d cubes behind, etc...
@@ -527,12 +567,9 @@
     //[self toggleNavBar]; // we want to do this after the deathScreen Animation fires
     //[self delayedToggleNavBar];
     
-    [self.scoreLabel setText:[NSString stringWithFormat:@"%@", [farkle scoreTitle]]];
-    
-    [self.passButton setTitle:[NSString stringWithFormat:@"%@", [farkle passTitle]] forState:UIControlStateNormal];
-    [self.passButton setTitle:[NSString stringWithFormat:@"%@", [farkle passTitle]] forState:UIControlStateDisabled];
-
-    [self.turnsProgress setProgress:((float)([farkle.turns integerValue] ) / 10) animated:YES];
+    [self updateScoreLabel];
+    [self updatePassButton];
+    [self updateTurnsProgress];
     
     if ([farkle didFarkle]) {
         [self enableRollButton]; // hack
@@ -542,6 +579,22 @@
         [self disableRollButton];
     }
 
+}
+
+- (void)updateScoreLabel {
+    Farkle *farkle = [Farkle sharedManager];
+    [self.scoreLabel setText:[NSString stringWithFormat:@"%@", [farkle scoreTitle]]];
+}
+
+- (void)updatePassButton {
+    Farkle *farkle = [Farkle sharedManager];
+    [self.passButton setTitle:[NSString stringWithFormat:@"%@", [farkle passTitle]] forState:UIControlStateNormal];
+    [self.passButton setTitle:[NSString stringWithFormat:@"%@", [farkle passTitle]] forState:UIControlStateDisabled];
+}
+
+- (void)updateTurnsProgress {
+    Farkle *farkle = [Farkle sharedManager];
+    [self.turnsProgress setProgress:((float)([farkle.turns integerValue] ) / 10) animated:YES];
 }
 
 #pragma mark Toggle Controls
