@@ -295,10 +295,21 @@
 	}
 }
 
+- (void)logDiceButtons {
+    for (int i = 0; i < 6; i++) {
+        if ([self.diceButtons[i] isEnabled]) {
+            NSLog(@"enabled %d", i);
+        } else NSLog(@"disabled %d", i);
+    }
+}
+
 - (void)redrawDice {
     Farkle *farkle = [Farkle sharedManager];
  //   [farkle passed];
+    [self logDiceButtons];
+    NSLog(@"#####################");
     [self hideDice];
+    [self logDiceButtons];
     [self updateScoreLabel];
     [self updatePassButton];
     [self updateTurnsProgress];
@@ -319,6 +330,9 @@
             [[self.diceButtons objectAtIndex:i] setTitle:[[farkle.dice objectAtIndex:i] sideUp]
                                                 forState:UIControlStateNormal];
         }
+
+//        else if ([self.diceButtons objectAtIndex:i])
+        
         else if ( (!farkle.isNewGame) || (!farkle.isGameOver) ) {
             [[self.diceButtons objectAtIndex:i] setAlpha:1];
             [[self.diceButtons objectAtIndex:i] setEnabled:YES];
@@ -326,7 +340,29 @@
             [[self.diceButtons objectAtIndex:i] setTitle:[[farkle.dice objectAtIndex:i] sideUp]
                                                 forState:UIControlStateNormal];
         }
+        
+        else if (![farkle.dice[i] sideUp]) {
+            [[self.diceButtons objectAtIndex:i] setAlpha:0.0];
+            [[self.diceButtons objectAtIndex:i] setEnabled:NO];
+            [[self.diceButtons objectAtIndex:i] setSelected:NO];
+           //NSLog(@"%d is nil", i);
+        } //NSLog(@"%@", farkle.dice[i]);
+   /*
+        else {
+            [[self.diceButtons objectAtIndex:i] setAlpha:0.0];
+            [[self.diceButtons objectAtIndex:i] setEnabled:NO];
+            [[self.diceButtons objectAtIndex:i] setSelected:NO];
+        }
+   */
+        
+        
 	}
+    // pretty sure this BOOL is backwards
+    if (!farkle.isNewGame) {
+        [self enableRollButton];
+       // NSLog(@"enableRollButton");
+    }
+
 }
 
 // replace this with 3d cubes behind, etc...
