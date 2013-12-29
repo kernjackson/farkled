@@ -1480,6 +1480,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="HUD" destination="Dbe-Jf-7xF" id="YAa-L3-FUv"/>
+                        <outlet property="bannerAd" destination="RIt-bh-U49" id="OeQ-mz-jBY"/>
                         <outlet property="passButton" destination="Kl3-a5-J9G" id="2w0-wN-O5t"/>
                         <outlet property="rollButton" destination="iJ3-qO-gQM" id="KFb-Vt-X6f"/>
                         <outlet property="scoreLabel" destination="FRF-Sk-GBw" id="cob-DN-dz3"/>

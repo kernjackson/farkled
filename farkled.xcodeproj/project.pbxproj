@@ -327,6 +327,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Kern Jackson";
 				TargetAttributes = {
+					48165652186EA0E900ABCD33 = {
+						DevelopmentTeam = XNN7EVQSE9;
+					};
 					48165673186EA0E900ABCD33 = {
 						TestTargetID = 48165652186EA0E900ABCD33;
 					};
@@ -513,9 +516,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "farkled/farkled-Prefix.pch";
 				INFOPLIST_FILE = "farkled/farkled-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/kern/Documents/Apps/farkled/TestFlightSDK2,
@@ -530,9 +535,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "farkled/farkled-Prefix.pch";
 				INFOPLIST_FILE = "farkled/farkled-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/kern/Documents/Apps/farkled/TestFlightSDK2,
@@ -603,6 +610,7 @@
 				48165687186EA0E900ABCD33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		48165688186EA0E900ABCD33 /* Build configuration list for PBXNativeTarget "farkledTests" */ = {
 			isa = XCConfigurationList;
@@ -611,6 +619,7 @@
 				4816568A186EA0E900ABCD33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

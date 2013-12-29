@@ -47,13 +47,13 @@
 //    farkle.total = @1;
     
     // Setup gesture recoginizer
-    /*
+    
     UISwipeGestureRecognizer *mSwipeUpRecognizer = [[UISwipeGestureRecognizer alloc]
                                                     initWithTarget:self
                                                     action:@selector(popView)];
     [mSwipeUpRecognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
     [[self view] addGestureRecognizer:mSwipeUpRecognizer];
-    */
+    
 //    self.navigationController.navigationBar.translucent = NO;
 //    [[UINavigationBar appearance] setTranslucent:NO];
 //    [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
@@ -389,7 +389,7 @@
                      animations:^{
                          self.HUD.backgroundColor = [UIColor redColor];
                          self.HUD.alpha = 1.0;
-                         [self.bannerAd setAlpha:0]; // was 1
+                         [self.bannerAd setAlpha:1];
                          // self.HUD.tintColor = [UIColor whiteColor];
                          self.scoreLabel.textColor = [UIColor blackColor];
                      }
@@ -403,7 +403,7 @@
                      animations:^{
                          self.HUD.backgroundColor = [UIColor blueColor];
                          self.HUD.alpha = 1.0;
-                         [self.bannerAd setAlpha:0]; // was 1
+                         [self.bannerAd setAlpha:1];
                          // self.HUD.tintColor = [UIColor whiteColor];
                          self.scoreLabel.textColor = [UIColor blackColor];
                      }
@@ -573,11 +573,11 @@
 }
 
 #pragma mark iAd Delegate Methods
-/*
+
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner {
     [UIView beginAnimations:Nil context:nil];
     [UIView setAnimationDuration:1];
-    [banner setAlpha:0]; // should be 1
+    [banner setAlpha:1];
     [UIView commitAnimations];
 }
 
@@ -587,5 +587,5 @@
     [banner setAlpha:0];
     [UIView commitAnimations];
 }
-*/
+
 @end
