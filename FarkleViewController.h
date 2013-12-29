@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
 
-@interface FarkleViewController : UIViewController //<ADBannerViewDelegate>
+@interface FarkleViewController : UIViewController <ADBannerViewDelegate>
 
 @end

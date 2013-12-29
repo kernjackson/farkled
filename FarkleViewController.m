@@ -40,8 +40,14 @@
     [super viewDidLoad];
     
 //    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
+  /*
     [self updateUI];
+    [self enableRollButton]; // fixes newGame issue, but allows player to cheat
+   */
+    [self togglePassButton];
+    [self toggleRollButton];
+    [self updateDice];
+    
 	// Do any additional setup after loading the view.
 
 //    farkle.total = @1;
@@ -472,6 +478,16 @@
 
 #pragma mark updateUI
 
+- (void)updateDice {
+    Farkle *farkle = [Farkle sharedManager];
+    for (int i = 0; i <= 5; i++) {
+        if (![[farkle.dice objectAtIndex:i] isLocked]) {
+            [[self.diceButtons objectAtIndex:i] setTitle:[[farkle.dice objectAtIndex:i] sideUp]
+                                                forState:UIControlStateNormal];
+        }
+    }
+}
+
 - (void)updateUI {
     
     Farkle *farkle = [Farkle sharedManager];
@@ -479,12 +495,8 @@
     
 
     // update Dice
-    for (int i = 0; i <= 5; i++) {
-        if (![[farkle.dice objectAtIndex:i] isLocked]) {
-            [[self.diceButtons objectAtIndex:i] setTitle:[[farkle.dice objectAtIndex:i] sideUp]
-                                                forState:UIControlStateNormal];
-        }
-    }
+    [self updateDice];
+    
 
     if ([farkle didFarkle]) {
         [self disableDice];
