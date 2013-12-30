@@ -39,6 +39,8 @@
 		481656C8186F2C5A00ABCD33 /* icon-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 481656C5186F2C5A00ABCD33 /* icon-58.png */; };
 		481656CC186F2C7E00ABCD33 /* icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 481656CB186F2C7E00ABCD33 /* icon-120.png */; };
 		481656CF186F34D100ABCD33 /* icon-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 481656CE186F34D100ABCD33 /* icon-80.png */; };
+		48DCA7961870CAF800743859 /* RulesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA7951870CAF800743859 /* RulesViewController.m */; };
+		48DCA7DD1870E9F500743859 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA7DC1870E9F500743859 /* Player.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,10 @@
 		481656C5186F2C5A00ABCD33 /* icon-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-58.png"; sourceTree = "<group>"; };
 		481656CB186F2C7E00ABCD33 /* icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-120.png"; sourceTree = "<group>"; };
 		481656CE186F34D100ABCD33 /* icon-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-80.png"; sourceTree = "<group>"; };
+		48DCA7941870CAF800743859 /* RulesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RulesViewController.h; sourceTree = "<group>"; };
+		48DCA7951870CAF800743859 /* RulesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RulesViewController.m; sourceTree = "<group>"; };
+		48DCA7DB1870E9F500743859 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		48DCA7DC1870E9F500743859 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +218,8 @@
 			children = (
 				4816568D186EA10B00ABCD33 /* ScoreKeeperViewController.h */,
 				4816568E186EA10B00ABCD33 /* ScoreKeeperViewController.m */,
+				48DCA7941870CAF800743859 /* RulesViewController.h */,
+				48DCA7951870CAF800743859 /* RulesViewController.m */,
 				4816568F186EA10B00ABCD33 /* RuleCardViewController.h */,
 				48165690186EA10B00ABCD33 /* RuleCardViewController.m */,
 				48165691186EA10B00ABCD33 /* FarkleViewController.h */,
@@ -231,6 +239,8 @@
 				4816569F186EA12600ABCD33 /* Die.m */,
 				481656A0186EA12600ABCD33 /* Score.h */,
 				481656A1186EA12600ABCD33 /* Score.m */,
+				48DCA7DB1870E9F500743859 /* Player.h */,
+				48DCA7DC1870E9F500743859 /* Player.m */,
 				481656A2186EA12600ABCD33 /* Farkle.h */,
 				481656A3186EA12600ABCD33 /* Farkle.m */,
 				481656A4186EA12600ABCD33 /* Settings.h */,
@@ -390,6 +400,7 @@
 				48165698186EA10B00ABCD33 /* RuleCardViewController.m in Sources */,
 				4816569A186EA10B00ABCD33 /* MenuViewController.m in Sources */,
 				481656A8186EA12600ABCD33 /* Farkle.m in Sources */,
+				48DCA7DD1870E9F500743859 /* Player.m in Sources */,
 				481656A9186EA12600ABCD33 /* Settings.m in Sources */,
 				481656A6186EA12600ABCD33 /* Die.m in Sources */,
 				481656A7186EA12600ABCD33 /* Score.m in Sources */,
@@ -397,6 +408,7 @@
 				48165699186EA10B00ABCD33 /* FarkleViewController.m in Sources */,
 				48165663186EA0E900ABCD33 /* main.m in Sources */,
 				48165697186EA10B00ABCD33 /* ScoreKeeperViewController.m in Sources */,
+				48DCA7961870CAF800743859 /* RulesViewController.m in Sources */,
 				4816569B186EA10B00ABCD33 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

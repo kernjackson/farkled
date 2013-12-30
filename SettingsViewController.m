@@ -10,6 +10,7 @@
 
 @interface SettingsViewController ()
 {
+    BOOL sounds;
     BOOL penalty;
     BOOL minimum;
     BOOL hotdice;
@@ -19,7 +20,7 @@
     NSNumber *minimumScore;
     NSNumber *difficulty;
 }
-
+@property (weak, nonatomic) IBOutlet UISwitch *soundSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *penaltySwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *hotDiceSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *minimumScoreSwitch;
@@ -59,6 +60,7 @@
         [defaults setObject:[NSDate date] forKey:@"firstRun"];
     [NSUserDefaults standardUserDefaults];
  */
+    sounds = [defaults boolForKey:@"sounds"];
     penalty = [defaults boolForKey:@"penalty"];
     minimum = [defaults boolForKey:@"minimum"];
     stealing = [defaults boolForKey:@"stealing"];
@@ -88,6 +90,21 @@
 }
 
 #pragma mark Switches
+
+- (IBAction)soundSwitched:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if (sounds) {
+        sounds = NO;
+        [defaults setBool:sounds forKey:@"sounds"];
+        //        NSLog(@"penalty to FALSE");
+    } else {
+        sounds = YES;
+        [defaults setBool:sounds forKey:@"sounds"];
+        //        NSLog(@"penalty to TRUE");
+    }
+}
+
 
 - (IBAction)penaltySwitched:(id)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -236,6 +253,7 @@
     // reset all settings to factory default
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    sounds = YES;
     penalty = NO;
     minimum = YES;
     hotdice = YES;
@@ -245,6 +263,7 @@
     minimumScore = @1;
     difficulty = @1;
     
+    [defaults setBool:sounds forKey:@"sounds"];
     [defaults setBool:penalty forKey:@"penalty"];
     [defaults setBool:minimum forKey:@"minimum"];
     [defaults setBool:hotdice forKey:@"hotdice"];
@@ -258,6 +277,14 @@
 - (void)updateControls {
     
     // Switches
+    
+    if (sounds) {
+        [self.soundSwitch setOn:YES animated:YES];
+        //       NSLog(@"sounds is TRUE");
+    } else {
+        [self.soundSwitch setOn:NO animated:YES];
+        //      NSLog(@"sounds is FALSE");
+    }
     
     if (penalty) {
         [self.penaltySwitch setOn:YES animated:YES];

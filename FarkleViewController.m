@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *HUD;
 @property (weak, nonatomic) IBOutlet UIProgressView *turnsProgress;
 @property (weak, nonatomic) IBOutlet ADBannerView *bannerAd;
+@property (weak, nonatomic) IBOutlet UILabel *tapToPlayButton;
+@property (strong, nonatomic) IBOutlet UIView *farkleView;
 
 @end
 
@@ -48,13 +50,18 @@
     [self toggleRollButton];
     [self updateDice];
     [self redrawDice];
+    [self toggleNavBar];
+    //[self shakeView];
     
-    
+    //[self.navigationController setNavigationBarHidden:NO animated:YES];
 	// Do any additional setup after loading the view.
 
 //    farkle.total = @1;
     
     // Setup gesture recoginizer
+    
+
+   // possibly use handle pan instead
     
     UISwipeGestureRecognizer *mSwipeUpRecognizer = [[UISwipeGestureRecognizer alloc]
                                                     initWithTarget:self
@@ -76,6 +83,112 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark AnimateSlideView
+/*
+- (CGRect)frameForPreviousViewWithTranslate:(CGPoint)translate
+{
+    return CGRectMake(-self.view.bounds.size.width + translate.x, translate.y, self.view.bounds.size.width, self.view.bounds.size.height);
+}
+
+- (CGRect)frameForCurrentViewWithTranslate:(CGPoint)translate
+{
+    return CGRectMake(translate.x, translate.y, self.view.bounds.size.width, self.view.bounds.size.height);
+}
+
+- (CGRect)frameForNextViewWithTranslate:(CGPoint)translate
+{
+    return CGRectMake(self.view.bounds.size.width + translate.x, translate.y, self.view.bounds.size.width, self.view.bounds.size.height);
+}
+
+- (void)handlePan:(UIPanGestureRecognizer *)gesture
+{
+    // transform the three views by the amount of the x translation
+    
+    CGPoint translate = [gesture translationInView:gesture.view];
+    translate.y = 0.0; // I'm just doing horizontal scrolling
+    
+    prevView.frame = [self frameForPreviousViewWithTranslate:translate];
+    currView.frame = [self frameForCurrentViewWithTranslate:translate];
+    nextView.frame = [self frameForNextViewWithTranslate:translate];
+    
+    // if we're done with gesture, animate frames to new locations
+    
+    if (gesture.state == UIGestureRecognizerStateCancelled ||
+        gesture.state == UIGestureRecognizerStateEnded ||
+        gesture.state == UIGestureRecognizerStateFailed)
+    {
+        // figure out if we've moved (or flicked) more than 50% the way across
+        
+        CGPoint velocity = [gesture velocityInView:gesture.view];
+        if (translate.x > 0.0 && (translate.x + velocity.x * 0.25) > (gesture.view.bounds.size.width / 2.0) && prevView)
+        {
+            // moving right (and/or flicked right)
+            
+            [UIView animateWithDuration:0.25
+                                  delay:0.0
+                                options:UIViewAnimationOptionCurveEaseOut
+                             animations:^{
+                                 prevView.frame = [self frameForCurrentViewWithTranslate:CGPointZero];
+                                 currView.frame = [self frameForNextViewWithTranslate:CGPointZero];
+                             }
+                             completion:^(BOOL finished) {
+                                 // do whatever you want upon completion to reflect that everything has slid to the right
+                                 
+                                 // this redefines "next" to be the old "current",
+                                 // "current" to be the old "previous", and recycles
+                                 // the old "next" to be the new "previous" (you'd presumably.
+                                 // want to update the content for the new "previous" to reflect whatever should be there
+                                 
+                                 UIView *tempView = nextView;
+                                 nextView = currView;
+                                 currView = prevView;
+                                 prevView = tempView;
+                                 prevView.frame = [self frameForPreviousViewWithTranslate:CGPointZero];
+                             }];
+        }
+        else if (translate.x < 0.0 && (translate.x + velocity.x * 0.25) < -(gesture.view.frame.size.width / 2.0) && nextView)
+        {
+            // moving left (and/or flicked left)
+            
+            [UIView animateWithDuration:0.25
+                                  delay:0.0
+                                options:UIViewAnimationOptionCurveEaseOut
+                             animations:^{
+                                 nextView.frame = [self frameForCurrentViewWithTranslate:CGPointZero];
+                                 currView.frame = [self frameForPreviousViewWithTranslate:CGPointZero];
+                             }
+                             completion:^(BOOL finished) {
+                                 // do whatever you want upon completion to reflect that everything has slid to the left
+                                 
+                                 // this redefines "previous" to be the old "current",
+                                 // "current" to be the old "next", and recycles
+                                 // the old "previous" to be the new "next". (You'd presumably.
+                                 // want to update the content for the new "next" to reflect whatever should be there
+                                 
+                                 UIView *tempView = prevView;
+                                 prevView = currView;
+                                 currView = nextView;
+                                 nextView = tempView;
+                                 nextView.frame = [self frameForNextViewWithTranslate:CGPointZero];
+                             }];
+        }
+        else
+        {
+            // return to original location
+            
+            [UIView animateWithDuration:0.25
+                                  delay:0.0
+                                options:UIViewAnimationOptionCurveEaseOut
+                             animations:^{
+                                 prevView.frame = [self frameForPreviousViewWithTranslate:CGPointZero];
+                                 currView.frame = [self frameForCurrentViewWithTranslate:CGPointZero];
+                                 nextView.frame = [self frameForNextViewWithTranslate:CGPointZero];
+                             }
+                             completion:NULL];
+        }
+    }
+}
+*/
 #pragma mark Nav Bar
 
 - (void)viewWillAppear:(BOOL)animated
@@ -93,8 +206,28 @@
 - (void)popView {
     // Pop this view off the stack
     [self.navigationController popViewControllerAnimated:YES];
+    //[self.navigationController pushViewController: animated:YES]
+}
+/*
+- (void)animationPush {
+    MainView *nextView = [[MainView alloc] init];
+    [UIView animateWithDuration:0.75
+                     animations:^{
+                         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+                         [self.navigationController pushViewController:nextView animated:NO];
+                         [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.navigationController.view cache:NO];
+                     }];
 }
 
+- (void)popAnimated {
+    [UIView animateWithDuration:0.75
+                     animations:^{
+                         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+                         [UIView setAnimationTransition:pop forView:self.navigationController.view cache:NO];
+                     }];
+    [self.navigationController popViewControllerAnimated:NO];
+}
+*/
 #pragma mark Actions
 
 - (IBAction)rolled:(id)sender {
@@ -306,10 +439,10 @@
 - (void)redrawDice {
     Farkle *farkle = [Farkle sharedManager];
  //   [farkle passed];
-    [self logDiceButtons];
-    NSLog(@"#####################");
+  //  [self logDiceButtons];
+ //   NSLog(@"#####################");
     [self hideDice];
-    [self logDiceButtons];
+ //   [self logDiceButtons];
     [self updateScoreLabel];
     [self updatePassButton];
     [self updateTurnsProgress];
@@ -457,6 +590,7 @@
                      animations:^{
                          self.HUD.backgroundColor = [UIColor whiteColor];
                          self.HUD.alpha = 0.0;
+                         [self.tapToPlayButton setAlpha:0.0];
                          self.bannerAd.alpha = 0.0;
                          //		 [self.HUD setTitle:[NSString stringWithFormat:@""]
                          //							 forState:UIControlStateNormal];
@@ -471,6 +605,7 @@
                      animations:^{
                          self.HUD.backgroundColor = [UIColor redColor];
                          self.HUD.alpha = 1.0;
+                         [self.tapToPlayButton setAlpha:1.0];
                          [self.bannerAd setAlpha:1];
                          // self.HUD.tintColor = [UIColor whiteColor];
                          self.scoreLabel.textColor = [UIColor blackColor];
@@ -495,7 +630,7 @@
 - (void)gameOver {
   //  [self showBannerAd];
     [self disableRollButton];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
+    //[[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
 	[self.rollButton setEnabled:NO];
 	[self.HUD setTitle:[NSString stringWithFormat:@"game over"]
               forState:UIControlStateNormal];
@@ -601,7 +736,7 @@
 //    NSLog(@"canRoll: %hhd", [farkle canRoll]);
 
     //[self toggleNavBar]; // we want to do this after the deathScreen Animation fires
-    //[self delayedToggleNavBar];
+  //  [self delayedToggleNavBar];
     
     [self updateScoreLabel];
     [self updatePassButton];
@@ -634,6 +769,32 @@
 }
 
 #pragma mark Toggle Controls
+
+- (void)shakeView {
+
+    CAKeyframeAnimation * anim = [ CAKeyframeAnimation animationWithKeyPath:@"transform" ] ;
+    anim.values = @[ [ NSValue valueWithCATransform3D:CATransform3DMakeTranslation(50.0f, 0.0f, 0.0f) ] ];
+    anim.autoreverses = YES ;
+    anim.repeatCount = 1.0f ;
+    anim.duration = 0.7f ;
+    
+    [self.farkleView.layer addAnimation:anim forKey:nil];
+}
+
+
+
+- (void)hintSlide {
+    UIView* view = [self.view viewWithTag:100];
+    [UIView animateWithDuration:3.0
+                          delay:0.4
+                        options: UIViewAnimationOptionAllowUserInteraction
+                     animations:^{
+                         CGRect frame = view.frame;
+                         frame.origin.y = 0;
+                         frame.origin.x = (100);
+                         view.frame = frame;
+                        } completion:nil];
+}
 
 - (void)delayedToggleNavBar {
     [NSTimer scheduledTimerWithTimeInterval:2.0
