@@ -78,8 +78,13 @@ BOOL iapSettings;
 
 - (IBAction)gameCenter:(id)sender {
     [[GCTurnBasedMatchHelper sharedInstance]
-     findMatchWithMinPlayers:2 maxPlayers:12 viewController:self];
+     findMatchWithMinPlayers:2 maxPlayers:2 viewController:self];
 }
+
+- (IBAction)gameCenter2:(id)sender {
+    [self showGameCenter];
+}
+
 
 #pragma mark - GCTurnBasedMatchHelperDelegate
 
@@ -102,6 +107,23 @@ BOOL iapSettings;
     [self layoutMatch:match];
 }
 
+
+#pragma mark from GC docs
+
+- (void) showGameCenter
+{
+    GKGameCenterViewController *gameCenterController = [[GKGameCenterViewController alloc] init];
+    if (gameCenterController != nil)
+    {
+        gameCenterController.gameCenterDelegate = self;
+        [self presentViewController: gameCenterController animated: YES completion:nil];
+    }
+}
+
+- (void)gameCenterViewControllerDidFinish:(GKGameCenterViewController *)gameCenterViewController
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 

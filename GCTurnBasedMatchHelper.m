@@ -76,7 +76,7 @@ static GCTurnBasedMatchHelper *sharedHelper = nil;
 
 #pragma mark User functions
 
-- (void)authenticateLocalUser { 
+- (void)authenticateLocalUser {
     
     if (!gameCenterAvailable) return;
     
@@ -87,14 +87,101 @@ static GCTurnBasedMatchHelper *sharedHelper = nil;
     
     NSLog(@"Authenticating local user...");
     if ([GKLocalPlayer localPlayer].authenticated == NO) {     
-        [[GKLocalPlayer localPlayer] 
-         authenticateWithCompletionHandler:setGKEventHandlerDelegate];        
+        [[GKLocalPlayer localPlayer]
+         //authenticateHandler];
+         authenticateWithCompletionHandler:setGKEventHandlerDelegate];
     } else {
         NSLog(@"Already authenticated!");
         setGKEventHandlerDelegate(nil);
     }
     //[GKTurnBasedMatch loadMatchesWithCompletionHandler:^(NSArray *matches, NSError *error){for (GKTurnBasedMatch *match in matches) { NSLog(@"%@", match.matchID); [match removeWithCompletionHandler:^(NSError *error){NSLog(@"%@", error);}]; }} ]; 
 }
+
+- (void) authenticateLocalPlayer
+{
+    GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
+    [localPlayer authenticateWithCompletionHandler:^(NSError *error) {
+        if (localPlayer.isAuthenticated)
+        {
+            // Player was successfully authenticated.
+            // Perform additional tasks for the authenticated player.
+        }
+    }];
+}
+
+/*
+- (void) authenticateLocalPlayer
+{
+    GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
+    localPlayer.authenticateHandler = ^(UIViewController *viewController, NSError *error){
+        if (viewController != nil)
+        {
+            //showAuthenticationDialogWhenReasonable: is an example method name. Create your own method that displays an authentication view when appropriate for your app.
+            [self showAuthenticationDialogWhenReasonable: viewController];
+        }
+        else if (localPlayer.isAuthenticated)
+        {
+            //authenticatedPlayer: is an example method name. Create your own method that is called after the loacal player is authenticated.
+            NSLog(@"authenticated");
+//            [self authenticatedPlayer: localPlayer];
+        }
+        else
+        {
+            NSLog(@"disableGameCenter");
+            //[self disableGameCenter];
+        }
+    }];
+}
+*/
+
+#pragma mark experimenting
+
+- (void)showGameCenter
+{
+    GKGameCenterViewController *gameCenterController = [[GKGameCenterViewController alloc] init];
+    if (gameCenterController != nil)
+    {
+        gameCenterController.gameCenterDelegate = self;
+   //     [self presentViewController: gameCenterController animated: YES completion:nil];
+        
+    }
+}
+
+- (void)presentViewController {
+    
+}
+
+- (void)gameCenterViewControllerDidFinish:(GKGameCenterViewController *)gameCenterViewController
+{
+    [gameCenterViewController dismissViewControllerAnimated:YES completion:nil];
+//    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+#pragma mark GKLeaderBoardController?
+
+-(void)leaderBoardController: (GKTurnBasedMatchmakerViewController *)viewController didFindMatch:(GKTurnBasedMatch *)match {
+    for (GKTurnBasedParticipant *part in match.participants) {
+        NSLog(@"%@ part outcome %d, part status %d, game status %d", part.playerID, part.matchOutcome, part.status, match.status);
+    }
+    
+    [presentingViewController dismissModalViewControllerAnimated:YES];
+    self.currentMatch = match;
+    GKTurnBasedParticipant *firstParticipant = [match.participants objectAtIndex:0];
+    if (firstParticipant.lastTurnDate == NULL) {
+        // It's a new game!
+        [delegate enterNewGame:match];
+    } else {
+        if ([match.currentParticipant.playerID isEqualToString:[GKLocalPlayer localPlayer].playerID]) {
+            // It's your turn!
+            [delegate takeTurn:match];
+        } else {
+            // It's not your turn, just display the game state.
+            [delegate layoutMatch:match];
+        }
+    }
+}
+
 
 - (void)findMatchWithMinPlayers:(int)minPlayers maxPlayers:(int)maxPlayers viewController:(UIViewController *)viewController {
     if (!gameCenterAvailable) return;               
@@ -138,6 +225,17 @@ static GCTurnBasedMatchHelper *sharedHelper = nil;
 -(void)turnBasedMatchmakerViewControllerWasCancelled: (GKTurnBasedMatchmakerViewController *)viewController {
     [presentingViewController dismissModalViewControllerAnimated:YES];
     NSLog(@"has cancelled");
+}
+
+- (void)leaderboardViewControllerDidFinish:(GKGameCenterViewController *)viewController
+{
+    [presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+- (void)achievementViewControllerDidFinish:(GKGameCenterViewController *)viewController;
+{
+    [presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)turnBasedMatchmakerViewController: (GKTurnBasedMatchmakerViewController *)viewController didFailWithError:(NSError *)error {
