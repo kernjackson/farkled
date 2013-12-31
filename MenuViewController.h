@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GameKit/GameKit.h>
 
-@interface MenuViewController : UITableViewController
+#import "GCTurnBasedMatchHelper.h"
+@class GameCenterManager;
+
+@interface MenuViewController : UITableViewController <UIActionSheetDelegate, GKLeaderboardViewControllerDelegate, GKAchievementViewControllerDelegate, GCTurnBasedMatchHelperDelegate>
+{
+	
+}
+
+@property (nonatomic, retain) GameCenterManager *gameCenterManager;
 
 @end

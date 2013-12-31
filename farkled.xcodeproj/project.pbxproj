@@ -41,6 +41,9 @@
 		481656CF186F34D100ABCD33 /* icon-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 481656CE186F34D100ABCD33 /* icon-80.png */; };
 		48DCA7961870CAF800743859 /* RulesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA7951870CAF800743859 /* RulesViewController.m */; };
 		48DCA7DD1870E9F500743859 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA7DC1870E9F500743859 /* Player.m */; };
+		48DCA7E21871D09700743859 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48DCA7E11871D09700743859 /* GameKit.framework */; };
+		48DCA83A187230FB00743859 /* GameCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA839187230FB00743859 /* GameCenterManager.m */; };
+		48DCA83D187240E100743859 /* GCTurnBasedMatchHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA83C187240E100743859 /* GCTurnBasedMatchHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +109,11 @@
 		48DCA7951870CAF800743859 /* RulesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RulesViewController.m; sourceTree = "<group>"; };
 		48DCA7DB1870E9F500743859 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		48DCA7DC1870E9F500743859 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		48DCA7E11871D09700743859 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		48DCA838187230FB00743859 /* GameCenterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCenterManager.h; sourceTree = "<group>"; };
+		48DCA839187230FB00743859 /* GameCenterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCenterManager.m; sourceTree = "<group>"; };
+		48DCA83B187240E100743859 /* GCTurnBasedMatchHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCTurnBasedMatchHelper.h; sourceTree = "<group>"; };
+		48DCA83C187240E100743859 /* GCTurnBasedMatchHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCTurnBasedMatchHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48DCA7E21871D09700743859 /* GameKit.framework in Frameworks */,
 				481656C0186EA9EF00ABCD33 /* libz.dylib in Frameworks */,
 				481656BC186EA98300ABCD33 /* libTestFlight.a in Frameworks */,
 				481656B1186EA1C000ABCD33 /* iAd.framework in Frameworks */,
@@ -163,6 +172,7 @@
 		48165655186EA0E900ABCD33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				48DCA7E11871D09700743859 /* GameKit.framework */,
 				481656BF186EA9EF00ABCD33 /* libz.dylib */,
 				481656B0186EA1C000ABCD33 /* iAd.framework */,
 				48165656186EA0E900ABCD33 /* Foundation.framework */,
@@ -239,12 +249,16 @@
 				4816569F186EA12600ABCD33 /* Die.m */,
 				481656A0186EA12600ABCD33 /* Score.h */,
 				481656A1186EA12600ABCD33 /* Score.m */,
-				48DCA7DB1870E9F500743859 /* Player.h */,
-				48DCA7DC1870E9F500743859 /* Player.m */,
 				481656A2186EA12600ABCD33 /* Farkle.h */,
 				481656A3186EA12600ABCD33 /* Farkle.m */,
+				48DCA7DB1870E9F500743859 /* Player.h */,
+				48DCA7DC1870E9F500743859 /* Player.m */,
 				481656A4186EA12600ABCD33 /* Settings.h */,
 				481656A5186EA12600ABCD33 /* Settings.m */,
+				48DCA838187230FB00743859 /* GameCenterManager.h */,
+				48DCA839187230FB00743859 /* GameCenterManager.m */,
+				48DCA83B187240E100743859 /* GCTurnBasedMatchHelper.h */,
+				48DCA83C187240E100743859 /* GCTurnBasedMatchHelper.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -339,6 +353,11 @@
 				TargetAttributes = {
 					48165652186EA0E900ABCD33 = {
 						DevelopmentTeam = XNN7EVQSE9;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
 					};
 					48165673186EA0E900ABCD33 = {
 						TestTargetID = 48165652186EA0E900ABCD33;
@@ -400,6 +419,7 @@
 				48165698186EA10B00ABCD33 /* RuleCardViewController.m in Sources */,
 				4816569A186EA10B00ABCD33 /* MenuViewController.m in Sources */,
 				481656A8186EA12600ABCD33 /* Farkle.m in Sources */,
+				48DCA83D187240E100743859 /* GCTurnBasedMatchHelper.m in Sources */,
 				48DCA7DD1870E9F500743859 /* Player.m in Sources */,
 				481656A9186EA12600ABCD33 /* Settings.m in Sources */,
 				481656A6186EA12600ABCD33 /* Die.m in Sources */,
@@ -407,6 +427,7 @@
 				48165667186EA0E900ABCD33 /* kernAppDelegate.m in Sources */,
 				48165699186EA10B00ABCD33 /* FarkleViewController.m in Sources */,
 				48165663186EA0E900ABCD33 /* main.m in Sources */,
+				48DCA83A187230FB00743859 /* GameCenterManager.m in Sources */,
 				48165697186EA10B00ABCD33 /* ScoreKeeperViewController.m in Sources */,
 				48DCA7961870CAF800743859 /* RulesViewController.m in Sources */,
 				4816569B186EA10B00ABCD33 /* SettingsViewController.m in Sources */,
@@ -529,6 +550,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "farkled/farkled-Prefix.pch";
 				INFOPLIST_FILE = "farkled/farkled-Info.plist";
@@ -538,6 +560,7 @@
 					/Users/kern/Documents/Apps/farkled/TestFlightSDK2,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -548,6 +571,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "farkled/farkled-Prefix.pch";
 				INFOPLIST_FILE = "farkled/farkled-Info.plist";
@@ -557,6 +581,7 @@
 					/Users/kern/Documents/Apps/farkled/TestFlightSDK2,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -10,6 +10,8 @@
 #import "Player.h"
 
 @interface ScoreKeeperViewController ()
+@property (weak, nonatomic) IBOutlet UIView *addPlayerView;
+@property (weak, nonatomic) IBOutlet UITextField *addPlayerField;
 
 @end
 
@@ -35,7 +37,7 @@
  
     //self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewPlayer)];
     self.navigationItem.rightBarButtonItem = addButton;
     
 }
@@ -44,6 +46,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)addNewPlayer {
+    [self insertNewObject:nil];
+    // addPlayerView
 }
 
 - (void)insertNewObject:(id)sender

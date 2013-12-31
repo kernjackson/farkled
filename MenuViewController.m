@@ -7,12 +7,22 @@
 //
 
 #import "MenuViewController.h"
+#import "GameCenterManager.h"
 
-@interface MenuViewController ()
+@interface MenuViewController () {
+
+BOOL iapSettings;
+
+}
+@property (weak, nonatomic) IBOutlet UITableViewCell *settingsCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *spacerCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *gameCenter;
 
 @end
 
 @implementation MenuViewController
+
+@synthesize gameCenterManager;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -34,9 +44,14 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [[GCTurnBasedMatchHelper sharedInstance] authenticateLocalUser];
+    [GCTurnBasedMatchHelper sharedInstance].delegate = self;
     
-    
-    
+    if (iapSettings) {
+        NSLog(@"show settings");
+        [self.spacerCell setHidden:YES];
+        [self.settingsCell setHidden:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,5 +73,36 @@
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillDisappear:animated];
 }
+
+#pragma mark Game Center
+
+- (IBAction)gameCenter:(id)sender {
+    [[GCTurnBasedMatchHelper sharedInstance]
+     findMatchWithMinPlayers:2 maxPlayers:12 viewController:self];
+}
+
+#pragma mark - GCTurnBasedMatchHelperDelegate
+
+-(void)enterNewGame:(GKTurnBasedMatch *)match {
+}
+
+-(void)takeTurn:(GKTurnBasedMatch *)match {
+}
+
+-(void)layoutMatch:(GKTurnBasedMatch *)match {
+}
+
+-(void)sendNotice:(NSString *)notice forMatch:(GKTurnBasedMatch *)match {
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+}
+
+-(void)recieveEndGame:(GKTurnBasedMatch *)match {
+    [self layoutMatch:match];
+}
+
+
+
 
 @end

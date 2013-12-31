@@ -19,6 +19,8 @@
     NSInteger totalPoints;
     NSInteger previousPoints;
     NSInteger finalPoints;
+    
+    NSNumber *minimumScore; // [defaults setObject:minimumScore forKey:@"minimumScore"];
 }
 
 //+ (NSArray *)pointsForTriples;
@@ -46,6 +48,8 @@
 @synthesize scoredPoints;
 @synthesize totalPoints;
 @synthesize previousPoints;
+
+//@synthesize minimumScore;
 
 @synthesize isNewGame;
 @synthesize canPass;
@@ -84,6 +88,7 @@
         
         // possibly check defaults here.
         //NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        //[defaults setObject:minimumScore forKey:@"minimumScore"];
         
         scoreTitle = @0;
         passTitle = @0;
@@ -251,7 +256,9 @@
 
 - (BOOL)canPass {
     Score *score = [[Score alloc] init];
-
+ //   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+ //   [defaults setObject:minimumScore forKey:@"minimumScore"];
+ //   NSLog(@"%ld", (long)[minimumScore integerValue]);
     NSInteger temp = [passTitle integerValue];
     if ( (temp < 300) || (self.areDiceHot) || (score.nonScoring) )
     { // add a check for non-scoring dice
@@ -415,8 +422,13 @@
     
     // need a loop that checks for locked & scored and adds the current i (position) to tutorialDice
     
+    
+    
+    
     // the actual tutorial class should just step through the tutorial to avoid confusion. requiring specific things to be locked, unulocked, passed, rolled, etc...
     // pass and roll button are overridden, and only show up whenever tutorial wants
+    
+    // Player rolls 153324
     
     // replace unlocked and unscored dice
 	for (int i = 0; i <= 5; i++) {
@@ -427,6 +439,16 @@
             [dice replaceObjectAtIndex:i withObject:values[i]];
 		}
 	}
+    
+    // Player locks 1 and 5
+    // Player unlocks 5
+    // Player rolls 12522
+    // diceAreHot = YES;
+    // 
+    
+    
+    
+    
     return dice;
 }
 
