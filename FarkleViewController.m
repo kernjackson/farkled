@@ -15,6 +15,7 @@
 
 @interface FarkleViewController () {
     BOOL iap;
+    BOOL sounds;
 }
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *diceButtons;
@@ -50,6 +51,7 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     iap = [defaults boolForKey:@"iap"];
+    sounds = [defaults boolForKey:@"sounds"];
     
    // Farkle *farkle = [Farkle sharedManager];
     
@@ -746,7 +748,11 @@
     
 
     if ([farkle didFarkle]) {
-        [sound playSound];
+        //[sound playClick];
+        if (sounds) {
+            [sound playSound];
+        }
+        
         [self disableDice];
         [self flashScreen];
         //[self enableRollButton]; // hack

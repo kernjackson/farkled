@@ -49,6 +49,8 @@
 		48FFFBCE1873684E003A5C8C /* Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FFFBCD1873684E003A5C8C /* Sound.m */; };
 		48FFFBD0187368EB003A5C8C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FFFBCF187368EB003A5C8C /* AVFoundation.framework */; };
 		48FFFBD618736B94003A5C8C /* Explosion.aifc in Resources */ = {isa = PBXBuildFile; fileRef = 48FFFBD518736B0A003A5C8C /* Explosion.aifc */; };
+		48FFFBD818736E2D003A5C8C /* Farkled.aifc in Resources */ = {isa = PBXBuildFile; fileRef = 48FFFBD718736E2D003A5C8C /* Farkled.aifc */; };
+		48FFFBDA18736FCF003A5C8C /* Farkled.caf in Resources */ = {isa = PBXBuildFile; fileRef = 48FFFBD918736F6F003A5C8C /* Farkled.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +129,8 @@
 		48FFFBCF187368EB003A5C8C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		48FFFBD21873694B003A5C8C /* Explosion.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Explosion.aiff; sourceTree = "<group>"; };
 		48FFFBD518736B0A003A5C8C /* Explosion.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Explosion.aifc; sourceTree = "<group>"; };
+		48FFFBD718736E2D003A5C8C /* Farkled.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Farkled.aifc; sourceTree = "<group>"; };
+		48FFFBD918736F6F003A5C8C /* Farkled.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Farkled.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -335,6 +339,8 @@
 		48FFFBD41873694F003A5C8C /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				48FFFBD918736F6F003A5C8C /* Farkled.caf */,
+				48FFFBD718736E2D003A5C8C /* Farkled.aifc */,
 				48FFFBD518736B0A003A5C8C /* Explosion.aifc */,
 				48FFFBD21873694B003A5C8C /* Explosion.aiff */,
 			);
@@ -428,6 +434,8 @@
 			files = (
 				481656BE186EA98300ABCD33 /* release_notes.md in Resources */,
 				48FFFBC918732B7D003A5C8C /* iOS Simulator Screen shot Dec 31, 2013, 10.42.08 AM.png in Resources */,
+				48FFFBD818736E2D003A5C8C /* Farkled.aifc in Resources */,
+				48FFFBDA18736FCF003A5C8C /* Farkled.caf in Resources */,
 				4816566F186EA0E900ABCD33 /* Images.xcassets in Resources */,
 				481656AD186EA13600ABCD33 /* LaunchImage-568@2x.png in Resources */,
 				48FFFBD618736B94003A5C8C /* Explosion.aifc in Resources */,
