@@ -21,7 +21,12 @@
     NSNumber *playTo;
     NSNumber *minimumScore;
     NSNumber *difficulty;
+    
+//    NSInteger customTableCellHeight;
 }
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
 @property (weak, nonatomic) IBOutlet UISwitch *soundSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *penaltySwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *hotDiceSwitch;
@@ -64,8 +69,24 @@
 {
     [super viewDidLoad];
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    iap = [defaults boolForKey:@"iap"];
+    
+ //   CGRect hide = CGRectMake(0, 0, 0, 0);
+
+    
     // Hide these options if they haven't bought the upgrade
-    if (iap) {
+    if (!iap) {
+//        [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:
+    //                                    self.tableVie]
+  //                    withRowAnimation:UITableViewRowAnimationTop];
+ 
+
+        
+   //     [self.generalCell setBounds:hide];
+    //    customTableCellHeight = 0; // or whatever
+    //    [self.tableView reloadData];
+        
         [self.generalCell setHidden:YES];
         [self.playToCell setHidden:YES];
         [self.minimumSwitchCell setHidden:YES];
@@ -80,7 +101,11 @@
         [self.difficultyCell setHidden:YES];
         [self.difficultyFooterCell setHidden:YES];
         [self.resetCell setHidden:YES];
-    }
+//        [self.tableView reloadInputViews];
+    }/* else {
+        customTableCellHeight = 80; // or whatever
+        [self.tableView reloadData];
+    }*/
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -88,7 +113,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
     
 //    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
 /*
@@ -97,6 +122,8 @@
         [NSUserDefaults standardUserDefaults];
     }
  */
+    
+    
     sounds = [defaults boolForKey:@"sounds"];
     penalty = [defaults boolForKey:@"penalty"];
     minimum = [defaults boolForKey:@"minimum"];
@@ -115,7 +142,12 @@
 
     [self updateControls];
 }
-
+/*
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return customTableCellHeight;
+}
+*/
 - (void)viewDidAppear:(BOOL)animated
 {
     [self updateControls];

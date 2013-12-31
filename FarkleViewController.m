@@ -11,7 +11,9 @@
 #import "Settings.h"
 //#import <AdSupport/AdSupport.h>
 
-@interface FarkleViewController ()
+@interface FarkleViewController () {
+    BOOL iap;
+}
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *diceButtons;
 @property (weak, nonatomic) IBOutlet UIButton *passButton;
@@ -44,7 +46,10 @@
 {
     [super viewDidLoad];
     
-    Farkle *farkle = [Farkle sharedManager];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    iap = [defaults boolForKey:@"iap"];
+    
+   // Farkle *farkle = [Farkle sharedManager];
     
 //    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
   /*
@@ -92,6 +97,11 @@
 //    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"TransparantNavBar.png"] forBarMetrics:UIBarMetricsDefault];
     
     //bannerView.delegate = self; // not sure if I need this
+ /*
+    if (iap) {
+        [self disableBannerView:bannerAd];
+    }
+  */
 }
 
 - (void)didReceiveMemoryWarning
@@ -623,7 +633,11 @@
                          self.HUD.backgroundColor = [UIColor redColor];
                          self.HUD.alpha = 1.0;
                          [self.tapToPlayButton setAlpha:1.0];
-                         [self.bannerAd setAlpha:1];
+                         if (!iap) {
+                             [self enableBannerView:bannerAd];
+                         //    [self.bannerAd setAlpha:1];
+                         }
+                         
                          // self.HUD.tintColor = [UIColor whiteColor];
                          self.scoreLabel.textColor = [UIColor blackColor];
                      }
@@ -637,7 +651,10 @@
                      animations:^{
                          self.HUD.backgroundColor = [UIColor blueColor];
                          self.HUD.alpha = 1.0;
-                         [self.bannerAd setAlpha:1];
+                         if (!iap) {
+                             [self enableBannerView:bannerAd];
+                             //    [self.bannerAd setAlpha:1];
+                         }
                          // self.HUD.tintColor = [UIColor whiteColor];
                          self.scoreLabel.textColor = [UIColor blackColor];
                      }
@@ -854,17 +871,26 @@
 #pragma mark iAd Delegate Methods
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner {
+    [self enableBannerView:banner];
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
+    [self disableBannerView:banner];
+}
+
+- (void)enableBannerView:(ADBannerView *)banner {
     [UIView beginAnimations:Nil context:nil];
     [UIView setAnimationDuration:1];
     [banner setAlpha:1];
     [UIView commitAnimations];
 }
 
-- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
+- (void)disableBannerView:(ADBannerView *)banner {
     [UIView beginAnimations:Nil context:nil];
     [UIView setAnimationDuration:1];
     [banner setAlpha:0];
     [UIView commitAnimations];
 }
+
 
 @end

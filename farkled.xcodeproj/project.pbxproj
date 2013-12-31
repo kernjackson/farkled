@@ -44,6 +44,8 @@
 		48DCA7E21871D09700743859 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48DCA7E11871D09700743859 /* GameKit.framework */; };
 		48DCA83A187230FB00743859 /* GameCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA839187230FB00743859 /* GameCenterManager.m */; };
 		48DCA83D187240E100743859 /* GCTurnBasedMatchHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA83C187240E100743859 /* GCTurnBasedMatchHelper.m */; };
+		48F72120187317720038229D /* IAPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7211F187317720038229D /* IAPViewController.m */; };
+		48FFFBC918732B7D003A5C8C /* iOS Simulator Screen shot Dec 31, 2013, 10.42.08 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 48FFFBC818732B7D003A5C8C /* iOS Simulator Screen shot Dec 31, 2013, 10.42.08 AM.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +116,9 @@
 		48DCA839187230FB00743859 /* GameCenterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCenterManager.m; sourceTree = "<group>"; };
 		48DCA83B187240E100743859 /* GCTurnBasedMatchHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCTurnBasedMatchHelper.h; sourceTree = "<group>"; };
 		48DCA83C187240E100743859 /* GCTurnBasedMatchHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCTurnBasedMatchHelper.m; sourceTree = "<group>"; };
+		48F7211E187317720038229D /* IAPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPViewController.h; sourceTree = "<group>"; };
+		48F7211F187317720038229D /* IAPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPViewController.m; sourceTree = "<group>"; };
+		48FFFBC818732B7D003A5C8C /* iOS Simulator Screen shot Dec 31, 2013, 10.42.08 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS Simulator Screen shot Dec 31, 2013, 10.42.08 AM.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +152,7 @@
 		4816564A186EA0E900ABCD33 = {
 			isa = PBXGroup;
 			children = (
+				48FFFBC818732B7D003A5C8C /* iOS Simulator Screen shot Dec 31, 2013, 10.42.08 AM.png */,
 				481656B5186EA98300ABCD33 /* TestFlightSDK2 */,
 				481656B4186EA55C00ABCD33 /* Icons */,
 				481656AF186EA13C00ABCD33 /* Launch Images */,
@@ -236,6 +242,8 @@
 				48165692186EA10B00ABCD33 /* FarkleViewController.m */,
 				48165693186EA10B00ABCD33 /* MenuViewController.h */,
 				48165694186EA10B00ABCD33 /* MenuViewController.m */,
+				48F7211E187317720038229D /* IAPViewController.h */,
+				48F7211F187317720038229D /* IAPViewController.m */,
 				48165695186EA10B00ABCD33 /* SettingsViewController.h */,
 				48165696186EA10B00ABCD33 /* SettingsViewController.m */,
 			);
@@ -389,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				481656BE186EA98300ABCD33 /* release_notes.md in Resources */,
+				48FFFBC918732B7D003A5C8C /* iOS Simulator Screen shot Dec 31, 2013, 10.42.08 AM.png in Resources */,
 				4816566F186EA0E900ABCD33 /* Images.xcassets in Resources */,
 				481656AD186EA13600ABCD33 /* LaunchImage-568@2x.png in Resources */,
 				48165661186EA0E900ABCD33 /* InfoPlist.strings in Resources */,
@@ -423,6 +432,7 @@
 				48DCA7DD1870E9F500743859 /* Player.m in Sources */,
 				481656A9186EA12600ABCD33 /* Settings.m in Sources */,
 				481656A6186EA12600ABCD33 /* Die.m in Sources */,
+				48F72120187317720038229D /* IAPViewController.m in Sources */,
 				481656A7186EA12600ABCD33 /* Score.m in Sources */,
 				48165667186EA0E900ABCD33 /* kernAppDelegate.m in Sources */,
 				48165699186EA10B00ABCD33 /* FarkleViewController.m in Sources */,
