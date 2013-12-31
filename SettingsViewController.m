@@ -16,6 +16,8 @@
     BOOL hotdice;
     BOOL stealing;
     
+    BOOL iap;
+    
     NSNumber *playTo;
     NSNumber *minimumScore;
     NSNumber *difficulty;
@@ -29,6 +31,22 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *playToSegment;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *minimumSegment;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *difficultySegment;
+
+@property (weak, nonatomic) IBOutlet UITableViewCell *generalCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *playToCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *minimumSwitchCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *minimumSegmentCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *minimumFootnoteCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *hotDiceCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *hotDiceFootnoteCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *penaltyCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *penaltyFootnoteCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *stealingCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *stealingFootnoteCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *difficultyFooterCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *difficultyCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *resetCell;
+
 @end
 
 @implementation SettingsViewController
@@ -45,6 +63,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  
+    // Hide these options if they haven't bought the upgrade
+    if (iap) {
+        [self.generalCell setHidden:YES];
+        [self.playToCell setHidden:YES];
+        [self.minimumSwitchCell setHidden:YES];
+        [self.minimumSegmentCell setHidden:YES];
+        [self.minimumFootnoteCell setHidden:YES];
+        [self.hotDiceCell setHidden:YES];
+        [self.hotDiceFootnoteCell setHidden:YES];
+        [self.penaltyCell setHidden:YES];
+        [self.penaltyFootnoteCell setHidden:YES];
+        [self.stealingCell setHidden:YES];
+        [self.stealingFootnoteCell setHidden:YES];
+        [self.difficultyCell setHidden:YES];
+        [self.difficultyFooterCell setHidden:YES];
+        [self.resetCell setHidden:YES];
+    }
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -56,9 +92,10 @@
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
 /*
-    if (![defaults objectForKey:@"firstRun"])
+    if (![defaults objectForKey:@"firstRun"]) {
         [defaults setObject:[NSDate date] forKey:@"firstRun"];
-    [NSUserDefaults standardUserDefaults];
+        [NSUserDefaults standardUserDefaults];
+    }
  */
     sounds = [defaults boolForKey:@"sounds"];
     penalty = [defaults boolForKey:@"penalty"];
@@ -69,12 +106,13 @@
     playTo = [defaults objectForKey:@"playTo"];
     minimumScore = [defaults objectForKey:@"minimumScore"];
     difficulty = [defaults objectForKey:@"difficulty"];
-/*
-    if([defaults objectForKey:@"firstRun"])
+
+    if(![defaults objectForKey:@"firstRun"])
     {
+        [defaults setObject:[NSDate date] forKey:@"firstRun"];
         [self factoryDefaults];
     }
- */
+
     [self updateControls];
 }
 /*

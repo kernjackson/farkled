@@ -11,13 +11,15 @@
 
 @interface MenuViewController () {
 
-BOOL iapSettings;
+    BOOL iap;
 
 }
 @property (weak, nonatomic) IBOutlet UITableViewCell *settingsCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *spacerCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *gameCenter;
 @property (weak, nonatomic) IBOutlet ADBannerView *bannerAd;
+
+
 
 @end
 
@@ -50,10 +52,8 @@ BOOL iapSettings;
     [[GCTurnBasedMatchHelper sharedInstance] authenticateLocalUser];
     [GCTurnBasedMatchHelper sharedInstance].delegate = self;
     
-    if (iapSettings) {
-        NSLog(@"show settings");
-        [self.spacerCell setHidden:YES];
-        [self.settingsCell setHidden:YES];
+    if (!iap) {
+    // hide stuff that's for iap purchasers here
     }
 }
 
