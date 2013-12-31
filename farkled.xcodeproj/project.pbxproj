@@ -46,6 +46,9 @@
 		48DCA83D187240E100743859 /* GCTurnBasedMatchHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA83C187240E100743859 /* GCTurnBasedMatchHelper.m */; };
 		48F72120187317720038229D /* IAPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7211F187317720038229D /* IAPViewController.m */; };
 		48FFFBC918732B7D003A5C8C /* iOS Simulator Screen shot Dec 31, 2013, 10.42.08 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 48FFFBC818732B7D003A5C8C /* iOS Simulator Screen shot Dec 31, 2013, 10.42.08 AM.png */; };
+		48FFFBCE1873684E003A5C8C /* Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FFFBCD1873684E003A5C8C /* Sound.m */; };
+		48FFFBD0187368EB003A5C8C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FFFBCF187368EB003A5C8C /* AVFoundation.framework */; };
+		48FFFBD618736B94003A5C8C /* Explosion.aifc in Resources */ = {isa = PBXBuildFile; fileRef = 48FFFBD518736B0A003A5C8C /* Explosion.aifc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +122,11 @@
 		48F7211E187317720038229D /* IAPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPViewController.h; sourceTree = "<group>"; };
 		48F7211F187317720038229D /* IAPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPViewController.m; sourceTree = "<group>"; };
 		48FFFBC818732B7D003A5C8C /* iOS Simulator Screen shot Dec 31, 2013, 10.42.08 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS Simulator Screen shot Dec 31, 2013, 10.42.08 AM.png"; sourceTree = "<group>"; };
+		48FFFBCC1873684E003A5C8C /* Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sound.h; sourceTree = "<group>"; };
+		48FFFBCD1873684E003A5C8C /* Sound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sound.m; sourceTree = "<group>"; };
+		48FFFBCF187368EB003A5C8C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		48FFFBD21873694B003A5C8C /* Explosion.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Explosion.aiff; sourceTree = "<group>"; };
+		48FFFBD518736B0A003A5C8C /* Explosion.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Explosion.aifc; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48FFFBD0187368EB003A5C8C /* AVFoundation.framework in Frameworks */,
 				48DCA7E21871D09700743859 /* GameKit.framework in Frameworks */,
 				481656C0186EA9EF00ABCD33 /* libz.dylib in Frameworks */,
 				481656BC186EA98300ABCD33 /* libTestFlight.a in Frameworks */,
@@ -152,10 +161,9 @@
 		4816564A186EA0E900ABCD33 = {
 			isa = PBXGroup;
 			children = (
-				48FFFBC818732B7D003A5C8C /* iOS Simulator Screen shot Dec 31, 2013, 10.42.08 AM.png */,
+				48FFFBD41873694F003A5C8C /* Sounds */,
+				48FFFBD118736906003A5C8C /* Images */,
 				481656B5186EA98300ABCD33 /* TestFlightSDK2 */,
-				481656B4186EA55C00ABCD33 /* Icons */,
-				481656AF186EA13C00ABCD33 /* Launch Images */,
 				481656AA186EA12C00ABCD33 /* Model */,
 				481656CD186F33E100ABCD33 /* Views */,
 				4816569C186EA11100ABCD33 /* Controllers */,
@@ -178,6 +186,7 @@
 		48165655186EA0E900ABCD33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				48FFFBCF187368EB003A5C8C /* AVFoundation.framework */,
 				48DCA7E11871D09700743859 /* GameKit.framework */,
 				481656BF186EA9EF00ABCD33 /* libz.dylib */,
 				481656B0186EA1C000ABCD33 /* iAd.framework */,
@@ -307,8 +316,29 @@
 			isa = PBXGroup;
 			children = (
 				4816568B186EA0FF00ABCD33 /* Main_iPhone.storyboard */,
+				48FFFBCC1873684E003A5C8C /* Sound.h */,
+				48FFFBCD1873684E003A5C8C /* Sound.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		48FFFBD118736906003A5C8C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				48FFFBC818732B7D003A5C8C /* iOS Simulator Screen shot Dec 31, 2013, 10.42.08 AM.png */,
+				481656B4186EA55C00ABCD33 /* Icons */,
+				481656AF186EA13C00ABCD33 /* Launch Images */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		48FFFBD41873694F003A5C8C /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				48FFFBD518736B0A003A5C8C /* Explosion.aifc */,
+				48FFFBD21873694B003A5C8C /* Explosion.aiff */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,6 +430,7 @@
 				48FFFBC918732B7D003A5C8C /* iOS Simulator Screen shot Dec 31, 2013, 10.42.08 AM.png in Resources */,
 				4816566F186EA0E900ABCD33 /* Images.xcassets in Resources */,
 				481656AD186EA13600ABCD33 /* LaunchImage-568@2x.png in Resources */,
+				48FFFBD618736B94003A5C8C /* Explosion.aifc in Resources */,
 				48165661186EA0E900ABCD33 /* InfoPlist.strings in Resources */,
 				481656BD186EA98300ABCD33 /* README.md in Resources */,
 				481656CC186F2C7E00ABCD33 /* icon-120.png in Resources */,
@@ -435,6 +466,7 @@
 				48F72120187317720038229D /* IAPViewController.m in Sources */,
 				481656A7186EA12600ABCD33 /* Score.m in Sources */,
 				48165667186EA0E900ABCD33 /* kernAppDelegate.m in Sources */,
+				48FFFBCE1873684E003A5C8C /* Sound.m in Sources */,
 				48165699186EA10B00ABCD33 /* FarkleViewController.m in Sources */,
 				48165663186EA0E900ABCD33 /* main.m in Sources */,
 				48DCA83A187230FB00743859 /* GameCenterManager.m in Sources */,

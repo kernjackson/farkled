@@ -8,8 +8,10 @@
 
 #import "FarkleViewController.h"
 #import "Farkle.h"
-#import "Settings.h"
-//#import <AdSupport/AdSupport.h>
+//#import "Settings.h"
+#import "Sound.h"
+
+#import <AdSupport/AdSupport.h>
 
 @interface FarkleViewController () {
     BOOL iap;
@@ -736,7 +738,7 @@
 - (void)updateUI {
     
     Farkle *farkle = [Farkle sharedManager];
-   
+    Sound *sound = [[Sound alloc] init];
     
 
     // update Dice
@@ -744,6 +746,7 @@
     
 
     if ([farkle didFarkle]) {
+        [sound playSound];
         [self disableDice];
         [self flashScreen];
         //[self enableRollButton]; // hack
@@ -891,6 +894,14 @@
     [banner setAlpha:0];
     [UIView commitAnimations];
 }
+/*
+- (void)loadSound {
+    self.alarmSoundPlayer = [[AVAudioPlayer alloc]
+                             initWithContentsOfURL:[[NSBundle mainBundle]
+                                                    URLForResource:@"alarm"
+                                                    withExtension:@"caf"]
+                             error:0];
 
-
+}
+*/
 @end

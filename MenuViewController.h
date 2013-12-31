@@ -13,9 +13,9 @@
 #import "GCTurnBasedMatchHelper.h"
 @class GameCenterManager;
 
-@interface MenuViewController : UITableViewController <UIActionSheetDelegate, GCTurnBasedMatchHelperDelegate, GKGameCenterControllerDelegate, ADBannerViewDelegate>
+@interface MenuViewController : UITableViewController <UIActionSheetDelegate, GCTurnBasedMatchHelperDelegate, GKGameCenterControllerDelegate>
 {
-	ADBannerView *bannerView;
+//	ADBannerView *bannerView;
 }
 
 @property (nonatomic, retain) GameCenterManager *gameCenterManager;

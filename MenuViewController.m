@@ -41,7 +41,7 @@
 {
     [super viewDidLoad];
     
-    bannerView.delegate = self;
+    //bannerView.delegate = self;
 
     [self performSegueWithIdentifier:@"SolitaireSegue" sender:self];
     
@@ -132,7 +132,7 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
+/*
 #pragma mark iAd Delegate Methods
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner {
@@ -148,6 +148,6 @@
     [banner setAlpha:0];
     [UIView commitAnimations];
 }
-
+*/
 
 @end
