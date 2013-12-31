@@ -63,7 +63,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-  
+    
     // Hide these options if they haven't bought the upgrade
     if (iap) {
         [self.generalCell setHidden:YES];
@@ -90,7 +90,7 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+//    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
 /*
     if (![defaults objectForKey:@"firstRun"]) {
         [defaults setObject:[NSDate date] forKey:@"firstRun"];
@@ -115,12 +115,12 @@
 
     [self updateControls];
 }
-/*
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [self updateControls];
 }
-*/
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -142,7 +142,6 @@
         //        NSLog(@"penalty to TRUE");
     }
 }
-
 
 - (IBAction)penaltySwitched:(id)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

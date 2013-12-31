@@ -19,7 +19,8 @@
 @property (weak, nonatomic) IBOutlet UITableViewCell *gameCenter;
 @property (weak, nonatomic) IBOutlet ADBannerView *bannerAd;
 
-
+@property (weak, nonatomic) IBOutlet UITableViewCell *iapHeaderCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *iapCell;
 
 @end
 
@@ -52,8 +53,12 @@
     [[GCTurnBasedMatchHelper sharedInstance] authenticateLocalUser];
     [GCTurnBasedMatchHelper sharedInstance].delegate = self;
     
-    if (!iap) {
+    
+    // Will have to write iap to defaults when user purchases upgrade
+    if (iap) {
     // hide stuff that's for iap purchasers here
+        [self.iapHeaderCell setHidden:YES];
+        [self.iapCell setHidden:YES];
     }
 }
 
