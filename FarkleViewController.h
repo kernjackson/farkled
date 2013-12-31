@@ -10,5 +10,10 @@
 #import <iAd/iAd.h>
 
 @interface FarkleViewController : UIViewController <ADBannerViewDelegate>
+{
+//    ADBannerView *bannerAd;
+}
+
+//@property (weak, nonatomic) IBOutlet ADBannerView *bannerAd;
 
 @end

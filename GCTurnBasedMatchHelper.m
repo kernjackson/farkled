@@ -82,13 +82,14 @@ static GCTurnBasedMatchHelper *sharedHelper = nil;
     
     void (^setGKEventHandlerDelegate)(NSError *) = ^ (NSError *error){
         GKTurnBasedEventHandler *ev = [GKTurnBasedEventHandler sharedTurnBasedEventHandler];
+        
         ev.delegate = self;
     };
     
     NSLog(@"Authenticating local user...");
     if ([GKLocalPlayer localPlayer].authenticated == NO) {     
         [[GKLocalPlayer localPlayer]
-         //authenticateHandler];
+    //     authenticateHandler];
          authenticateWithCompletionHandler:setGKEventHandlerDelegate];
     } else {
         NSLog(@"Already authenticated!");
@@ -96,7 +97,73 @@ static GCTurnBasedMatchHelper *sharedHelper = nil;
     }
     //[GKTurnBasedMatch loadMatchesWithCompletionHandler:^(NSArray *matches, NSError *error){for (GKTurnBasedMatch *match in matches) { NSLog(@"%@", match.matchID); [match removeWithCompletionHandler:^(NSError *error){NSLog(@"%@", error);}]; }} ]; 
 }
-
+/*
+- (void) authenticateLocalPlayer {
+    self.gameCenterAuthenticationComplete = NO;
+    
+    if (!isGameCenterAPIAvailable()) {
+        // Game Center is not available.
+    } else {
+        
+        GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
+        
+        /*
+         The authenticateWithCompletionHandler method is like all completion handler methods and runs a block
+         of code after completing its task. The difference with this method is that it does not release the
+         completion handler after calling it. Whenever your application returns to the foreground after
+         running in the background, Game Kit re-authenticates the user and calls the retained completion
+         handler. This means the authenticateWithCompletionHandler: method only needs to be called once each
+         time your application is launched. This is the reason the sample authenticates in the application
+         delegate's application:didFinishLaunchingWithOptions: method instead of in the view controller's
+         viewDidLoad method.
+         
+         Remember this call returns immediately, before the user is authenticated. This is because it uses
+         Grand Central Dispatch to call the block asynchronously once authentication completes.
+         */
+/*
+        [[GKLocalPlayer localPlayer] authenticateWithCompletionHandler:^(NSError *error) {
+            // If there is an error, do not assume local player is not authenticated.
+            if (localPlayer.isAuthenticated) {
+                
+                // Enable Game Center Functionality
+                self.gameCenterAuthenticationComplete = YES;
+                
+                if (! self.currentPlayerID || ! [self.currentPlayerID isEqualToString:localPlayer.playerID]) {
+                    
+                    // Switching Users
+                    if (!mainViewController.player || ![self.currentPlayerID isEqualToString:localPlayer.playerID]) {
+                        // If there is an existing player, replace the existing PlayerModel object with a
+                        // new object, and use it to load the new player's saved achievements.
+                        // It is not necessary for the previous PlayerModel object to writes its data first;
+                        // It automatically saves the changes whenever its list of stored
+                        // achievements changes.
+                        
+                    }
+                    [[mainViewController player] loadStoredScores];
+                    [[mainViewController player] resubmitStoredScores];
+                    
+                    // Load new game instance around new player being logged in.
+                    
+                }
+                [mainViewController enableGameCenter:YES];
+            } else {
+                // User has logged out of Game Center or can not login to Game Center, your app should run
+				// without GameCenter support or user interface.
+                self.gameCenterAuthenticationComplete = NO;
+                [self.mainViewController enableGameCenter:NO];
+            }
+        }];
+    }
+ */
+    /*
+	 A quick reminder that at this point the user still hasn't been authenticated
+	 until the Completion Hander block is called.
+	 */
+/*
+    return YES;
+}
+*/
+/*
 - (void) authenticateLocalPlayer
 {
     GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
@@ -108,7 +175,7 @@ static GCTurnBasedMatchHelper *sharedHelper = nil;
         }
     }];
 }
-
+*/
 /*
 - (void) authenticateLocalPlayer
 {

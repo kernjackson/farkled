@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <GameKit/GameKit.h>
+#import <iAd/iAd.h>
 
 #import "GCTurnBasedMatchHelper.h"
 @class GameCenterManager;
 
-@interface MenuViewController : UITableViewController <UIActionSheetDelegate, GCTurnBasedMatchHelperDelegate, GKGameCenterControllerDelegate>
+@interface MenuViewController : UITableViewController <UIActionSheetDelegate, GCTurnBasedMatchHelperDelegate, GKGameCenterControllerDelegate, ADBannerViewDelegate>
 {
-	
+	ADBannerView *bannerView;
 }
 
 @property (nonatomic, retain) GameCenterManager *gameCenterManager;

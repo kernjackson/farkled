@@ -17,6 +17,7 @@ BOOL iapSettings;
 @property (weak, nonatomic) IBOutlet UITableViewCell *settingsCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *spacerCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *gameCenter;
+@property (weak, nonatomic) IBOutlet ADBannerView *bannerAd;
 
 @end
 
@@ -36,6 +37,8 @@ BOOL iapSettings;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    bannerView.delegate = self;
 
     [self performSegueWithIdentifier:@"SolitaireSegue" sender:self];
     
@@ -125,6 +128,21 @@ BOOL iapSettings;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark iAd Delegate Methods
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner {
+    [UIView beginAnimations:Nil context:nil];
+    [UIView setAnimationDuration:1];
+    [banner setAlpha:1];
+    [UIView commitAnimations];
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
+    [UIView beginAnimations:Nil context:nil];
+    [UIView setAnimationDuration:1];
+    [banner setAlpha:0];
+    [UIView commitAnimations];
+}
 
 
 @end

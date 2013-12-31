@@ -29,6 +29,8 @@
 
 @implementation FarkleViewController
 
+@synthesize bannerAd;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -42,16 +44,29 @@
 {
     [super viewDidLoad];
     
+    Farkle *farkle = [Farkle sharedManager];
+    
 //    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
   /*
     [self updateUI];
     [self enableRollButton]; // fixes newGame issue, but allows player to cheat
    */
+ /*
+    if (farkle.isGameOver) {
+        [self clearDice];
+        [self updateDice];
+        [self redrawDice];
+    }
+    
+    else {
+*/
     [self togglePassButton];
     [self toggleRollButton];
+
     [self updateDice];
     [self redrawDice];
     [self toggleNavBar];
+//    }
     //[self shakeView];
     
     //[self.navigationController setNavigationBarHidden:NO animated:YES];
@@ -75,7 +90,8 @@
 //    [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
 //    [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
 //    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"TransparantNavBar.png"] forBarMetrics:UIBarMetricsDefault];
-
+    
+    //bannerView.delegate = self; // not sure if I need this
 }
 
 - (void)didReceiveMemoryWarning
