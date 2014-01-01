@@ -58,6 +58,8 @@
 - (BOOL)didPlayerWin;
 //- (BOOL)noLockedDice;
 
+- (BOOL)increasedScore;
+
 #pragma make private
 
 - (NSMutableArray *)newDice; // this should be private?

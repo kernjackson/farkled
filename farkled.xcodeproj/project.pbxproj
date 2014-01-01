@@ -39,18 +39,29 @@
 		481656C8186F2C5A00ABCD33 /* icon-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 481656C5186F2C5A00ABCD33 /* icon-58.png */; };
 		481656CC186F2C7E00ABCD33 /* icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 481656CB186F2C7E00ABCD33 /* icon-120.png */; };
 		481656CF186F34D100ABCD33 /* icon-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 481656CE186F34D100ABCD33 /* icon-80.png */; };
+		483939D718739CB9001718D9 /* gameOver1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 483939D618739CB9001718D9 /* gameOver1.caf */; };
+		483939D918739DE3001718D9 /* gameOver2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 483939D818739DE3001718D9 /* gameOver2.caf */; };
+		483939DB18739F48001718D9 /* decay.caf in Resources */ = {isa = PBXBuildFile; fileRef = 483939DA18739F48001718D9 /* decay.caf */; };
 		48DCA7961870CAF800743859 /* RulesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA7951870CAF800743859 /* RulesViewController.m */; };
 		48DCA7DD1870E9F500743859 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA7DC1870E9F500743859 /* Player.m */; };
 		48DCA7E21871D09700743859 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48DCA7E11871D09700743859 /* GameKit.framework */; };
 		48DCA83A187230FB00743859 /* GameCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA839187230FB00743859 /* GameCenterManager.m */; };
 		48DCA83D187240E100743859 /* GCTurnBasedMatchHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA83C187240E100743859 /* GCTurnBasedMatchHelper.m */; };
 		48F72120187317720038229D /* IAPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7211F187317720038229D /* IAPViewController.m */; };
-		48FFFBC918732B7D003A5C8C /* iOS Simulator Screen shot Dec 31, 2013, 10.42.08 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 48FFFBC818732B7D003A5C8C /* iOS Simulator Screen shot Dec 31, 2013, 10.42.08 AM.png */; };
 		48FFFBCE1873684E003A5C8C /* Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FFFBCD1873684E003A5C8C /* Sound.m */; };
 		48FFFBD0187368EB003A5C8C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FFFBCF187368EB003A5C8C /* AVFoundation.framework */; };
 		48FFFBD618736B94003A5C8C /* Explosion.aifc in Resources */ = {isa = PBXBuildFile; fileRef = 48FFFBD518736B0A003A5C8C /* Explosion.aifc */; };
 		48FFFBD818736E2D003A5C8C /* Farkled.aifc in Resources */ = {isa = PBXBuildFile; fileRef = 48FFFBD718736E2D003A5C8C /* Farkled.aifc */; };
 		48FFFBDA18736FCF003A5C8C /* Farkled.caf in Resources */ = {isa = PBXBuildFile; fileRef = 48FFFBD918736F6F003A5C8C /* Farkled.caf */; };
+		48FFFBDC187374CF003A5C8C /* 1Dice.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 48FFFBDB18737388003A5C8C /* 1Dice.m4a */; };
+		48FFFBE318737A8F003A5C8C /* nonscoring5.caf in Resources */ = {isa = PBXBuildFile; fileRef = 48FFFBDE18737A8F003A5C8C /* nonscoring5.caf */; };
+		48FFFBE418737A8F003A5C8C /* nonscoring4.caf in Resources */ = {isa = PBXBuildFile; fileRef = 48FFFBDF18737A8F003A5C8C /* nonscoring4.caf */; };
+		48FFFBE518737A8F003A5C8C /* nonscoring3.caf in Resources */ = {isa = PBXBuildFile; fileRef = 48FFFBE018737A8F003A5C8C /* nonscoring3.caf */; };
+		48FFFBE618737A8F003A5C8C /* nonscoring2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 48FFFBE118737A8F003A5C8C /* nonscoring2.caf */; };
+		48FFFBE718737A8F003A5C8C /* nonscoring1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 48FFFBE218737A8F003A5C8C /* nonscoring1.caf */; };
+		48FFFBE918737CBB003A5C8C /* Pickup_Coin69.caf in Resources */ = {isa = PBXBuildFile; fileRef = 48FFFBE818737CBB003A5C8C /* Pickup_Coin69.caf */; };
+		48FFFBEB187385D2003A5C8C /* Drop_Coin69.caf in Resources */ = {isa = PBXBuildFile; fileRef = 48FFFBEA187385D2003A5C8C /* Drop_Coin69.caf */; };
+		48FFFBED187388F9003A5C8C /* farkled1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 48FFFBEC187388F9003A5C8C /* farkled1.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +123,9 @@
 		481656C5186F2C5A00ABCD33 /* icon-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-58.png"; sourceTree = "<group>"; };
 		481656CB186F2C7E00ABCD33 /* icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-120.png"; sourceTree = "<group>"; };
 		481656CE186F34D100ABCD33 /* icon-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-80.png"; sourceTree = "<group>"; };
+		483939D618739CB9001718D9 /* gameOver1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gameOver1.caf; sourceTree = "<group>"; };
+		483939D818739DE3001718D9 /* gameOver2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gameOver2.caf; sourceTree = "<group>"; };
+		483939DA18739F48001718D9 /* decay.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = decay.caf; sourceTree = "<group>"; };
 		48DCA7941870CAF800743859 /* RulesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RulesViewController.h; sourceTree = "<group>"; };
 		48DCA7951870CAF800743859 /* RulesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RulesViewController.m; sourceTree = "<group>"; };
 		48DCA7DB1870E9F500743859 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
@@ -131,6 +145,16 @@
 		48FFFBD518736B0A003A5C8C /* Explosion.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Explosion.aifc; sourceTree = "<group>"; };
 		48FFFBD718736E2D003A5C8C /* Farkled.aifc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Farkled.aifc; sourceTree = "<group>"; };
 		48FFFBD918736F6F003A5C8C /* Farkled.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Farkled.caf; sourceTree = "<group>"; };
+		48FFFBDB18737388003A5C8C /* 1Dice.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1Dice.m4a; sourceTree = "<group>"; };
+		48FFFBDD18737926003A5C8C /* pierce.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pierce.caf; sourceTree = "<group>"; };
+		48FFFBDE18737A8F003A5C8C /* nonscoring5.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nonscoring5.caf; sourceTree = "<group>"; };
+		48FFFBDF18737A8F003A5C8C /* nonscoring4.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nonscoring4.caf; sourceTree = "<group>"; };
+		48FFFBE018737A8F003A5C8C /* nonscoring3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nonscoring3.caf; sourceTree = "<group>"; };
+		48FFFBE118737A8F003A5C8C /* nonscoring2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nonscoring2.caf; sourceTree = "<group>"; };
+		48FFFBE218737A8F003A5C8C /* nonscoring1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nonscoring1.caf; sourceTree = "<group>"; };
+		48FFFBE818737CBB003A5C8C /* Pickup_Coin69.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pickup_Coin69.caf; sourceTree = "<group>"; };
+		48FFFBEA187385D2003A5C8C /* Drop_Coin69.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Drop_Coin69.caf; sourceTree = "<group>"; };
+		48FFFBEC187388F9003A5C8C /* farkled1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = farkled1.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,7 +363,20 @@
 		48FFFBD41873694F003A5C8C /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				483939DA18739F48001718D9 /* decay.caf */,
+				483939D618739CB9001718D9 /* gameOver1.caf */,
+				48FFFBEC187388F9003A5C8C /* farkled1.caf */,
+				48FFFBEA187385D2003A5C8C /* Drop_Coin69.caf */,
+				48FFFBE818737CBB003A5C8C /* Pickup_Coin69.caf */,
+				48FFFBDE18737A8F003A5C8C /* nonscoring5.caf */,
+				48FFFBDF18737A8F003A5C8C /* nonscoring4.caf */,
+				48FFFBE018737A8F003A5C8C /* nonscoring3.caf */,
+				48FFFBE118737A8F003A5C8C /* nonscoring2.caf */,
+				48FFFBE218737A8F003A5C8C /* nonscoring1.caf */,
+				48FFFBDD18737926003A5C8C /* pierce.caf */,
+				48FFFBDB18737388003A5C8C /* 1Dice.m4a */,
 				48FFFBD918736F6F003A5C8C /* Farkled.caf */,
+				483939D818739DE3001718D9 /* gameOver2.caf */,
 				48FFFBD718736E2D003A5C8C /* Farkled.aifc */,
 				48FFFBD518736B0A003A5C8C /* Explosion.aifc */,
 				48FFFBD21873694B003A5C8C /* Explosion.aiff */,
@@ -433,17 +470,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				481656BE186EA98300ABCD33 /* release_notes.md in Resources */,
-				48FFFBC918732B7D003A5C8C /* iOS Simulator Screen shot Dec 31, 2013, 10.42.08 AM.png in Resources */,
+				48FFFBDC187374CF003A5C8C /* 1Dice.m4a in Resources */,
+				48FFFBE318737A8F003A5C8C /* nonscoring5.caf in Resources */,
 				48FFFBD818736E2D003A5C8C /* Farkled.aifc in Resources */,
+				48FFFBE518737A8F003A5C8C /* nonscoring3.caf in Resources */,
 				48FFFBDA18736FCF003A5C8C /* Farkled.caf in Resources */,
+				48FFFBED187388F9003A5C8C /* farkled1.caf in Resources */,
 				4816566F186EA0E900ABCD33 /* Images.xcassets in Resources */,
+				483939DB18739F48001718D9 /* decay.caf in Resources */,
+				48FFFBEB187385D2003A5C8C /* Drop_Coin69.caf in Resources */,
 				481656AD186EA13600ABCD33 /* LaunchImage-568@2x.png in Resources */,
 				48FFFBD618736B94003A5C8C /* Explosion.aifc in Resources */,
 				48165661186EA0E900ABCD33 /* InfoPlist.strings in Resources */,
 				481656BD186EA98300ABCD33 /* README.md in Resources */,
+				48FFFBE718737A8F003A5C8C /* nonscoring1.caf in Resources */,
+				48FFFBE918737CBB003A5C8C /* Pickup_Coin69.caf in Resources */,
+				48FFFBE618737A8F003A5C8C /* nonscoring2.caf in Resources */,
+				483939D718739CB9001718D9 /* gameOver1.caf in Resources */,
 				481656CC186F2C7E00ABCD33 /* icon-120.png in Resources */,
+				48FFFBE418737A8F003A5C8C /* nonscoring4.caf in Resources */,
 				481656C8186F2C5A00ABCD33 /* icon-58.png in Resources */,
 				4816568C186EA0FF00ABCD33 /* Main_iPhone.storyboard in Resources */,
+				483939D918739DE3001718D9 /* gameOver2.caf in Resources */,
 				481656CF186F34D100ABCD33 /* icon-80.png in Resources */,
 				481656AE186EA13600ABCD33 /* LaunchImage@2x.png in Resources */,
 			);

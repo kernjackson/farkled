@@ -14,6 +14,14 @@
 @property (nonatomic,strong) AVAudioPlayer *click;
 
 - (void)playClick;
-- (void) playSound;
+- (void)playSound;
+- (void)rollDice1;
+- (void)nonscoring1;
+
+- (void)didFarkle;
+- (void)gameOver;
+- (void)coinUp;
+- (void)coindDown;
+
 
 @end

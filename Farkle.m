@@ -8,6 +8,7 @@
 #import "Die.h"
 #import "Score.h"
 #import "Farkle.h"
+#import "Sound.h"
 
 #define APP_DELEGATE (AppDelegate *)[[UIApplication sharedApplication] delegate]
 
@@ -21,6 +22,8 @@
     NSInteger finalPoints;
     
     NSNumber *minimumScore; // [defaults setObject:minimumScore forKey:@"minimumScore"];
+    
+    
 }
 
 //+ (NSArray *)pointsForTriples;
@@ -160,8 +163,13 @@
     
     // This feels like a hack, but in it's present state we get a BOOL Yes back if nonscoring dice are selected.
     
+   
     
     totalPoints = previousPoints + lockedPoints;
+    
+
+    
+    
     /*
     NSLog(@"######################################");
     NSLog(@"previousPoints: %d", previousPoints);
@@ -169,9 +177,20 @@
     NSLog(@"totalPoints:    %d", totalPoints);
     NSLog(@"######################################");
     */
+    Sound *sound = [[Sound alloc] init];
+    
     if (lockedPoints == 1) {
         passTitle = @0;
-    } else passTitle = [NSNumber numberWithInteger:totalPoints];
+        //[sound coindDown];
+    } else { passTitle = [NSNumber numberWithInteger:totalPoints];
+        
+     //       if (sounds) {
+        if (totalPoints > previousPoints) {
+            [sound coinUp];
+        }
+        
+   //         }
+    }
 
     //NSLog(@"toggle nonScoring: %hhd", score.nonScoring);
     
@@ -320,6 +339,7 @@
 - (BOOL)didFarkle {
     if ((rolledPoints == 0) && (!isNewGame)) {
         [self endTurn];
+         
         return YES;
     }
       return NO;
@@ -451,5 +471,14 @@
     
     return dice;
 }
+
+#pragma mark Sound
+
+- (BOOL)increasedScore {
+    if (totalPoints > previousPoints) {
+        return YES;
+    } return NO;
+}
+
 
 @end

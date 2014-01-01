@@ -267,6 +267,11 @@
     
     // need to check the state of newGame, and then change it so that we don't get a crash or a bunch of deactivated controls here
     
+    Sound *sound = [[Sound alloc] init];
+    if (sound) {
+    //    [sound rollDice1];
+    }
+    
 	[self rollDice];
     [farkle rolled];
     [self showDice];
@@ -282,8 +287,13 @@
     
     // hack
    // if (!farkle.turns) {
-        
+/*
+    Sound *sound = [[Sound alloc] init];
     
+    if (sounds) {
+        [sound nonscoring1];
+    }
+*/
     if ([sender isSelected]) {
 		[self enableDie:sender];
 	} else {
@@ -748,9 +758,8 @@
     
 
     if ([farkle didFarkle]) {
-        //[sound playClick];
         if (sounds) {
-            [sound playSound];
+            [sound didFarkle];
         }
         
         [self disableDice];
@@ -761,10 +770,15 @@
     // is Game Over?
     if ([farkle isGameOver]) {
         
+        
+        
     // did this make it slow?
         if ([farkle didPlayerWin]) {
             [self playerWon];
-        } else [self gameOver];
+        } else {
+            [sound gameOver];
+            [self gameOver];
+        }
     }
 
     [self togglePassButton];
@@ -802,6 +816,22 @@
 
 - (void)updatePassButton {
     Farkle *farkle = [Farkle sharedManager];
+    Sound *sound = [[Sound alloc] init];
+    // check to see if current title is ==, <, or > new passTitle
+    
+/*
+ //   if (farkle.lockedPoints == 1) {
+ //       //[sound coindDown];
+ //   } else {
+        
+        if (sounds) {
+            if (farkle.increasedScore) {
+                [sound coinUp];
+            }
+        
+    //    }
+    }
+ */
     [self.passButton setTitle:[NSString stringWithFormat:@"%@", [farkle passTitle]] forState:UIControlStateNormal];
     [self.passButton setTitle:[NSString stringWithFormat:@"%@", [farkle passTitle]] forState:UIControlStateDisabled];
 }
