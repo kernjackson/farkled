@@ -688,8 +688,9 @@
                          self.HUD.backgroundColor = [UIColor redColor];
                          self.HUD.alpha = 1.0;
                          [self.tapToPlayButton setAlpha:1.0];
-                         if (!iap) {
-                           //  [self enableBannerView:bannerAd];
+                         if ( (!iap) && (!isBannerVisible) )
+                         {
+                             [self enableBannerView:bannerAd];
                          //    [self.bannerAd setAlpha:1];
                          }
                          
@@ -706,8 +707,8 @@
                      animations:^{
                          self.HUD.backgroundColor = [UIColor blueColor];
                          self.HUD.alpha = 1.0;
-                         if (!iap) {
-                             //[self enableBannerView:bannerAd];
+                         if ( (!iap) && (isBannerVisible) ) {
+                             [self enableBannerView:bannerAd];
                              //    [self.bannerAd setAlpha:1];
                          }
                          // self.HUD.tintColor = [UIColor whiteColor];
@@ -961,11 +962,7 @@
 #pragma mark iAd Delegate Methods
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner {
-    Farkle *farkle = [Farkle sharedManager];
-    if ( (!isBannerVisible) && (farkle.isGameOver) )
-    {
         [self enableBannerView:banner];
-    }
 }
 
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
@@ -975,10 +972,15 @@
 }
 
 - (void)enableBannerView:(ADBannerView *)banner {
-    [UIView beginAnimations:Nil context:nil];
-    [UIView setAnimationDuration:1];
-    [banner setAlpha:1];
+    Farkle *farkle = [Farkle sharedManager];
+    // Only show the ad if it's invisible, the game is over, and the ad is loaded
+    if ( (!isBannerVisible) && (farkle.isGameOver) && (bannerAd.isBannerLoaded) )
+    {
+        [UIView beginAnimations:Nil context:nil];
+        [UIView setAnimationDuration:1];
+        [banner setAlpha:1];
     [UIView commitAnimations];
+    }
 }
 
 - (void)disableBannerView:(ADBannerView *)banner {
