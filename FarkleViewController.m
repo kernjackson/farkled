@@ -16,6 +16,8 @@
 @interface FarkleViewController () {
     BOOL iap;
     BOOL sounds;
+    
+    BOOL isBannerVisible;
 }
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *diceButtons;
@@ -36,6 +38,7 @@
 
 @synthesize bannerAd;
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -48,6 +51,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.bannerAd.delegate = self;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     iap = [defaults boolForKey:@"iap"];
@@ -118,6 +123,7 @@
     }
   
     //[self disableDice]; // just proving that it works
+    //[self disableBannerView:bannerAd];
 }
 
 - (void)didReceiveMemoryWarning
@@ -683,7 +689,7 @@
                          self.HUD.alpha = 1.0;
                          [self.tapToPlayButton setAlpha:1.0];
                          if (!iap) {
-                             [self enableBannerView:bannerAd];
+                           //  [self enableBannerView:bannerAd];
                          //    [self.bannerAd setAlpha:1];
                          }
                          
@@ -701,7 +707,7 @@
                          self.HUD.backgroundColor = [UIColor blueColor];
                          self.HUD.alpha = 1.0;
                          if (!iap) {
-                             [self enableBannerView:bannerAd];
+                             //[self enableBannerView:bannerAd];
                              //    [self.bannerAd setAlpha:1];
                          }
                          // self.HUD.tintColor = [UIColor whiteColor];
@@ -955,11 +961,17 @@
 #pragma mark iAd Delegate Methods
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner {
-    [self enableBannerView:banner];
+    Farkle *farkle = [Farkle sharedManager];
+    if ( (!isBannerVisible) && (farkle.isGameOver) )
+    {
+        [self enableBannerView:banner];
+    }
 }
 
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
-    [self disableBannerView:banner];
+    if (isBannerVisible) {
+        [self disableBannerView:banner];
+    }
 }
 
 - (void)enableBannerView:(ADBannerView *)banner {

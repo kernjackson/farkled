@@ -15,7 +15,7 @@
 
 @interface MenuViewController : UITableViewController <UIActionSheetDelegate, GCTurnBasedMatchHelperDelegate, GKGameCenterControllerDelegate>
 {
-//	ADBannerView *bannerView;
+	ADBannerView *bannerView;
 }
 
 @property (nonatomic, retain) GameCenterManager *gameCenterManager;
