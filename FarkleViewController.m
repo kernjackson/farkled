@@ -106,11 +106,15 @@
         [self disableBannerView:bannerAd];
     }
   */
-    
+    // new years
     Farkle *farkle = [Farkle sharedManager];
-    if (!farkle.areDiceCleared) {
+    if ((!farkle.areDiceCleared) && (farkle.isGameOver) ) {
         [self disableDice];
         [self newGame];
+    }
+    
+    if ( (!farkle.canPass) && (!farkle.canPass)) {
+        [self disableDice];
     }
   
     //[self disableDice]; // just proving that it works
@@ -236,10 +240,11 @@
     [super viewWillAppear:animated];
     
     Farkle *farkle = [Farkle sharedManager];
+    /*
     if (!farkle.areDiceCleared) {
         [self disableDice];
     }
-
+*/
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -310,7 +315,7 @@
 */
     
     
-    if (farkle.dice) {
+    if ((farkle.dice) && (!farkle.didFarkle)) {
         if ([sender isSelected]) {
             [self enableDie:sender];
         } else {
@@ -327,6 +332,7 @@
     
     Farkle *farkle = [Farkle sharedManager];
     
+    [self disableDice]; // new years
     [farkle passed];
     
 //    NSLog(@"turns: %@", farkle.turns);
@@ -790,7 +796,6 @@
         if (sounds) {
             [sound didFarkle];
         }
-        
         [self disableDice];
         [self flashScreen];
         //[self enableRollButton]; // hack
@@ -831,7 +836,9 @@
     [self updatePassButton];
     [self updateTurnsProgress];
     
+    // duplicate code?
     if ([farkle didFarkle]) {
+        [self disableDice];
         [self enableRollButton]; // hack
     }
     
@@ -840,11 +847,11 @@
         [self disableRollButton];
         [self disableDice];
     }
-    
-    if ([farkle.turns  isEqual: @10]) {
+ /*
+    if ([farkle.turns isEqual: @10]) {
       //  [self disableDice];
     }
-
+*/
 }
 
 - (void)updateScoreLabel {
