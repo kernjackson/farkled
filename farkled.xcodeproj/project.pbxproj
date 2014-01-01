@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		480BBB8D1873A821006DB66C /* threePairs.caf in Resources */ = {isa = PBXBuildFile; fileRef = 480BBB8C1873A821006DB66C /* threePairs.caf */; };
 		48165657186EA0E900ABCD33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48165656186EA0E900ABCD33 /* Foundation.framework */; };
 		48165659186EA0E900ABCD33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48165658186EA0E900ABCD33 /* CoreGraphics.framework */; };
 		4816565B186EA0E900ABCD33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4816565A186EA0E900ABCD33 /* UIKit.framework */; };
@@ -75,6 +76,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		480BBB8C1873A821006DB66C /* threePairs.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = threePairs.caf; sourceTree = "<group>"; };
 		48165653186EA0E900ABCD33 /* farkled.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = farkled.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48165656186EA0E900ABCD33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		48165658186EA0E900ABCD33 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -363,6 +365,7 @@
 		48FFFBD41873694F003A5C8C /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				480BBB8C1873A821006DB66C /* threePairs.caf */,
 				483939DA18739F48001718D9 /* decay.caf */,
 				483939D618739CB9001718D9 /* gameOver1.caf */,
 				48FFFBEC187388F9003A5C8C /* farkled1.caf */,
@@ -472,6 +475,7 @@
 				481656BE186EA98300ABCD33 /* release_notes.md in Resources */,
 				48FFFBDC187374CF003A5C8C /* 1Dice.m4a in Resources */,
 				48FFFBE318737A8F003A5C8C /* nonscoring5.caf in Resources */,
+				480BBB8D1873A821006DB66C /* threePairs.caf in Resources */,
 				48FFFBD818736E2D003A5C8C /* Farkled.aifc in Resources */,
 				48FFFBE518737A8F003A5C8C /* nonscoring3.caf in Resources */,
 				48FFFBDA18736FCF003A5C8C /* Farkled.caf in Resources */,

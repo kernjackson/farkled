@@ -8,6 +8,7 @@
 
 #import "Score.h"
 #import "Die.h"
+#import "Sound.h"
 
 @implementation Score
 
@@ -134,6 +135,9 @@
         }
     }
     if (counter == 3) {
+        // This is sort of a view controller object that we've put in the model
+        Sound *sound = [[Sound alloc] init];
+        [sound threePairs];
         return YES;
     }
     return NO;
@@ -209,6 +213,7 @@
 - (NSInteger)score:(NSArray *)unscored {
     
     if ([self threePair:unscored]) {
+        
         return 1500;
     }
     if ([self straight:unscored]) {

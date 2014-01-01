@@ -56,6 +56,15 @@
     AudioServicesPlaySystemSound (soundID);
 }
 
+- (void)threePairs {
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"threePairs" ofType:@"caf"];
+    SystemSoundID soundID;
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+    AudioServicesPlaySystemSound (soundID);
+}
+
+
+
 - (void) rollDice1 {
     NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"1Dice" ofType:@"m4a"];
     SystemSoundID soundID;

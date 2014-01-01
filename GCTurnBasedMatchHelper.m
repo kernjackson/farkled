@@ -106,7 +106,7 @@ static GCTurnBasedMatchHelper *sharedHelper = nil;
     } else {
         
         GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
-        
+*/
         /*
          The authenticateWithCompletionHandler method is like all completion handler methods and runs a block
          of code after completing its task. The difference with this method is that it does not release the

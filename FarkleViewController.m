@@ -106,6 +106,14 @@
         [self disableBannerView:bannerAd];
     }
   */
+    
+    Farkle *farkle = [Farkle sharedManager];
+    if (!farkle.areDiceCleared) {
+        [self disableDice];
+        [self newGame];
+    }
+  
+    //[self disableDice]; // just proving that it works
 }
 
 - (void)didReceiveMemoryWarning
@@ -226,6 +234,12 @@
 {
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
+    
+    Farkle *farkle = [Farkle sharedManager];
+    if (!farkle.areDiceCleared) {
+        [self disableDice];
+    }
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -294,15 +308,19 @@
         [sound nonscoring1];
     }
 */
-    if ([sender isSelected]) {
-		[self enableDie:sender];
-	} else {
-        [self disableDie:sender];
-	}
-    //[farkle gameLoop];
-    [farkle toggleDie];
-	[self updateUI];
-//    }
+    
+    
+    if (farkle.dice) {
+        if ([sender isSelected]) {
+            [self enableDie:sender];
+        } else {
+            [self disableDie:sender];
+        }
+        //[farkle gameLoop];
+        [farkle toggleDie];
+        [self updateUI];
+    }
+
 }
 
 - (IBAction)passed:(id)sender {
@@ -326,13 +344,24 @@
     
 	[self.HUD setTitle:[NSString stringWithFormat:@"new game"]
               forState:UIControlStateNormal];
+    
 	[self newGame];
+}
+
+- (void)endGame {
+    Sound *sound = [[Sound alloc] init];
+    [self disableDice];
+    [sound gameOver];
+    [self gameOver];
+
+    
 }
 
 #pragma mark not sure if controller or model
 
 - (void)newGame {
     Farkle *farkle = [Farkle sharedManager];
+    
     
 	[self.HUD setEnabled:NO];
 	[self.HUD setTitle:[NSString stringWithFormat:@""]
@@ -342,7 +371,7 @@
 	[self clearScreen];
 	self.scoreLabel.textColor = [UIColor blackColor];
 	[self clearDice];
-    
+   // [self disableDice];
     [farkle newGame];
     
 	[self updateUI]; // hotDice causes a crash because there is nothing in the array
@@ -770,14 +799,17 @@
     // is Game Over?
     if ([farkle isGameOver]) {
         
-        
+        [self disableDice];
         
     // did this make it slow?
         if ([farkle didPlayerWin]) {
+            
             [self playerWon];
         } else {
-            [sound gameOver];
-            [self gameOver];
+      //      [self disableDice];
+           // [self redrawDice]; // new years
+            [self endGame];
+          //  [self disableDice];
         }
     }
 
@@ -804,7 +836,13 @@
     }
     
     if ([farkle isGameOver]) {
+        [self hideDice];
         [self disableRollButton];
+        [self disableDice];
+    }
+    
+    if ([farkle.turns  isEqual: @10]) {
+      //  [self disableDice];
     }
 
 }
@@ -819,7 +857,7 @@
     Sound *sound = [[Sound alloc] init];
     // check to see if current title is ==, <, or > new passTitle
     
-/*
+
  //   if (farkle.lockedPoints == 1) {
  //       //[sound coindDown];
  //   } else {
@@ -831,7 +869,7 @@
         
     //    }
     }
- */
+ 
     [self.passButton setTitle:[NSString stringWithFormat:@"%@", [farkle passTitle]] forState:UIControlStateNormal];
     [self.passButton setTitle:[NSString stringWithFormat:@"%@", [farkle passTitle]] forState:UIControlStateDisabled];
 }

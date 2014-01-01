@@ -56,6 +56,8 @@
 - (BOOL)areDiceHot;
 - (BOOL)didFarkle;
 - (BOOL)didPlayerWin;
+
+- (BOOL)areDiceCleared;
 //- (BOOL)noLockedDice;
 
 - (BOOL)increasedScore;

@@ -21,7 +21,7 @@
 - (void)didFarkle;
 - (void)gameOver;
 - (void)coinUp;
-- (void)coindDown;
-
+- (void)coinDown;
+- (void)threePairs;
 
 @end

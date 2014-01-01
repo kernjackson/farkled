@@ -177,7 +177,7 @@
     NSLog(@"totalPoints:    %d", totalPoints);
     NSLog(@"######################################");
     */
-    Sound *sound = [[Sound alloc] init];
+//    Sound *sound = [[Sound alloc] init];
     
     if (lockedPoints == 1) {
         passTitle = @0;
@@ -185,9 +185,9 @@
     } else { passTitle = [NSNumber numberWithInteger:totalPoints];
         
      //       if (sounds) {
-        if (totalPoints > previousPoints) {
-            [sound coinUp];
-        }
+    //    if (totalPoints > previousPoints) {
+   //         [sound coinUp];
+  //      }
         
    //         }
     }
@@ -234,6 +234,7 @@
 - (BOOL)isGameOver {
     if ([turns  isEqual: @0] ) {
         //turns = @10;
+        
         return YES;
     } else return NO;
 }
@@ -356,13 +357,20 @@
     return newDice;
 }
 
-
-
 - (void)clearDice {
     Die *die = [[Die alloc] init];
     for (int i = 0; i <= 5; i++) {
         [dice replaceObjectAtIndex:i withObject:[die blankDie]];
 	}
+}
+
+- (BOOL)areDiceCleared {
+    for (int i = 0; i <= 5; i++) {
+        if ([[[dice objectAtIndex:i] sideUp] isEqualToString:@""]) {
+            return YES;
+        }
+    }
+    return NO;
 }
 
 - (void)rollDice {
