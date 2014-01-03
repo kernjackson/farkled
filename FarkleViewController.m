@@ -124,6 +124,8 @@
   
     //[self disableDice]; // just proving that it works
     //[self disableBannerView:bannerAd];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -319,24 +321,51 @@
         [sound nonscoring1];
     }
 */
-    
+    Sound *playSound = [[Sound alloc] init];
     
     if ((farkle.dice) && (!farkle.didFarkle)) {
         if ([sender isSelected]) {
             [self enableDie:sender];
         } else {
+            /*
+            // check to see if current title is ==, <, or > new passTitle
+            if (sounds) {
+        //        if (farkle.increasedScore > 1) {
+                [sound coinUp];
+          //      }
+            }*/
             [self disableDie:sender];
         }
         //[farkle gameLoop];
         [farkle toggleDie];
         [self updateUI];
     }
-
+    
+    // should just play a sound, but instead it disabl locked dice
+    /*
+    if (farkle.areDiceHot) {
+        [playSound hotDice];
+    }
+     */
 }
-
+/*
+- (void)coinUp {
+    Farkle *farkle = [Farkle sharedManager];
+    Sound *sound = [[Sound alloc] init];
+    
+    if (farkle.increasedScore) {
+        // how and where do we check for die values to play different sounds?
+        [sound coinUp];
+    }
+}
+*/
 - (IBAction)passed:(id)sender {
     
     Farkle *farkle = [Farkle sharedManager];
+    Sound *playSound = [[Sound alloc] init];
+    
+    [self passedAnimation];
+    [playSound passedSmall];
     
     [self disableDice]; // new years
     [farkle passed];
@@ -363,7 +392,10 @@
 - (void)endGame {
     Sound *sound = [[Sound alloc] init];
     [self disableDice];
-    [sound gameOver];
+    if (sounds) {
+        [sound gameOver];
+    }
+    
     [self gameOver];
 
     
@@ -575,6 +607,7 @@
     // pretty sure this BOOL is backwards
     if (!farkle.isNewGame) {
         [self enableRollButton];
+        [self hintRollButton];
        // NSLog(@"enableRollButton");
     }
 
@@ -631,26 +664,79 @@
 
 
 - (IBAction)pressedRollButton:(id)sender {
+    /*
     [UIView transitionWithView:sender
                       duration:0.2
                        options:
      UIViewAnimationOptionAllowUserInteraction animations:^{
          [self.rollButton setTransform:CGAffineTransformMakeScale(0.95, 1.0  )];
      } completion:nil];
-    
+    */
 }
 
 - (IBAction)releasedRollButton:(id)sender {
+    /*
     [UIView transitionWithView:sender
                       duration:0.2
                        options:
      UIViewAnimationOptionAllowUserInteraction animations:^{
          [self.rollButton setTransform:CGAffineTransformMakeScale(1.0, 1.0  )];
      } completion:nil];
-    
+    */
+}
+
+- (void)hintRollButton {
+    [UIView animateWithDuration:0.9
+                          delay:1.2 // otherwise we will see disabled die flip
+                        options: UIViewAnimationOptionAutoreverse | UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionRepeat
+                     animations:^{
+                         [self.rollButton setTransform:CGAffineTransformMakeScale(1.0, 1.0)];
+                         [self.rollButton setTransform:CGAffineTransformMakeScale(1.1, 1.1)];
+                     }
+                     completion:nil];
 }
 
 #pragma mark HUD
+
+- (void)cycleColorsScreen {
+	[UIView animateWithDuration:0.2
+                          delay:0.2 // otherwise we will see disabled die flip
+                        options:
+     UIViewAnimationOptionAutoreverse |
+     UIViewAnimationOptionAutoreverse
+                     animations:^{
+                         self.HUD.backgroundColor = [UIColor yellowColor];
+                         self.HUD.alpha = 0.5;
+                         self.HUD.alpha = 0.0;
+                     }
+                     completion:nil];
+}
+
+- (void)passedAnimation {
+	[UIView animateWithDuration:0.2
+                          delay:0.2 // otherwise we will see disabled die flip
+                        options: UIViewAnimationOptionCurveEaseIn // | UIViewAnimationOptionAutoreverse
+                     animations:^{
+                         self.HUD.backgroundColor = [UIColor greenColor];
+                         self.HUD.alpha = 0.5;
+                         self.HUD.backgroundColor = [UIColor whiteColor];
+                         self.HUD.alpha = 0.0;
+                     }
+                     completion:nil];
+}
+
+- (void)hotDiceAnimation {
+	[UIView animateWithDuration:0.2
+                          delay:0.2 // otherwise we will see disabled die flip
+                        options: UIViewAnimationOptionCurveEaseIn | UIViewAnimationOptionAutoreverse
+                     animations:^{
+                         self.HUD.backgroundColor = [UIColor greenColor];
+                         self.HUD.alpha = 0.5;
+                         self.HUD.backgroundColor = [UIColor whiteColor];
+                         self.HUD.alpha = 0.0;
+                     }
+                     completion:nil];
+}
 
 - (void)flashScreen {
 	[UIView animateWithDuration:0.4
@@ -687,7 +773,7 @@
                      animations:^{
                          self.HUD.backgroundColor = [UIColor redColor];
                          self.HUD.alpha = 1.0;
-                         [self.tapToPlayButton setAlpha:1.0];
+                       //  [self.tapToPlayButton setAlpha:1.0];
                          if ( (!iap) && (!isBannerVisible) )
                          {
                              [self enableBannerView:bannerAd];
@@ -701,15 +787,19 @@
 }
 
 - (void)victoryScreen {
-	[UIView animateWithDuration:1.6
+	[UIView animateWithDuration:.8
                           delay:0.6
-                        options: UIViewAnimationOptionCurveEaseIn
+                        options:
+     UIViewAnimationOptionCurveEaseIn |
+     UIViewAnimationOptionCurveEaseOut |
+     UIViewAnimationOptionAutoreverse |
+     UIViewAnimationOptionRepeat |
+     UIViewAnimationOptionAllowUserInteraction
                      animations:^{
-                         self.HUD.backgroundColor = [UIColor blueColor];
+                         self.HUD.backgroundColor = [UIColor purpleColor];
                          self.HUD.alpha = 1.0;
                          if ( (!iap) && (isBannerVisible) ) {
                              [self enableBannerView:bannerAd];
-                             //    [self.bannerAd setAlpha:1];
                          }
                          // self.HUD.tintColor = [UIColor whiteColor];
                          self.scoreLabel.textColor = [UIColor blackColor];
@@ -737,11 +827,13 @@
     
     Farkle *farkle = [Farkle sharedManager];
     
-    [[UINavigationBar appearance] setBarTintColor:[UIColor blueColor]];
+    //[[UINavigationBar appearance] setBarTintColor:[UIColor purpleColor]];
 	[self.rollButton setEnabled:NO];
 //	[self.HUD setTitle:[NSString stringWithFormat:@"you  won"]
 //              forState:UIControlStateNormal];
-    [self.HUD setTitle:[NSString stringWithFormat:@"%@", [farkle scoreTitle]] forState:UIControlStateNormal];
+    [self.HUD setTitle:[NSString stringWithFormat:@"you  won"]
+              forState:UIControlStateNormal];
+//    [self.HUD setTitle:[NSString stringWithFormat:@"%@", [farkle scoreTitle]] forState:UIControlStateNormal];
     [self disableRollButton];
 	[self victoryScreen];
     
@@ -792,7 +884,7 @@
 - (void)updateUI {
     
     Farkle *farkle = [Farkle sharedManager];
-    Sound *sound = [[Sound alloc] init];
+    Sound *playSound = [[Sound alloc] init];
     
 
     // update Dice
@@ -801,7 +893,7 @@
 
     if ([farkle didFarkle]) {
         if (sounds) {
-            [sound didFarkle];
+            [playSound didFarkle];
         }
         [self disableDice];
         [self flashScreen];
@@ -846,6 +938,7 @@
     // duplicate code?
     if ([farkle didFarkle]) {
         [self disableDice];
+        [self hintRollButton]; // hack
         [self enableRollButton]; // hack
     }
     
@@ -859,6 +952,13 @@
       //  [self disableDice];
     }
 */
+/*
+    // hmm
+    if ( (farkle.areDiceHot) && (![farkle.scoreTitle isEqual:@"0"]) ) {
+        [self hotDiceAnimation];
+        [playSound hotDice];
+    }
+ */
 }
 
 - (void)updateScoreLabel {
@@ -868,24 +968,22 @@
 
 - (void)updatePassButton {
     Farkle *farkle = [Farkle sharedManager];
-    Sound *sound = [[Sound alloc] init];
-    // check to see if current title is ==, <, or > new passTitle
-    
-
- //   if (farkle.lockedPoints == 1) {
- //       //[sound coindDown];
- //   } else {
-        
-        if (sounds) {
-            if (farkle.increasedScore) {
-                [sound coinUp];
-            }
-        
-    //    }
-    }
+    Sound *playSound = [[Sound alloc] init];
  
-    [self.passButton setTitle:[NSString stringWithFormat:@"%@", [farkle passTitle]] forState:UIControlStateNormal];
+    [self.passButton setTitle:[NSString stringWithFormat:@"+ %@", [farkle passTitle]] forState:UIControlStateNormal];
     [self.passButton setTitle:[NSString stringWithFormat:@"%@", [farkle passTitle]] forState:UIControlStateDisabled];
+    
+    // check to see if current title is ==, <, or > new passTitle
+    if (sounds) {
+        if (farkle.increasedScore) {
+            [playSound coinUp];
+        }
+    }
+    /*
+    if ([farkle.passTitle  isEqual: @100]) {
+        [self cycleColorsScreen];
+    }
+     */
 }
 
 - (void)updateTurnsProgress {

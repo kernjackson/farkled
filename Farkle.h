@@ -18,6 +18,16 @@
     NSNumber *farkles;
     NSNumber *turns;
     
+    NSInteger rolledPoints;
+    NSInteger lockedPoints;
+    NSInteger scoredPoints;
+    NSInteger totalPoints;
+    NSInteger previousPoints;
+    NSInteger finalPoints;
+    
+    NSNumber *minimumScore; // [defaults setObject:minimumScore forKey:@"minimumScore"];
+    
+    
     BOOL hotDice;
 }
 

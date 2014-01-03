@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		480BBB8D1873A821006DB66C /* threePairs.caf in Resources */ = {isa = PBXBuildFile; fileRef = 480BBB8C1873A821006DB66C /* threePairs.caf */; };
+		480BBBDB187463A1006DB66C /* apple-touch-icon-57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 480BBBD2187463A1006DB66C /* apple-touch-icon-57x57.png */; };
+		480BBBDC187463A1006DB66C /* apple-touch-icon-60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 480BBBD3187463A1006DB66C /* apple-touch-icon-60x60.png */; };
+		480BBBDD187463A1006DB66C /* apple-touch-icon-72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 480BBBD4187463A1006DB66C /* apple-touch-icon-72x72.png */; };
+		480BBBDE187463A1006DB66C /* apple-touch-icon-76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 480BBBD5187463A1006DB66C /* apple-touch-icon-76x76.png */; };
+		480BBBDF187463A1006DB66C /* apple-touch-icon-114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 480BBBD6187463A1006DB66C /* apple-touch-icon-114x114.png */; };
+		480BBBE1187463A1006DB66C /* apple-touch-icon-144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = 480BBBD8187463A1006DB66C /* apple-touch-icon-144x144.png */; };
+		480BBBE2187463A1006DB66C /* apple-touch-icon-152x152.png in Resources */ = {isa = PBXBuildFile; fileRef = 480BBBD9187463A1006DB66C /* apple-touch-icon-152x152.png */; };
+		480BBBE3187463A1006DB66C /* apple-touch-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 480BBBDA187463A1006DB66C /* apple-touch-icon.png */; };
+		480BBBE618746503006DB66C /* apple-touch-icon-120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 480BBBE518746503006DB66C /* apple-touch-icon-120x120.png */; };
+		480BBBE81874653B006DB66C /* apple-touch-icon-120x120 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 480BBBE71874653B006DB66C /* apple-touch-icon-120x120 2.png */; };
+		480BBBEA1874656A006DB66C /* apple-touch-icon-120x120 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 480BBBE91874656A006DB66C /* apple-touch-icon-120x120 3.png */; };
 		48165657186EA0E900ABCD33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48165656186EA0E900ABCD33 /* Foundation.framework */; };
 		48165659186EA0E900ABCD33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48165658186EA0E900ABCD33 /* CoreGraphics.framework */; };
 		4816565B186EA0E900ABCD33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4816565A186EA0E900ABCD33 /* UIKit.framework */; };
@@ -40,6 +51,7 @@
 		481656C8186F2C5A00ABCD33 /* icon-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 481656C5186F2C5A00ABCD33 /* icon-58.png */; };
 		481656CC186F2C7E00ABCD33 /* icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 481656CB186F2C7E00ABCD33 /* icon-120.png */; };
 		481656CF186F34D100ABCD33 /* icon-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 481656CE186F34D100ABCD33 /* icon-80.png */; };
+		4826B23E1877277000BB3E29 /* SoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4826B23D1877277000BB3E29 /* SoundController.m */; };
 		483939D718739CB9001718D9 /* gameOver1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 483939D618739CB9001718D9 /* gameOver1.caf */; };
 		483939D918739DE3001718D9 /* gameOver2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 483939D818739DE3001718D9 /* gameOver2.caf */; };
 		483939DB18739F48001718D9 /* decay.caf in Resources */ = {isa = PBXBuildFile; fileRef = 483939DA18739F48001718D9 /* decay.caf */; };
@@ -77,6 +89,17 @@
 
 /* Begin PBXFileReference section */
 		480BBB8C1873A821006DB66C /* threePairs.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = threePairs.caf; sourceTree = "<group>"; };
+		480BBBD2187463A1006DB66C /* apple-touch-icon-57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-touch-icon-57x57.png"; sourceTree = "<group>"; };
+		480BBBD3187463A1006DB66C /* apple-touch-icon-60x60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-touch-icon-60x60.png"; sourceTree = "<group>"; };
+		480BBBD4187463A1006DB66C /* apple-touch-icon-72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-touch-icon-72x72.png"; sourceTree = "<group>"; };
+		480BBBD5187463A1006DB66C /* apple-touch-icon-76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-touch-icon-76x76.png"; sourceTree = "<group>"; };
+		480BBBD6187463A1006DB66C /* apple-touch-icon-114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-touch-icon-114x114.png"; sourceTree = "<group>"; };
+		480BBBD8187463A1006DB66C /* apple-touch-icon-144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-touch-icon-144x144.png"; sourceTree = "<group>"; };
+		480BBBD9187463A1006DB66C /* apple-touch-icon-152x152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-touch-icon-152x152.png"; sourceTree = "<group>"; };
+		480BBBDA187463A1006DB66C /* apple-touch-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-touch-icon.png"; sourceTree = "<group>"; };
+		480BBBE518746503006DB66C /* apple-touch-icon-120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-touch-icon-120x120.png"; sourceTree = "<group>"; };
+		480BBBE71874653B006DB66C /* apple-touch-icon-120x120 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-touch-icon-120x120 2.png"; sourceTree = "<group>"; };
+		480BBBE91874656A006DB66C /* apple-touch-icon-120x120 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-touch-icon-120x120 3.png"; sourceTree = "<group>"; };
 		48165653186EA0E900ABCD33 /* farkled.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = farkled.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48165656186EA0E900ABCD33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		48165658186EA0E900ABCD33 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -125,6 +148,8 @@
 		481656C5186F2C5A00ABCD33 /* icon-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-58.png"; sourceTree = "<group>"; };
 		481656CB186F2C7E00ABCD33 /* icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-120.png"; sourceTree = "<group>"; };
 		481656CE186F34D100ABCD33 /* icon-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-80.png"; sourceTree = "<group>"; };
+		4826B23C1877277000BB3E29 /* SoundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundController.h; sourceTree = "<group>"; };
+		4826B23D1877277000BB3E29 /* SoundController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundController.m; sourceTree = "<group>"; };
 		483939D618739CB9001718D9 /* gameOver1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gameOver1.caf; sourceTree = "<group>"; };
 		483939D818739DE3001718D9 /* gameOver2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gameOver2.caf; sourceTree = "<group>"; };
 		483939DA18739F48001718D9 /* decay.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = decay.caf; sourceTree = "<group>"; };
@@ -139,7 +164,6 @@
 		48DCA83C187240E100743859 /* GCTurnBasedMatchHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCTurnBasedMatchHelper.m; sourceTree = "<group>"; };
 		48F7211E187317720038229D /* IAPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPViewController.h; sourceTree = "<group>"; };
 		48F7211F187317720038229D /* IAPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPViewController.m; sourceTree = "<group>"; };
-		48FFFBC818732B7D003A5C8C /* iOS Simulator Screen shot Dec 31, 2013, 10.42.08 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS Simulator Screen shot Dec 31, 2013, 10.42.08 AM.png"; sourceTree = "<group>"; };
 		48FFFBCC1873684E003A5C8C /* Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sound.h; sourceTree = "<group>"; };
 		48FFFBCD1873684E003A5C8C /* Sound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sound.m; sourceTree = "<group>"; };
 		48FFFBCF187368EB003A5C8C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -188,6 +212,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		480BBBD118746398006DB66C /* White */ = {
+			isa = PBXGroup;
+			children = (
+				481656CE186F34D100ABCD33 /* icon-80.png */,
+				481656CB186F2C7E00ABCD33 /* icon-120.png */,
+				481656C5186F2C5A00ABCD33 /* icon-58.png */,
+			);
+			name = White;
+			sourceTree = "<group>";
+		};
+		480BBBE4187463A6006DB66C /* Red */ = {
+			isa = PBXGroup;
+			children = (
+				480BBBD2187463A1006DB66C /* apple-touch-icon-57x57.png */,
+				480BBBD3187463A1006DB66C /* apple-touch-icon-60x60.png */,
+				480BBBD4187463A1006DB66C /* apple-touch-icon-72x72.png */,
+				480BBBD5187463A1006DB66C /* apple-touch-icon-76x76.png */,
+				480BBBD6187463A1006DB66C /* apple-touch-icon-114x114.png */,
+				480BBBD8187463A1006DB66C /* apple-touch-icon-144x144.png */,
+				480BBBD9187463A1006DB66C /* apple-touch-icon-152x152.png */,
+				480BBBDA187463A1006DB66C /* apple-touch-icon.png */,
+			);
+			name = Red;
+			sourceTree = "<group>";
+		};
 		4816564A186EA0E900ABCD33 = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +351,8 @@
 				48DCA7DC1870E9F500743859 /* Player.m */,
 				481656A4186EA12600ABCD33 /* Settings.h */,
 				481656A5186EA12600ABCD33 /* Settings.m */,
+				4826B23C1877277000BB3E29 /* SoundController.h */,
+				4826B23D1877277000BB3E29 /* SoundController.m */,
 				48DCA838187230FB00743859 /* GameCenterManager.h */,
 				48DCA839187230FB00743859 /* GameCenterManager.m */,
 				48DCA83B187240E100743859 /* GCTurnBasedMatchHelper.h */,
@@ -322,9 +373,11 @@
 		481656B4186EA55C00ABCD33 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				481656CE186F34D100ABCD33 /* icon-80.png */,
-				481656CB186F2C7E00ABCD33 /* icon-120.png */,
-				481656C5186F2C5A00ABCD33 /* icon-58.png */,
+				480BBBE91874656A006DB66C /* apple-touch-icon-120x120 3.png */,
+				480BBBE71874653B006DB66C /* apple-touch-icon-120x120 2.png */,
+				480BBBE518746503006DB66C /* apple-touch-icon-120x120.png */,
+				480BBBE4187463A6006DB66C /* Red */,
+				480BBBD118746398006DB66C /* White */,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -355,7 +408,6 @@
 		48FFFBD118736906003A5C8C /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				48FFFBC818732B7D003A5C8C /* iOS Simulator Screen shot Dec 31, 2013, 10.42.08 AM.png */,
 				481656B4186EA55C00ABCD33 /* Icons */,
 				481656AF186EA13C00ABCD33 /* Launch Images */,
 			);
@@ -480,21 +532,32 @@
 				48FFFBE518737A8F003A5C8C /* nonscoring3.caf in Resources */,
 				48FFFBDA18736FCF003A5C8C /* Farkled.caf in Resources */,
 				48FFFBED187388F9003A5C8C /* farkled1.caf in Resources */,
+				480BBBE2187463A1006DB66C /* apple-touch-icon-152x152.png in Resources */,
 				4816566F186EA0E900ABCD33 /* Images.xcassets in Resources */,
+				480BBBDB187463A1006DB66C /* apple-touch-icon-57x57.png in Resources */,
+				480BBBDC187463A1006DB66C /* apple-touch-icon-60x60.png in Resources */,
+				480BBBE3187463A1006DB66C /* apple-touch-icon.png in Resources */,
 				483939DB18739F48001718D9 /* decay.caf in Resources */,
+				480BBBE81874653B006DB66C /* apple-touch-icon-120x120 2.png in Resources */,
+				480BBBDE187463A1006DB66C /* apple-touch-icon-76x76.png in Resources */,
 				48FFFBEB187385D2003A5C8C /* Drop_Coin69.caf in Resources */,
 				481656AD186EA13600ABCD33 /* LaunchImage-568@2x.png in Resources */,
 				48FFFBD618736B94003A5C8C /* Explosion.aifc in Resources */,
 				48165661186EA0E900ABCD33 /* InfoPlist.strings in Resources */,
 				481656BD186EA98300ABCD33 /* README.md in Resources */,
+				480BBBE618746503006DB66C /* apple-touch-icon-120x120.png in Resources */,
 				48FFFBE718737A8F003A5C8C /* nonscoring1.caf in Resources */,
 				48FFFBE918737CBB003A5C8C /* Pickup_Coin69.caf in Resources */,
 				48FFFBE618737A8F003A5C8C /* nonscoring2.caf in Resources */,
+				480BBBDD187463A1006DB66C /* apple-touch-icon-72x72.png in Resources */,
 				483939D718739CB9001718D9 /* gameOver1.caf in Resources */,
+				480BBBEA1874656A006DB66C /* apple-touch-icon-120x120 3.png in Resources */,
 				481656CC186F2C7E00ABCD33 /* icon-120.png in Resources */,
 				48FFFBE418737A8F003A5C8C /* nonscoring4.caf in Resources */,
+				480BBBE1187463A1006DB66C /* apple-touch-icon-144x144.png in Resources */,
 				481656C8186F2C5A00ABCD33 /* icon-58.png in Resources */,
 				4816568C186EA0FF00ABCD33 /* Main_iPhone.storyboard in Resources */,
+				480BBBDF187463A1006DB66C /* apple-touch-icon-114x114.png in Resources */,
 				483939D918739DE3001718D9 /* gameOver2.caf in Resources */,
 				481656CF186F34D100ABCD33 /* icon-80.png in Resources */,
 				481656AE186EA13600ABCD33 /* LaunchImage@2x.png in Resources */,
@@ -521,6 +584,7 @@
 				481656A8186EA12600ABCD33 /* Farkle.m in Sources */,
 				48DCA83D187240E100743859 /* GCTurnBasedMatchHelper.m in Sources */,
 				48DCA7DD1870E9F500743859 /* Player.m in Sources */,
+				4826B23E1877277000BB3E29 /* SoundController.m in Sources */,
 				481656A9186EA12600ABCD33 /* Settings.m in Sources */,
 				481656A6186EA12600ABCD33 /* Die.m in Sources */,
 				48F72120187317720038229D /* IAPViewController.m in Sources */,

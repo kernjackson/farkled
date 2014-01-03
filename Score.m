@@ -135,9 +135,10 @@
         }
     }
     if (counter == 3) {
+        /*
         // This is sort of a view controller object that we've put in the model
         Sound *sound = [[Sound alloc] init];
-        [sound threePairs];
+        [sound threePairs];*/
         return YES;
     }
     return NO;

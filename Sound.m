@@ -11,7 +11,7 @@
 @implementation Sound
 
 @synthesize click;
-
+/*
 - (void)playClick {
     NSURL* musicFile = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Farkled"
                                                                               ofType:@"caf"]];
@@ -20,14 +20,15 @@
 //    [click prepareToPlay];
     [click play];
 }
-
+ */
+/*
 -(void) playSound {
     NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"Pickup_Coin69" ofType:@"caf"];
     SystemSoundID soundID;
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
     AudioServicesPlaySystemSound (soundID);
 }
-
+*/
 -(void) coinUp {
     NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"Pickup_Coin69" ofType:@"caf"];
     SystemSoundID soundID;
@@ -56,6 +57,13 @@
     AudioServicesPlaySystemSound (soundID);
 }
 
+- (void)hotDice {
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"threePairs" ofType:@"caf"];
+    SystemSoundID soundID;
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+    AudioServicesPlaySystemSound (soundID);
+}
+
 - (void)threePairs {
     NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"threePairs" ofType:@"caf"];
     SystemSoundID soundID;
@@ -78,5 +86,22 @@
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
     AudioServicesPlaySystemSound (soundID);
 }
+
+- (void)coinUp:(UIButton *)sender {
+    if (sender == 0) {
+        NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"Drop_Coin69" ofType:@"caf"];
+        SystemSoundID soundID;
+        AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+        AudioServicesPlaySystemSound (soundID);
+    }
+}
+
+- (void)passedSmall {
+        NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"threePairs" ofType:@"caf"];
+        SystemSoundID soundID;
+        AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+        AudioServicesPlaySystemSound (soundID);
+}
+
 
 @end

@@ -14,14 +14,6 @@
 
 @interface Farkle() {
 
-    NSInteger rolledPoints;
-    NSInteger lockedPoints;
-    NSInteger scoredPoints;
-    NSInteger totalPoints;
-    NSInteger previousPoints;
-    NSInteger finalPoints;
-    
-    NSNumber *minimumScore; // [defaults setObject:minimumScore forKey:@"minimumScore"];
     
     
 }
@@ -282,6 +274,7 @@
     NSInteger temp = [passTitle integerValue];
     if ( (temp < 300) || (self.areDiceHot) || (score.nonScoring) )
     { // add a check for non-scoring dice
+        
         return NO;
     } else return YES;
 }
@@ -312,6 +305,9 @@
         }
     }
     if (count == 6) {
+        // This should be in a view controller, just call this method again?
+   //     Sound *playSound = [[Sound alloc] init];
+   //     [playSound hotDice];
         return YES;
     } else return NO;
 }
