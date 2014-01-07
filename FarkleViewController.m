@@ -52,6 +52,9 @@
 {
     [super viewDidLoad];
     
+    [[GCTurnBasedMatchHelper sharedInstance] authenticateLocalUser];
+    [GCTurnBasedMatchHelper sharedInstance].delegate = self;
+    
     self.bannerAd.delegate = self;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -140,6 +143,8 @@
     
     // Shake to Rage Quit
     //[self becomeFirstResponder];
+    
+    //[self performSegueWithIdentifier:@"ModalMenuSegue" sender:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -267,6 +272,7 @@
         [self disableDice];
     }
 */
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -318,10 +324,11 @@
     // need to check the state of newGame, and then change it so that we don't get a crash or a bunch of deactivated controls here
     
     Sound *sound = [[Sound alloc] init];
+    /*
     if (sound) {
-    //    [sound rollDice1];
+        [sound rollDice1];
     }
-    
+    */
 	[self rollDice];
     [farkle rolled];
     [self showDice];
@@ -349,7 +356,17 @@
     if ((farkle.dice) && (!farkle.didFarkle)) {
         if ([sender isSelected]) {
             [self enableDie:sender];
+         /*
+            if (sounds) {
+                [playSound nonscoring1];
+            }
+          */
         } else {
+          /*
+            if ( (sounds) && (![self.passButton.titleLabel.text isEqual:@"0"]) ) {
+                [playSound coinUp];
+            }
+           */
             /*
             // check to see if current title is ==, <, or > new passTitle
             if (sounds) {
@@ -998,10 +1015,17 @@
     
     // check to see if current title is ==, <, or > new passTitle
     if (sounds) {
-        if (farkle.increasedScore) {
+ 
+        if (![self.passButton.titleLabel.text isEqual:@"0"]) {
+           [playSound coinUp];
+        }
+  }
+  
+ /*
+        if ( (farkle.increasedScore) && (!farkle.nonScoring) ) {
             [playSound coinUp];
         }
-    }
+  */
     /*
     if ([farkle.passTitle  isEqual: @100]) {
         [self cycleColorsScreen];

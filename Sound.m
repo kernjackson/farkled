@@ -65,7 +65,7 @@
 }
 
 - (void)threePairs {
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"threePairs" ofType:@"caf"];
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"Pickup_Coin12" ofType:@"caf"];
     SystemSoundID soundID;
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
     AudioServicesPlaySystemSound (soundID);
@@ -79,6 +79,14 @@
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
     AudioServicesPlaySystemSound (soundID);
 }
+
+- (void) nonscoring {
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"Pickup_Coin12" ofType:@"caf"];
+    SystemSoundID soundID;
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+    AudioServicesPlaySystemSound (soundID);
+}
+
 
 - (void) nonscoring1 {
     NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"nonscoring1" ofType:@"caf"];
@@ -97,7 +105,7 @@
 }
 
 - (void)passedSmall {
-        NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"threePairs" ofType:@"caf"];
+        NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"Laser_Shoot11" ofType:@"caf"];
         SystemSoundID soundID;
         AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
         AudioServicesPlaySystemSound (soundID);

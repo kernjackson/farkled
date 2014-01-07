@@ -16,6 +16,7 @@
 //- (void)playClick;
 //- (void)playSound;
 - (void)rollDice1;
+- (void)nonscoring;
 - (void)nonscoring1;
 
 - (void)didFarkle;

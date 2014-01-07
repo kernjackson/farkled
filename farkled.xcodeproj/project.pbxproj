@@ -63,6 +63,15 @@
 		48DCA7E21871D09700743859 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48DCA7E11871D09700743859 /* GameKit.framework */; };
 		48DCA83A187230FB00743859 /* GameCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA839187230FB00743859 /* GameCenterManager.m */; };
 		48DCA83D187240E100743859 /* GCTurnBasedMatchHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA83C187240E100743859 /* GCTurnBasedMatchHelper.m */; };
+		48E88586187CB397004D9D8E /* Pickup_Coin10.caf in Resources */ = {isa = PBXBuildFile; fileRef = 48E88585187CB397004D9D8E /* Pickup_Coin10.caf */; };
+		48E88588187CB8E8004D9D8E /* Pickup_Coin12.caf in Resources */ = {isa = PBXBuildFile; fileRef = 48E88587187CB8E8004D9D8E /* Pickup_Coin12.caf */; };
+		48E8858A187CBAE3004D9D8E /* Pickup_Coin26.caf in Resources */ = {isa = PBXBuildFile; fileRef = 48E88589187CBAE3004D9D8E /* Pickup_Coin26.caf */; };
+		48E8858D187CBBED004D9D8E /* Pickup_Coin35.caf in Resources */ = {isa = PBXBuildFile; fileRef = 48E8858C187CBBED004D9D8E /* Pickup_Coin35.caf */; };
+		48E8858F187CBC3A004D9D8E /* Pickup_Coin36.caf in Resources */ = {isa = PBXBuildFile; fileRef = 48E8858E187CBC3A004D9D8E /* Pickup_Coin36.caf */; };
+		48E88591187CBCF2004D9D8E /* Blip_Select8.caf in Resources */ = {isa = PBXBuildFile; fileRef = 48E88590187CBCF2004D9D8E /* Blip_Select8.caf */; };
+		48E88593187CBD3C004D9D8E /* Pickup_Coin50.caf in Resources */ = {isa = PBXBuildFile; fileRef = 48E88592187CBD3C004D9D8E /* Pickup_Coin50.caf */; };
+		48E88597187CBDC6004D9D8E /* Pickup_Coin53.caf in Resources */ = {isa = PBXBuildFile; fileRef = 48E88596187CBDC6004D9D8E /* Pickup_Coin53.caf */; };
+		48E88599187CC0B4004D9D8E /* Laser_Shoot11.caf in Resources */ = {isa = PBXBuildFile; fileRef = 48E88598187CC0B4004D9D8E /* Laser_Shoot11.caf */; };
 		48F72120187317720038229D /* IAPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7211F187317720038229D /* IAPViewController.m */; };
 		48FB53D8187745C100FBCA5E /* ScoreKeeperDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FB53D7187745C100FBCA5E /* ScoreKeeperDetailViewController.m */; };
 		48FFFBCE1873684E003A5C8C /* Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FFFBCD1873684E003A5C8C /* Sound.m */; };
@@ -172,6 +181,15 @@
 		48DCA839187230FB00743859 /* GameCenterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCenterManager.m; sourceTree = "<group>"; };
 		48DCA83B187240E100743859 /* GCTurnBasedMatchHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCTurnBasedMatchHelper.h; sourceTree = "<group>"; };
 		48DCA83C187240E100743859 /* GCTurnBasedMatchHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCTurnBasedMatchHelper.m; sourceTree = "<group>"; };
+		48E88585187CB397004D9D8E /* Pickup_Coin10.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pickup_Coin10.caf; sourceTree = "<group>"; };
+		48E88587187CB8E8004D9D8E /* Pickup_Coin12.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pickup_Coin12.caf; sourceTree = "<group>"; };
+		48E88589187CBAE3004D9D8E /* Pickup_Coin26.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pickup_Coin26.caf; sourceTree = "<group>"; };
+		48E8858C187CBBED004D9D8E /* Pickup_Coin35.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pickup_Coin35.caf; sourceTree = "<group>"; };
+		48E8858E187CBC3A004D9D8E /* Pickup_Coin36.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pickup_Coin36.caf; sourceTree = "<group>"; };
+		48E88590187CBCF2004D9D8E /* Blip_Select8.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Blip_Select8.caf; sourceTree = "<group>"; };
+		48E88592187CBD3C004D9D8E /* Pickup_Coin50.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pickup_Coin50.caf; sourceTree = "<group>"; };
+		48E88596187CBDC6004D9D8E /* Pickup_Coin53.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pickup_Coin53.caf; sourceTree = "<group>"; };
+		48E88598187CC0B4004D9D8E /* Laser_Shoot11.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Laser_Shoot11.caf; sourceTree = "<group>"; };
 		48F7211E187317720038229D /* IAPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPViewController.h; sourceTree = "<group>"; };
 		48F7211F187317720038229D /* IAPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPViewController.m; sourceTree = "<group>"; };
 		48FB53D6187745C100FBCA5E /* ScoreKeeperDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreKeeperDetailViewController.h; sourceTree = "<group>"; };
@@ -437,6 +455,14 @@
 		48FFFBD41873694F003A5C8C /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				48E88598187CC0B4004D9D8E /* Laser_Shoot11.caf */,
+				48E88596187CBDC6004D9D8E /* Pickup_Coin53.caf */,
+				48E88592187CBD3C004D9D8E /* Pickup_Coin50.caf */,
+				48E8858E187CBC3A004D9D8E /* Pickup_Coin36.caf */,
+				48E8858C187CBBED004D9D8E /* Pickup_Coin35.caf */,
+				48E88589187CBAE3004D9D8E /* Pickup_Coin26.caf */,
+				48E88587187CB8E8004D9D8E /* Pickup_Coin12.caf */,
+				48E88585187CB397004D9D8E /* Pickup_Coin10.caf */,
 				480BBB8C1873A821006DB66C /* threePairs.caf */,
 				483939DA18739F48001718D9 /* decay.caf */,
 				483939D618739CB9001718D9 /* gameOver1.caf */,
@@ -454,6 +480,7 @@
 				483939D818739DE3001718D9 /* gameOver2.caf */,
 				48FFFBD718736E2D003A5C8C /* Farkled.aifc */,
 				48FFFBD518736B0A003A5C8C /* Explosion.aifc */,
+				48E88590187CBCF2004D9D8E /* Blip_Select8.caf */,
 				48FFFBD21873694B003A5C8C /* Explosion.aiff */,
 			);
 			name = Sounds;
@@ -546,15 +573,22 @@
 			files = (
 				481656BE186EA98300ABCD33 /* release_notes.md in Resources */,
 				48FFFBDC187374CF003A5C8C /* 1Dice.m4a in Resources */,
+				48E88599187CC0B4004D9D8E /* Laser_Shoot11.caf in Resources */,
 				48FFFBE318737A8F003A5C8C /* nonscoring5.caf in Resources */,
 				480BBB8D1873A821006DB66C /* threePairs.caf in Resources */,
 				48FFFBD818736E2D003A5C8C /* Farkled.aifc in Resources */,
 				48FFFBE518737A8F003A5C8C /* nonscoring3.caf in Resources */,
+				48E8858F187CBC3A004D9D8E /* Pickup_Coin36.caf in Resources */,
 				48FFFBDA18736FCF003A5C8C /* Farkled.caf in Resources */,
 				48FFFBED187388F9003A5C8C /* farkled1.caf in Resources */,
+				48E88597187CBDC6004D9D8E /* Pickup_Coin53.caf in Resources */,
+				48E8858D187CBBED004D9D8E /* Pickup_Coin35.caf in Resources */,
 				480BBBE2187463A1006DB66C /* apple-touch-icon-152x152.png in Resources */,
+				48E88588187CB8E8004D9D8E /* Pickup_Coin12.caf in Resources */,
 				4816566F186EA0E900ABCD33 /* Images.xcassets in Resources */,
+				48E88586187CB397004D9D8E /* Pickup_Coin10.caf in Resources */,
 				480BBBDB187463A1006DB66C /* apple-touch-icon-57x57.png in Resources */,
+				48E8858A187CBAE3004D9D8E /* Pickup_Coin26.caf in Resources */,
 				480BBBDC187463A1006DB66C /* apple-touch-icon-60x60.png in Resources */,
 				480BBBE3187463A1006DB66C /* apple-touch-icon.png in Resources */,
 				483939DB18739F48001718D9 /* decay.caf in Resources */,
@@ -571,7 +605,9 @@
 				48FFFBE618737A8F003A5C8C /* nonscoring2.caf in Resources */,
 				480BBBDD187463A1006DB66C /* apple-touch-icon-72x72.png in Resources */,
 				483939D718739CB9001718D9 /* gameOver1.caf in Resources */,
+				48E88591187CBCF2004D9D8E /* Blip_Select8.caf in Resources */,
 				480BBBEA1874656A006DB66C /* apple-touch-icon-120x120 3.png in Resources */,
+				48E88593187CBD3C004D9D8E /* Pickup_Coin50.caf in Resources */,
 				481656CC186F2C7E00ABCD33 /* icon-120.png in Resources */,
 				48FFFBE418737A8F003A5C8C /* nonscoring4.caf in Resources */,
 				480BBBE1187463A1006DB66C /* apple-touch-icon-144x144.png in Resources */,

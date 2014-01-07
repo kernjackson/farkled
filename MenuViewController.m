@@ -50,8 +50,8 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [[GCTurnBasedMatchHelper sharedInstance] authenticateLocalUser];
-    [GCTurnBasedMatchHelper sharedInstance].delegate = self;
+//    [[GCTurnBasedMatchHelper sharedInstance] authenticateLocalUser];
+//    [GCTurnBasedMatchHelper sharedInstance].delegate = self;
     
     
     // Will have to write iap to defaults when user purchases upgrade
@@ -153,5 +153,19 @@
 - (IBAction)singlePlayer:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+/*
+#pragma mark Nav Bar
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [super viewWillDisappear:animated];
+}
+*/
 @end

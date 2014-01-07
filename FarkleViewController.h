@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
+#import "GCTurnBasedMatchHelper.h"
 
-@interface FarkleViewController : UIViewController <ADBannerViewDelegate, UIActionSheetDelegate>
+@interface FarkleViewController : UIViewController <ADBannerViewDelegate, UIActionSheetDelegate, GCTurnBasedMatchHelperDelegate, GKGameCenterControllerDelegate>
 {
 
 }
