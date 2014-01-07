@@ -1,5 +1,5 @@
 //
-//  FarkleViewController.h
+//  TimeAttackViewController.h
 //  spinninyarn
 //
 //  Created by Kern Jackson on 12/8/13.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
 
-@interface FarkleViewController : UIViewController <ADBannerViewDelegate, UIActionSheetDelegate>
+@interface TimeAttackViewController : UIViewController <ADBannerViewDelegate>
 {
 
 }

@@ -1,19 +1,19 @@
 //
-//  FarkleViewController.m
+//  TimeAttackViewController.m
 //  spinninyarn
 //
 //  Created by Kern Jackson on 12/8/13.
 //  Copyright (c) 2013 Kern Jackson. All rights reserved.
 //
 
-#import "FarkleViewController.h"
+#import "TimeAttackViewController.h"
 #import "Farkle.h"
 //#import "Settings.h"
 #import "Sound.h"
 
 #import <AdSupport/AdSupport.h>
 
-@interface FarkleViewController () {
+@interface TimeAttackViewController () {
     BOOL iap;
     BOOL sounds;
     
@@ -34,7 +34,7 @@
 
 #define TURNS 10
 
-@implementation FarkleViewController
+@implementation TimeAttackViewController
 
 @synthesize bannerAd;
 
@@ -93,13 +93,11 @@
 
    // possibly use handle pan instead
     
-    UISwipeGestureRecognizer *mSwipeRightRecognizer = [[UISwipeGestureRecognizer alloc]
+    UISwipeGestureRecognizer *mSwipeUpRecognizer = [[UISwipeGestureRecognizer alloc]
                                                     initWithTarget:self
                                                     action:@selector(popView)];
-    [mSwipeRightRecognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
-    [[self view] addGestureRecognizer:mSwipeRightRecognizer];
-    
-  
+    [mSwipeUpRecognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
+    [[self view] addGestureRecognizer:mSwipeUpRecognizer];
     
 //    self.navigationController.navigationBar.translucent = NO;
 //    [[UINavigationBar appearance] setTranslucent:NO];
@@ -120,15 +118,14 @@
         [self newGame];
     }
     
-    if ( (!farkle.canPass) && (!farkle.canRoll) && (!farkle.nonScoring)) {
+    if ( (!farkle.canPass) && (!farkle.canPass)) {
         [self disableDice];
     }
   
     //[self disableDice]; // just proving that it works
     //[self disableBannerView:bannerAd];
     
-    // Shake to Rage Quit
-    //[self becomeFirstResponder];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -263,11 +260,7 @@
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillDisappear:animated];
 }
-/*
-- (void)slideUpMenu {
-    [self performSegueWithIdentifier:@"ModalMenuSegue" sender:self];
-}
-*/
+
 - (void)popView {
     // Pop this view off the stack
     [self.navigationController popViewControllerAnimated:YES];
@@ -614,7 +607,7 @@
     // pretty sure this BOOL is backwards
     if (!farkle.isNewGame) {
         [self enableRollButton];
-    //    [self hintRollButton];
+        [self hintRollButton];
        // NSLog(@"enableRollButton");
     }
 
@@ -945,7 +938,7 @@
     // duplicate code?
     if ([farkle didFarkle]) {
         [self disableDice];
-   //     [self hintRollButton]; // hack
+        [self hintRollButton]; // hack
         [self enableRollButton]; // hack
     }
     
@@ -1104,35 +1097,9 @@
 
 }
 */
-/*
-#pragma mark Shake to RageQuit
 
-- (BOOL)canBecomeFirstResponder {
-    return YES;
-}
+#pragma mark countdown
 
-- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
-    if (motion == UIEventSubtypeMotionShake)
-    {
-        // User was shaking the device. Post a notification named "shake."
-        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
-                                                                 delegate:self
-                                                        cancelButtonTitle:@"Cancel"
-                                                   destructiveButtonTitle:@"Quit Current Game?"
-                                                        otherButtonTitles:nil];
-        
-        
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"shake" object:self];
-        [actionSheet showInView:[UIApplication sharedApplication].keyWindow];
 
-    }
-}
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
-        [self endGame];
-    }
-}
-*/
 
 @end

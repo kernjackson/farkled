@@ -55,12 +55,15 @@
 		483939D718739CB9001718D9 /* gameOver1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 483939D618739CB9001718D9 /* gameOver1.caf */; };
 		483939D918739DE3001718D9 /* gameOver2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 483939D818739DE3001718D9 /* gameOver2.caf */; };
 		483939DB18739F48001718D9 /* decay.caf in Resources */ = {isa = PBXBuildFile; fileRef = 483939DA18739F48001718D9 /* decay.caf */; };
+		486E7FD7187C81C1008588D5 /* TimeAttackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 486E7FD6187C81C1008588D5 /* TimeAttackViewController.m */; };
+		486E7FDD187C83F7008588D5 /* TimeAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = 486E7FDC187C83F7008588D5 /* TimeAttack.m */; };
 		48DCA7961870CAF800743859 /* RulesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA7951870CAF800743859 /* RulesViewController.m */; };
 		48DCA7DD1870E9F500743859 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA7DC1870E9F500743859 /* Player.m */; };
 		48DCA7E21871D09700743859 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48DCA7E11871D09700743859 /* GameKit.framework */; };
 		48DCA83A187230FB00743859 /* GameCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA839187230FB00743859 /* GameCenterManager.m */; };
 		48DCA83D187240E100743859 /* GCTurnBasedMatchHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA83C187240E100743859 /* GCTurnBasedMatchHelper.m */; };
 		48F72120187317720038229D /* IAPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7211F187317720038229D /* IAPViewController.m */; };
+		48FB53D8187745C100FBCA5E /* ScoreKeeperDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FB53D7187745C100FBCA5E /* ScoreKeeperDetailViewController.m */; };
 		48FFFBCE1873684E003A5C8C /* Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FFFBCD1873684E003A5C8C /* Sound.m */; };
 		48FFFBD0187368EB003A5C8C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FFFBCF187368EB003A5C8C /* AVFoundation.framework */; };
 		48FFFBD618736B94003A5C8C /* Explosion.aifc in Resources */ = {isa = PBXBuildFile; fileRef = 48FFFBD518736B0A003A5C8C /* Explosion.aifc */; };
@@ -153,6 +156,10 @@
 		483939D618739CB9001718D9 /* gameOver1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gameOver1.caf; sourceTree = "<group>"; };
 		483939D818739DE3001718D9 /* gameOver2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gameOver2.caf; sourceTree = "<group>"; };
 		483939DA18739F48001718D9 /* decay.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = decay.caf; sourceTree = "<group>"; };
+		486E7FD5187C81C1008588D5 /* TimeAttackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeAttackViewController.h; sourceTree = "<group>"; };
+		486E7FD6187C81C1008588D5 /* TimeAttackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeAttackViewController.m; sourceTree = "<group>"; };
+		486E7FDB187C83F7008588D5 /* TimeAttack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeAttack.h; sourceTree = "<group>"; };
+		486E7FDC187C83F7008588D5 /* TimeAttack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeAttack.m; sourceTree = "<group>"; };
 		48DCA7941870CAF800743859 /* RulesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RulesViewController.h; sourceTree = "<group>"; };
 		48DCA7951870CAF800743859 /* RulesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RulesViewController.m; sourceTree = "<group>"; };
 		48DCA7DB1870E9F500743859 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
@@ -164,6 +171,8 @@
 		48DCA83C187240E100743859 /* GCTurnBasedMatchHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCTurnBasedMatchHelper.m; sourceTree = "<group>"; };
 		48F7211E187317720038229D /* IAPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPViewController.h; sourceTree = "<group>"; };
 		48F7211F187317720038229D /* IAPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPViewController.m; sourceTree = "<group>"; };
+		48FB53D6187745C100FBCA5E /* ScoreKeeperDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreKeeperDetailViewController.h; sourceTree = "<group>"; };
+		48FB53D7187745C100FBCA5E /* ScoreKeeperDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreKeeperDetailViewController.m; sourceTree = "<group>"; };
 		48FFFBCC1873684E003A5C8C /* Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sound.h; sourceTree = "<group>"; };
 		48FFFBCD1873684E003A5C8C /* Sound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sound.m; sourceTree = "<group>"; };
 		48FFFBCF187368EB003A5C8C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -322,12 +331,16 @@
 			children = (
 				4816568D186EA10B00ABCD33 /* ScoreKeeperViewController.h */,
 				4816568E186EA10B00ABCD33 /* ScoreKeeperViewController.m */,
+				48FB53D6187745C100FBCA5E /* ScoreKeeperDetailViewController.h */,
+				48FB53D7187745C100FBCA5E /* ScoreKeeperDetailViewController.m */,
 				48DCA7941870CAF800743859 /* RulesViewController.h */,
 				48DCA7951870CAF800743859 /* RulesViewController.m */,
 				4816568F186EA10B00ABCD33 /* RuleCardViewController.h */,
 				48165690186EA10B00ABCD33 /* RuleCardViewController.m */,
 				48165691186EA10B00ABCD33 /* FarkleViewController.h */,
 				48165692186EA10B00ABCD33 /* FarkleViewController.m */,
+				486E7FD5187C81C1008588D5 /* TimeAttackViewController.h */,
+				486E7FD6187C81C1008588D5 /* TimeAttackViewController.m */,
 				48165693186EA10B00ABCD33 /* MenuViewController.h */,
 				48165694186EA10B00ABCD33 /* MenuViewController.m */,
 				48F7211E187317720038229D /* IAPViewController.h */,
@@ -347,6 +360,8 @@
 				481656A1186EA12600ABCD33 /* Score.m */,
 				481656A2186EA12600ABCD33 /* Farkle.h */,
 				481656A3186EA12600ABCD33 /* Farkle.m */,
+				486E7FDB187C83F7008588D5 /* TimeAttack.h */,
+				486E7FDC187C83F7008588D5 /* TimeAttack.m */,
 				48DCA7DB1870E9F500743859 /* Player.h */,
 				48DCA7DC1870E9F500743859 /* Player.m */,
 				481656A4186EA12600ABCD33 /* Settings.h */,
@@ -582,7 +597,9 @@
 				48165698186EA10B00ABCD33 /* RuleCardViewController.m in Sources */,
 				4816569A186EA10B00ABCD33 /* MenuViewController.m in Sources */,
 				481656A8186EA12600ABCD33 /* Farkle.m in Sources */,
+				486E7FD7187C81C1008588D5 /* TimeAttackViewController.m in Sources */,
 				48DCA83D187240E100743859 /* GCTurnBasedMatchHelper.m in Sources */,
+				48FB53D8187745C100FBCA5E /* ScoreKeeperDetailViewController.m in Sources */,
 				48DCA7DD1870E9F500743859 /* Player.m in Sources */,
 				4826B23E1877277000BB3E29 /* SoundController.m in Sources */,
 				481656A9186EA12600ABCD33 /* Settings.m in Sources */,
@@ -597,6 +614,7 @@
 				48165697186EA10B00ABCD33 /* ScoreKeeperViewController.m in Sources */,
 				48DCA7961870CAF800743859 /* RulesViewController.m in Sources */,
 				4816569B186EA10B00ABCD33 /* SettingsViewController.m in Sources */,
+				486E7FDD187C83F7008588D5 /* TimeAttack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
