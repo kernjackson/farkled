@@ -340,6 +340,36 @@
             </objects>
             <point key="canvasLocation" x="-857" y="-336"/>
         </scene>
+        <!--Menu Test View Controller-->
+        <scene sceneID="JDc-zN-2Gx">
+            <objects>
+                <viewController id="ODu-cu-Ak7" customClass="MenuTestViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tkB-7f-Iv7"/>
+                        <viewControllerLayoutGuide type="bottom" id="ggr-Wk-xwe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i1y-b5-n01">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhG-ys-qDu">
+                                <rect key="frame" x="137" y="367" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissButton:" destination="ODu-cu-Ak7" eventType="touchUpInside" id="bZa-4X-GtZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XbX-6w-yPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-521" y="-1007"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="zfx-4R-zol">
             <objects>
@@ -1842,6 +1872,7 @@
                         <outletCollection property="diceButtons" destination="1BI-JQ-FnV" id="M4A-4w-iXG"/>
                         <outletCollection property="diceButtons" destination="seb-bW-993" id="adr-TT-x4i"/>
                         <outletCollection property="diceButtons" destination="otZ-TH-cDg" id="lQR-zQ-4z5"/>
+                        <segue destination="ODu-cu-Ak7" kind="modal" identifier="ModalMenuSegue" modalTransitionStyle="flipHorizontal" id="LVw-pd-FnC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7F-AZ-A2x" userLabel="First Responder" sceneMemberID="firstResponder"/>

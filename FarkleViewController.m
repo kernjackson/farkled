@@ -99,6 +99,13 @@
     [mSwipeRightRecognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
     [[self view] addGestureRecognizer:mSwipeRightRecognizer];
     
+    UISwipeGestureRecognizer *mSwipeUpRecognizer = [[UISwipeGestureRecognizer alloc]
+                                                       initWithTarget:self
+                                                       action:@selector(pullDownMenu)];
+    [mSwipeUpRecognizer setDirection:(UISwipeGestureRecognizerDirectionUp)];
+    [[self view] addGestureRecognizer:mSwipeUpRecognizer];
+
+    
   
     
 //    self.navigationController.navigationBar.translucent = NO;
@@ -120,7 +127,11 @@
         [self newGame];
     }
     
-    if ( (!farkle.canPass) && (!farkle.canRoll) && (!farkle.nonScoring)) {
+    if (!farkle.nonScoring) {
+        NSLog(@"unselect nonscoring dice");
+    }
+    
+    if ( (!farkle.canPass) && (!farkle.canRoll) ) {
         [self disableDice];
     }
   
@@ -273,6 +284,11 @@
     [self.navigationController popViewControllerAnimated:YES];
     //[self.navigationController pushViewController: animated:YES]
 }
+
+- (void) pullDownMenu {
+    [self performSegueWithIdentifier:@"ModalMenuSegue" sender:self];
+}
+
 /*
 - (void)animationPush {
     MainView *nextView = [[MainView alloc] init];

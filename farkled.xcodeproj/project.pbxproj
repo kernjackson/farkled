@@ -57,6 +57,7 @@
 		483939DB18739F48001718D9 /* decay.caf in Resources */ = {isa = PBXBuildFile; fileRef = 483939DA18739F48001718D9 /* decay.caf */; };
 		486E7FD7187C81C1008588D5 /* TimeAttackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 486E7FD6187C81C1008588D5 /* TimeAttackViewController.m */; };
 		486E7FDD187C83F7008588D5 /* TimeAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = 486E7FDC187C83F7008588D5 /* TimeAttack.m */; };
+		486E7FE0187CA1D0008588D5 /* MenuTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 486E7FDF187CA1D0008588D5 /* MenuTestViewController.m */; };
 		48DCA7961870CAF800743859 /* RulesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA7951870CAF800743859 /* RulesViewController.m */; };
 		48DCA7DD1870E9F500743859 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA7DC1870E9F500743859 /* Player.m */; };
 		48DCA7E21871D09700743859 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48DCA7E11871D09700743859 /* GameKit.framework */; };
@@ -160,6 +161,8 @@
 		486E7FD6187C81C1008588D5 /* TimeAttackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeAttackViewController.m; sourceTree = "<group>"; };
 		486E7FDB187C83F7008588D5 /* TimeAttack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeAttack.h; sourceTree = "<group>"; };
 		486E7FDC187C83F7008588D5 /* TimeAttack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeAttack.m; sourceTree = "<group>"; };
+		486E7FDE187CA1D0008588D5 /* MenuTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTestViewController.h; sourceTree = "<group>"; };
+		486E7FDF187CA1D0008588D5 /* MenuTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTestViewController.m; sourceTree = "<group>"; };
 		48DCA7941870CAF800743859 /* RulesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RulesViewController.h; sourceTree = "<group>"; };
 		48DCA7951870CAF800743859 /* RulesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RulesViewController.m; sourceTree = "<group>"; };
 		48DCA7DB1870E9F500743859 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
@@ -414,6 +417,8 @@
 			isa = PBXGroup;
 			children = (
 				4816568B186EA0FF00ABCD33 /* Main_iPhone.storyboard */,
+				486E7FDE187CA1D0008588D5 /* MenuTestViewController.h */,
+				486E7FDF187CA1D0008588D5 /* MenuTestViewController.m */,
 				48FFFBCC1873684E003A5C8C /* Sound.h */,
 				48FFFBCD1873684E003A5C8C /* Sound.m */,
 			);
@@ -605,6 +610,7 @@
 				481656A9186EA12600ABCD33 /* Settings.m in Sources */,
 				481656A6186EA12600ABCD33 /* Die.m in Sources */,
 				48F72120187317720038229D /* IAPViewController.m in Sources */,
+				486E7FE0187CA1D0008588D5 /* MenuTestViewController.m in Sources */,
 				481656A7186EA12600ABCD33 /* Score.m in Sources */,
 				48165667186EA0E900ABCD33 /* kernAppDelegate.m in Sources */,
 				48FFFBCE1873684E003A5C8C /* Sound.m in Sources */,
