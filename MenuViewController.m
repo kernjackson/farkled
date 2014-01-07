@@ -43,7 +43,7 @@
     
     //bannerView.delegate = self;
 
-    [self performSegueWithIdentifier:@"SolitaireSegue" sender:self];
+ //   [self performSegueWithIdentifier:@"SolitaireSegue" sender:self];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -69,7 +69,7 @@
 }
 
 #pragma mark Nav Bar
-
+/*
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:YES animated:animated];
@@ -81,7 +81,7 @@
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillDisappear:animated];
 }
-
+*/
 #pragma mark Game Center
 
 - (IBAction)gameCenter:(id)sender {
@@ -149,5 +149,9 @@
     [UIView commitAnimations];
 }
 */
+
+- (IBAction)singlePlayer:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

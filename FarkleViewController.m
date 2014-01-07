@@ -95,16 +95,16 @@
     
     UISwipeGestureRecognizer *mSwipeRightRecognizer = [[UISwipeGestureRecognizer alloc]
                                                     initWithTarget:self
-                                                    action:@selector(popView)];
-    [mSwipeRightRecognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
+                                                    action:@selector(pullDownMenu)];
+    [mSwipeRightRecognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
     [[self view] addGestureRecognizer:mSwipeRightRecognizer];
-    
+ /*
     UISwipeGestureRecognizer *mSwipeUpRecognizer = [[UISwipeGestureRecognizer alloc]
                                                        initWithTarget:self
                                                        action:@selector(pullDownMenu)];
     [mSwipeUpRecognizer setDirection:(UISwipeGestureRecognizerDirectionUp)];
     [[self view] addGestureRecognizer:mSwipeUpRecognizer];
-
+*/
     
   
     
