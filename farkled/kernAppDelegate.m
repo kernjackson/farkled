@@ -15,6 +15,7 @@
 {
     // Override point for customization after application launch.
     //[TestFlight takeOff:@"18fbe680-f2df-476f-b668-1bd4f8bb8dc1"];
+    [[GameCenterManager sharedManager] setupManager];
     
     return YES;
 }

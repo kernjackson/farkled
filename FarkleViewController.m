@@ -12,6 +12,7 @@
 #import "Sound.h"
 
 #import <AdSupport/AdSupport.h>
+#import "GameCenterManager.h"
 
 @interface FarkleViewController () {
     BOOL iap;
@@ -29,6 +30,8 @@
 @property (weak, nonatomic) IBOutlet ADBannerView *bannerAd;
 @property (weak, nonatomic) IBOutlet UILabel *tapToPlayButton;
 @property (strong, nonatomic) IBOutlet UIView *farkleView;
+@property (weak, nonatomic) IBOutlet UIView *gamePlayView;
+@property (weak, nonatomic) IBOutlet UILabel *swipeForMenu;
 
 @end
 
@@ -51,6 +54,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+//    [[GameCenterManager sharedManager] setupManager]; // Or use setupManagerAndSetShouldCryptWithKey: for use with encryption
+    [[GameCenterManager sharedManager] setDelegate:self];
     
     [[GCTurnBasedMatchHelper sharedInstance] authenticateLocalUser];
     [GCTurnBasedMatchHelper sharedInstance].delegate = self;
@@ -97,7 +103,7 @@
     UISwipeGestureRecognizer *mSwipeRightRecognizer = [[UISwipeGestureRecognizer alloc]
                                                     initWithTarget:self
                                                     action:@selector(pullDownMenu)];
-    [mSwipeRightRecognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+    [mSwipeRightRecognizer setDirection:(UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight | UISwipeGestureRecognizerDirectionDown | UISwipeGestureRecognizerDirectionUp)];
     [[self view] addGestureRecognizer:mSwipeRightRecognizer];
  /*
     UISwipeGestureRecognizer *mSwipeUpRecognizer = [[UISwipeGestureRecognizer alloc]
@@ -143,6 +149,10 @@
     //[self becomeFirstResponder];
     
     //[self performSegueWithIdentifier:@"ModalMenuSegue" sender:self];
+    
+    //[self runSpinAnimationWithDuration:3];
+    
+ //   [self swipeForMenuAnimation];
 }
 
 - (void)didReceiveMemoryWarning
@@ -819,6 +829,7 @@
                      animations:^{
                          self.HUD.backgroundColor = [UIColor redColor];
                          self.HUD.alpha = 1.0;
+                         self.tapToPlayButton.alpha = 1.0;
                        //  [self.tapToPlayButton setAlpha:1.0];
                          if ( (!iap) && (!isBannerVisible) )
                          {
@@ -1185,10 +1196,36 @@
 }
 */
 
+#pragma mark check settings
+
 - (void)checkSettings {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     iap = [defaults boolForKey:@"iap"];
     sounds = [defaults boolForKey:@"sounds"];
+}
+
+- (void)runSpinAnimationWithDuration:(CGFloat) duration;
+{
+    CABasicAnimation* rotationAnimation;
+    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.y"];
+    rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 /* full rotation*/ * 1 * duration ];
+    rotationAnimation.duration = duration;
+    rotationAnimation.cumulative = YES;
+    rotationAnimation.repeatCount = 1.0;
+    rotationAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+    
+    [self.gamePlayView.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+}
+
+- (void)swipeForMenuAnimation {
+    [UIView animateWithDuration:3.0
+                          delay:0.0 // otherwise we will see disabled die flip
+                        options: UIViewAnimationOptionCurveEaseIn | UIViewAnimationOptionAutoreverse
+                     animations:^{
+//                         self.swipeForMenu.alpha = 1.0;
+                         self.swipeForMenu.alpha = 1.0;
+                     }
+                     completion:nil];
 }
 
 @end

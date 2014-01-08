@@ -51,17 +51,19 @@
 		481656C8186F2C5A00ABCD33 /* icon-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 481656C5186F2C5A00ABCD33 /* icon-58.png */; };
 		481656CC186F2C7E00ABCD33 /* icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 481656CB186F2C7E00ABCD33 /* icon-120.png */; };
 		481656CF186F34D100ABCD33 /* icon-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 481656CE186F34D100ABCD33 /* icon-80.png */; };
+		481C987A187CE03000257071 /* SwipeForMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 481C9879187CE03000257071 /* SwipeForMenu.png */; };
 		4826B23E1877277000BB3E29 /* SoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4826B23D1877277000BB3E29 /* SoundController.m */; };
 		483939D718739CB9001718D9 /* gameOver1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 483939D618739CB9001718D9 /* gameOver1.caf */; };
 		483939D918739DE3001718D9 /* gameOver2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 483939D818739DE3001718D9 /* gameOver2.caf */; };
 		483939DB18739F48001718D9 /* decay.caf in Resources */ = {isa = PBXBuildFile; fileRef = 483939DA18739F48001718D9 /* decay.caf */; };
+		484846FB187D59CC00151082 /* TLContainmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 484846FA187D59CC00151082 /* TLContainmentViewController.m */; };
+		484846FE187D5A2100151082 /* TLContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 484846FD187D5A2100151082 /* TLContentViewController.m */; };
 		486E7FD7187C81C1008588D5 /* TimeAttackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 486E7FD6187C81C1008588D5 /* TimeAttackViewController.m */; };
 		486E7FDD187C83F7008588D5 /* TimeAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = 486E7FDC187C83F7008588D5 /* TimeAttack.m */; };
 		486E7FE0187CA1D0008588D5 /* MenuTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 486E7FDF187CA1D0008588D5 /* MenuTestViewController.m */; };
 		48DCA7961870CAF800743859 /* RulesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA7951870CAF800743859 /* RulesViewController.m */; };
 		48DCA7DD1870E9F500743859 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA7DC1870E9F500743859 /* Player.m */; };
 		48DCA7E21871D09700743859 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48DCA7E11871D09700743859 /* GameKit.framework */; };
-		48DCA83A187230FB00743859 /* GameCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA839187230FB00743859 /* GameCenterManager.m */; };
 		48DCA83D187240E100743859 /* GCTurnBasedMatchHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DCA83C187240E100743859 /* GCTurnBasedMatchHelper.m */; };
 		48E88586187CB397004D9D8E /* Pickup_Coin10.caf in Resources */ = {isa = PBXBuildFile; fileRef = 48E88585187CB397004D9D8E /* Pickup_Coin10.caf */; };
 		48E88588187CB8E8004D9D8E /* Pickup_Coin12.caf in Resources */ = {isa = PBXBuildFile; fileRef = 48E88587187CB8E8004D9D8E /* Pickup_Coin12.caf */; };
@@ -74,6 +76,11 @@
 		48E88599187CC0B4004D9D8E /* Laser_Shoot11.caf in Resources */ = {isa = PBXBuildFile; fileRef = 48E88598187CC0B4004D9D8E /* Laser_Shoot11.caf */; };
 		48E8859B187CC4C5004D9D8E /* Randomize.caf in Resources */ = {isa = PBXBuildFile; fileRef = 48E8859A187CC4C5004D9D8E /* Randomize.caf */; };
 		48E8859D187CC59E004D9D8E /* Randomize11.caf in Resources */ = {isa = PBXBuildFile; fileRef = 48E8859C187CC59E004D9D8E /* Randomize11.caf */; };
+		48E8859F187CD90E004D9D8E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48E8859E187CD90E004D9D8E /* SystemConfiguration.framework */; };
+		48E885A1187CD917004D9D8E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48E885A0187CD917004D9D8E /* Security.framework */; };
+		48E885C5187CDB3B004D9D8E /* GameCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48E885C0187CDB3B004D9D8E /* GameCenterManager.m */; };
+		48E885C6187CDB3B004D9D8E /* NSDataAES256.m in Sources */ = {isa = PBXBuildFile; fileRef = 48E885C2187CDB3B004D9D8E /* NSDataAES256.m */; };
+		48E885C7187CDB3B004D9D8E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 48E885C4187CDB3B004D9D8E /* Reachability.m */; };
 		48F72120187317720038229D /* IAPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F7211F187317720038229D /* IAPViewController.m */; };
 		48FB53D8187745C100FBCA5E /* ScoreKeeperDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FB53D7187745C100FBCA5E /* ScoreKeeperDetailViewController.m */; };
 		48FFFBCE1873684E003A5C8C /* Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = 48FFFBCD1873684E003A5C8C /* Sound.m */; };
@@ -163,11 +170,16 @@
 		481656C5186F2C5A00ABCD33 /* icon-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-58.png"; sourceTree = "<group>"; };
 		481656CB186F2C7E00ABCD33 /* icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-120.png"; sourceTree = "<group>"; };
 		481656CE186F34D100ABCD33 /* icon-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-80.png"; sourceTree = "<group>"; };
+		481C9879187CE03000257071 /* SwipeForMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SwipeForMenu.png; sourceTree = "<group>"; };
 		4826B23C1877277000BB3E29 /* SoundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundController.h; sourceTree = "<group>"; };
 		4826B23D1877277000BB3E29 /* SoundController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundController.m; sourceTree = "<group>"; };
 		483939D618739CB9001718D9 /* gameOver1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gameOver1.caf; sourceTree = "<group>"; };
 		483939D818739DE3001718D9 /* gameOver2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gameOver2.caf; sourceTree = "<group>"; };
 		483939DA18739F48001718D9 /* decay.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = decay.caf; sourceTree = "<group>"; };
+		484846F9187D59CC00151082 /* TLContainmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLContainmentViewController.h; sourceTree = "<group>"; };
+		484846FA187D59CC00151082 /* TLContainmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLContainmentViewController.m; sourceTree = "<group>"; };
+		484846FC187D5A2100151082 /* TLContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLContentViewController.h; sourceTree = "<group>"; };
+		484846FD187D5A2100151082 /* TLContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLContentViewController.m; sourceTree = "<group>"; };
 		486E7FD5187C81C1008588D5 /* TimeAttackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeAttackViewController.h; sourceTree = "<group>"; };
 		486E7FD6187C81C1008588D5 /* TimeAttackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeAttackViewController.m; sourceTree = "<group>"; };
 		486E7FDB187C83F7008588D5 /* TimeAttack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeAttack.h; sourceTree = "<group>"; };
@@ -179,8 +191,6 @@
 		48DCA7DB1870E9F500743859 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		48DCA7DC1870E9F500743859 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		48DCA7E11871D09700743859 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		48DCA838187230FB00743859 /* GameCenterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCenterManager.h; sourceTree = "<group>"; };
-		48DCA839187230FB00743859 /* GameCenterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCenterManager.m; sourceTree = "<group>"; };
 		48DCA83B187240E100743859 /* GCTurnBasedMatchHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCTurnBasedMatchHelper.h; sourceTree = "<group>"; };
 		48DCA83C187240E100743859 /* GCTurnBasedMatchHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCTurnBasedMatchHelper.m; sourceTree = "<group>"; };
 		48E88585187CB397004D9D8E /* Pickup_Coin10.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pickup_Coin10.caf; sourceTree = "<group>"; };
@@ -194,6 +204,14 @@
 		48E88598187CC0B4004D9D8E /* Laser_Shoot11.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Laser_Shoot11.caf; sourceTree = "<group>"; };
 		48E8859A187CC4C5004D9D8E /* Randomize.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Randomize.caf; sourceTree = "<group>"; };
 		48E8859C187CC59E004D9D8E /* Randomize11.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Randomize11.caf; sourceTree = "<group>"; };
+		48E8859E187CD90E004D9D8E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		48E885A0187CD917004D9D8E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		48E885BF187CDB3B004D9D8E /* GameCenterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCenterManager.h; sourceTree = "<group>"; };
+		48E885C0187CDB3B004D9D8E /* GameCenterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCenterManager.m; sourceTree = "<group>"; };
+		48E885C1187CDB3B004D9D8E /* NSDataAES256.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAES256.h; sourceTree = "<group>"; };
+		48E885C2187CDB3B004D9D8E /* NSDataAES256.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAES256.m; sourceTree = "<group>"; };
+		48E885C3187CDB3B004D9D8E /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		48E885C4187CDB3B004D9D8E /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		48F7211E187317720038229D /* IAPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPViewController.h; sourceTree = "<group>"; };
 		48F7211F187317720038229D /* IAPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPViewController.m; sourceTree = "<group>"; };
 		48FB53D6187745C100FBCA5E /* ScoreKeeperDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreKeeperDetailViewController.h; sourceTree = "<group>"; };
@@ -222,6 +240,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48E885A1187CD917004D9D8E /* Security.framework in Frameworks */,
+				48E8859F187CD90E004D9D8E /* SystemConfiguration.framework in Frameworks */,
 				48FFFBD0187368EB003A5C8C /* AVFoundation.framework in Frameworks */,
 				48DCA7E21871D09700743859 /* GameKit.framework in Frameworks */,
 				481656C0186EA9EF00ABCD33 /* libz.dylib in Frameworks */,
@@ -274,6 +294,7 @@
 		4816564A186EA0E900ABCD33 = {
 			isa = PBXGroup;
 			children = (
+				48E885BE187CDB3B004D9D8E /* GC Manager */,
 				48FFFBD41873694F003A5C8C /* Sounds */,
 				48FFFBD118736906003A5C8C /* Images */,
 				481656B5186EA98300ABCD33 /* TestFlightSDK2 */,
@@ -299,6 +320,8 @@
 		48165655186EA0E900ABCD33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				48E885A0187CD917004D9D8E /* Security.framework */,
+				48E8859E187CD90E004D9D8E /* SystemConfiguration.framework */,
 				48FFFBCF187368EB003A5C8C /* AVFoundation.framework */,
 				48DCA7E11871D09700743859 /* GameKit.framework */,
 				481656BF186EA9EF00ABCD33 /* libz.dylib */,
@@ -354,6 +377,10 @@
 		4816569C186EA11100ABCD33 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				484846FC187D5A2100151082 /* TLContentViewController.h */,
+				484846FD187D5A2100151082 /* TLContentViewController.m */,
+				484846F9187D59CC00151082 /* TLContainmentViewController.h */,
+				484846FA187D59CC00151082 /* TLContainmentViewController.m */,
 				4816568D186EA10B00ABCD33 /* ScoreKeeperViewController.h */,
 				4816568E186EA10B00ABCD33 /* ScoreKeeperViewController.m */,
 				48FB53D6187745C100FBCA5E /* ScoreKeeperDetailViewController.h */,
@@ -393,8 +420,6 @@
 				481656A5186EA12600ABCD33 /* Settings.m */,
 				4826B23C1877277000BB3E29 /* SoundController.h */,
 				4826B23D1877277000BB3E29 /* SoundController.m */,
-				48DCA838187230FB00743859 /* GameCenterManager.h */,
-				48DCA839187230FB00743859 /* GameCenterManager.m */,
 				48DCA83B187240E100743859 /* GCTurnBasedMatchHelper.h */,
 				48DCA83C187240E100743859 /* GCTurnBasedMatchHelper.m */,
 			);
@@ -447,9 +472,23 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		48E885BE187CDB3B004D9D8E /* GC Manager */ = {
+			isa = PBXGroup;
+			children = (
+				48E885BF187CDB3B004D9D8E /* GameCenterManager.h */,
+				48E885C0187CDB3B004D9D8E /* GameCenterManager.m */,
+				48E885C1187CDB3B004D9D8E /* NSDataAES256.h */,
+				48E885C2187CDB3B004D9D8E /* NSDataAES256.m */,
+				48E885C3187CDB3B004D9D8E /* Reachability.h */,
+				48E885C4187CDB3B004D9D8E /* Reachability.m */,
+			);
+			path = "GC Manager";
+			sourceTree = "<group>";
+		};
 		48FFFBD118736906003A5C8C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				481C9879187CE03000257071 /* SwipeForMenu.png */,
 				481656B4186EA55C00ABCD33 /* Icons */,
 				481656AF186EA13C00ABCD33 /* Launch Images */,
 			);
@@ -612,6 +651,7 @@
 				48FFFBE618737A8F003A5C8C /* nonscoring2.caf in Resources */,
 				480BBBDD187463A1006DB66C /* apple-touch-icon-72x72.png in Resources */,
 				48E8859B187CC4C5004D9D8E /* Randomize.caf in Resources */,
+				481C987A187CE03000257071 /* SwipeForMenu.png in Resources */,
 				483939D718739CB9001718D9 /* gameOver1.caf in Resources */,
 				48E88591187CBCF2004D9D8E /* Blip_Select8.caf in Resources */,
 				480BBBEA1874656A006DB66C /* apple-touch-icon-120x120 3.png in Resources */,
@@ -647,12 +687,15 @@
 				4816569A186EA10B00ABCD33 /* MenuViewController.m in Sources */,
 				481656A8186EA12600ABCD33 /* Farkle.m in Sources */,
 				486E7FD7187C81C1008588D5 /* TimeAttackViewController.m in Sources */,
+				48E885C7187CDB3B004D9D8E /* Reachability.m in Sources */,
 				48DCA83D187240E100743859 /* GCTurnBasedMatchHelper.m in Sources */,
+				484846FE187D5A2100151082 /* TLContentViewController.m in Sources */,
 				48FB53D8187745C100FBCA5E /* ScoreKeeperDetailViewController.m in Sources */,
 				48DCA7DD1870E9F500743859 /* Player.m in Sources */,
 				4826B23E1877277000BB3E29 /* SoundController.m in Sources */,
 				481656A9186EA12600ABCD33 /* Settings.m in Sources */,
 				481656A6186EA12600ABCD33 /* Die.m in Sources */,
+				484846FB187D59CC00151082 /* TLContainmentViewController.m in Sources */,
 				48F72120187317720038229D /* IAPViewController.m in Sources */,
 				486E7FE0187CA1D0008588D5 /* MenuTestViewController.m in Sources */,
 				481656A7186EA12600ABCD33 /* Score.m in Sources */,
@@ -660,8 +703,9 @@
 				48FFFBCE1873684E003A5C8C /* Sound.m in Sources */,
 				48165699186EA10B00ABCD33 /* FarkleViewController.m in Sources */,
 				48165663186EA0E900ABCD33 /* main.m in Sources */,
-				48DCA83A187230FB00743859 /* GameCenterManager.m in Sources */,
+				48E885C6187CDB3B004D9D8E /* NSDataAES256.m in Sources */,
 				48165697186EA10B00ABCD33 /* ScoreKeeperViewController.m in Sources */,
+				48E885C5187CDB3B004D9D8E /* GameCenterManager.m in Sources */,
 				48DCA7961870CAF800743859 /* RulesViewController.m in Sources */,
 				4816569B186EA10B00ABCD33 /* SettingsViewController.m in Sources */,
 				486E7FDD187C83F7008588D5 /* TimeAttack.m in Sources */,
