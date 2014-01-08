@@ -57,9 +57,7 @@
     
     self.bannerAd.delegate = self;
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    iap = [defaults boolForKey:@"iap"];
-    sounds = [defaults boolForKey:@"sounds"];
+    [self checkSettings];
     
    // Farkle *farkle = [Farkle sharedManager];
     
@@ -272,6 +270,7 @@
         [self disableDice];
     }
 */
+    [self checkSettings];
     
 }
 
@@ -323,12 +322,16 @@
     
     // need to check the state of newGame, and then change it so that we don't get a crash or a bunch of deactivated controls here
     
-    Sound *sound = [[Sound alloc] init];
+   // Sound *sound = [[Sound alloc] init];
     /*
     if (sound) {
         [sound rollDice1];
     }
     */
+   // Sound *playSound = [[Sound alloc] init];
+    
+  //  [playSound rolled];
+    
 	[self rollDice];
     [farkle rolled];
     [self showDice];
@@ -351,7 +354,7 @@
         [sound nonscoring1];
     }
 */
-    Sound *playSound = [[Sound alloc] init];
+   // Sound *playSound = [[Sound alloc] init];
     
     if ((farkle.dice) && (!farkle.didFarkle)) {
         if ([sender isSelected]) {
@@ -405,7 +408,10 @@
     Sound *playSound = [[Sound alloc] init];
     
     [self passedAnimation];
-    [playSound passedSmall];
+    
+    if (sounds) {
+        [playSound passedSmall];
+    }
     
     [self disableDice]; // new years
     [farkle passed];
@@ -1170,9 +1176,19 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) {
-        [self endGame];
+        [self clearDice];
+        [self hideDice];
+        [self disableDice];
+        [self gameOver];
+        [self newGame];
     }
 }
 */
+
+- (void)checkSettings {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    iap = [defaults boolForKey:@"iap"];
+    sounds = [defaults boolForKey:@"sounds"];
+}
 
 @end

@@ -80,6 +80,13 @@
     AudioServicesPlaySystemSound (soundID);
 }
 
+- (void) rolled {
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"Randomize" ofType:@"caf"];
+    SystemSoundID soundID;
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+    AudioServicesPlaySystemSound (soundID);
+}
+
 - (void) nonscoring {
     NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"Pickup_Coin12" ofType:@"caf"];
     SystemSoundID soundID;
