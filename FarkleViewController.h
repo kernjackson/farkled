@@ -11,9 +11,19 @@
 #import "GCTurnBasedMatchHelper.h"
 #import "GameCenterManager.h"
 
+@class FarkleViewController;
+
+@protocol TLContentViewControllerDelegate <NSObject>
+
+-(void)contentViewControllerDidPressBounceButton:(FarkleViewController *)viewController;
+
+@end
+
 @interface FarkleViewController : UIViewController <ADBannerViewDelegate, UIActionSheetDelegate, GameCenterManagerDelegate, GCTurnBasedMatchHelperDelegate, GKGameCenterControllerDelegate>
 {
 
 }
+
+@property (nonatomic, weak) id<TLContentViewControllerDelegate> delegate;
 
 @end

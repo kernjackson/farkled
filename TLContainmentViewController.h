@@ -10,4 +10,7 @@
 
 @interface TLContainmentViewController : UIViewController
 
+// want to access this from farklecontroller
+- (void)bounceOnAppear;
+
 @end

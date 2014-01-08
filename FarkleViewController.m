@@ -14,6 +14,8 @@
 #import <AdSupport/AdSupport.h>
 #import "GameCenterManager.h"
 
+#import "TLContainmentViewController.h"
+
 @interface FarkleViewController () {
     BOOL iap;
     BOOL sounds;
@@ -99,12 +101,13 @@
     
 
    // possibly use handle pan instead
-    
+   /*
     UISwipeGestureRecognizer *mSwipeRightRecognizer = [[UISwipeGestureRecognizer alloc]
                                                     initWithTarget:self
                                                     action:@selector(pullDownMenu)];
     [mSwipeRightRecognizer setDirection:(UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight | UISwipeGestureRecognizerDirectionDown | UISwipeGestureRecognizerDirectionUp)];
     [[self view] addGestureRecognizer:mSwipeRightRecognizer];
+    */
  /*
     UISwipeGestureRecognizer *mSwipeUpRecognizer = [[UISwipeGestureRecognizer alloc]
                                                        initWithTarget:self
@@ -153,6 +156,38 @@
     //[self runSpinAnimationWithDuration:3];
     
  //   [self swipeForMenuAnimation];
+    
+    [self hintMenu]; // this doesn't work
+    
+    //[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(menuAppeared) name:@"MenuAppeared" object:nil];
+    /*
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(settingsAppeared) name:@"SettingsAppeared" object:nil];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(settingsWillDisapear) name:@"SettingsWillDisappear" object:nil];
+   */ 
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(menuDissapeared) name:@"MenuDisappeared" object:nil];
+    
+}
+
+- (void)menuAppeared {
+    NSLog(@"menuAppeared");
+}
+
+- (void)settingsAppeared {
+    [self checkSettings];
+    NSLog(@"settingAppeared");
+}
+
+- (void)settingsWillDisapear {
+    [self checkSettings];
+    NSLog(@"settingsWillDisappear");
+}
+
+- (void)menuDissapeared {
+    [self checkSettings];
+    NSLog(@"menuDissapeared");
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -294,6 +329,7 @@
     [self performSegueWithIdentifier:@"ModalMenuSegue" sender:self];
 }
 */
+/*
 - (void)popView {
     // Pop this view off the stack
     [self.navigationController popViewControllerAnimated:YES];
@@ -303,7 +339,7 @@
 - (void) pullDownMenu {
     [self performSegueWithIdentifier:@"ModalMenuSegue" sender:self];
 }
-
+*/
 /*
 - (void)animationPush {
     MainView *nextView = [[MainView alloc] init];
@@ -476,6 +512,10 @@
     
 	[self updateUI]; // hotDice causes a crash because there is nothing in the array
  //   [self hideBannerAd];
+    /*
+    TLContainmentViewController *containment = [[TLContainmentViewController alloc] init];
+    [containment bounceOnAppear];
+     */
 }
 
 #pragma mark Pass
@@ -878,6 +918,11 @@
                                    selector:@selector(enableHUD:)
                                    userInfo:nil
                                     repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:1.9
+                                     target:self
+                                   selector:@selector(hintMenu)
+                                   userInfo:nil
+                                    repeats:NO];
 }
 
 - (void)playerWon {
@@ -1226,6 +1271,16 @@
                          self.swipeForMenu.alpha = 1.0;
                      }
                      completion:nil];
+}
+
+-(IBAction)userPressedBounceButton:(id)sender {
+    [self.delegate contentViewControllerDidPressBounceButton:self];
+}
+
+// This doesn't appear to work, hmm...
+- (void)hintMenu {
+    TLContainmentViewController *containment = [[TLContainmentViewController alloc] init];
+    [containment bounceOnAppear];
 }
 
 @end

@@ -141,6 +141,8 @@
     }
 
     [self updateControls];
+    
+    
 }
 /*
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -150,6 +152,7 @@
 */
 - (void)viewDidAppear:(BOOL)animated
 {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SettingsAppeared" object:nil];
     [self updateControls];
 }
 
@@ -444,14 +447,16 @@
 
  - (void)viewWillAppear:(BOOL)animated
  {
-     [self.navigationController setNavigationBarHidden:NO animated:animated];
-     [super viewWillAppear:animated];
+//     [self.navigationController setNavigationBarHidden:NO animated:animated];
+//     [super viewWillAppear:animated];
  }
  
  - (void)viewWillDisappear:(BOOL)animated
  {
-     [self.navigationController setNavigationBarHidden:YES animated:animated];
-     [super viewWillDisappear:animated];
+     [[NSNotificationCenter defaultCenter] postNotificationName:@"SettingsWillDisappear" object:nil];
+
+//     [self.navigationController setNavigationBarHidden:YES animated:animated];
+//     [super viewWillDisappear:animated];
  }
 
 @end

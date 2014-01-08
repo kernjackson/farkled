@@ -57,6 +57,8 @@
     self.contentView.layer.shadowRadius = 5.0f;
     
     [self bounceOnAppear];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MenuAppeared" object:nil];
 }
 
 -(void)setupContentViewControllerAnimatorProperties {
@@ -134,6 +136,8 @@
         else {
             // Close menu
             self.menuOpen = NO;
+            // possibly send notification here
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"MenuDisappeared" object:nil];
             
             self.gravityBehaviour.gravityDirection = CGVectorMake(-1, 0);
         }
@@ -164,7 +168,7 @@
 }
 
 - (void)bounceOnAppear {
-    self.pushBehavior.pushDirection = CGVectorMake(35.0f, 0.0f);
+    self.pushBehavior.pushDirection = CGVectorMake(285.0f, 0.0f);
     // active is set to NO once the instantaneous force is applied. All we need to do is reactivate it on each button press.
     self.pushBehavior.active = YES;
 
