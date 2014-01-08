@@ -58,7 +58,6 @@
     
     [self bounceOnAppear];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"MenuAppeared" object:nil];
 }
 
 -(void)setupContentViewControllerAnimatorProperties {
@@ -130,7 +129,7 @@
         if (velocity.x > 0) {
             // Open menu
             self.menuOpen = YES;
-            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"MenuAppeared" object:nil];
             self.gravityBehaviour.gravityDirection = CGVectorMake(1, 0);
         }
         else {

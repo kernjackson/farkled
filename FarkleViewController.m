@@ -167,15 +167,18 @@
    */ 
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(menuDissapeared) name:@"MenuDisappeared" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(menuAppeared) name:@"MenuAppeared" object:nil];
     
 }
 
 - (void)menuAppeared {
+    [self pauseScreen];
     NSLog(@"menuAppeared");
 }
-
+/*
 - (void)settingsAppeared {
     [self checkSettings];
+    [self resumeScreen];
     NSLog(@"settingAppeared");
 }
 
@@ -183,9 +186,10 @@
     [self checkSettings];
     NSLog(@"settingsWillDisappear");
 }
-
+*/
 - (void)menuDissapeared {
     [self checkSettings];
+    [self resumeScreen];
     NSLog(@"menuDissapeared");
 
 }
@@ -898,6 +902,56 @@
                          if ( (!iap) && (isBannerVisible) ) {
                              [self enableBannerView:bannerAd];
                          }
+                         // self.HUD.tintColor = [UIColor whiteColor];
+                         self.scoreLabel.textColor = [UIColor blackColor];
+                     }
+                     completion:nil];
+}
+
+- (void)pauseScreen {
+	[UIView animateWithDuration:1.6
+                          delay:0.0
+                        options: UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         self.HUD.backgroundColor = [UIColor groupTableViewBackgroundColor];
+                         self.HUD.alpha = 1.0;
+                         [self disableRollButton];
+                         [self disablePassButton];
+                         //[self disableDice];
+                        // self.tapToPlayButton.alpha = 1.0;
+                         //  [self.tapToPlayButton setAlpha:1.0];
+                         /*
+                         if ( (!iap) && (!isBannerVisible) )
+                         {
+                             [self enableBannerView:bannerAd];
+                             //    [self.bannerAd setAlpha:1];
+                         }
+                         */
+                         // self.HUD.tintColor = [UIColor whiteColor];
+                         self.scoreLabel.textColor = [UIColor blackColor];
+                     }
+                     completion:nil];
+}
+
+- (void)resumeScreen {
+	[UIView animateWithDuration:0.6
+                          delay:0.0
+                        options: UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         self.HUD.backgroundColor = [UIColor whiteColor];
+                         self.HUD.alpha = 0.0;
+                         [self enableRollButton];
+                         [self togglePassButton];
+                         //[self showDice];
+                         // self.tapToPlayButton.alpha = 1.0;
+                         //  [self.tapToPlayButton setAlpha:1.0];
+                         /*
+                         if ( (!iap) && (!isBannerVisible) )
+                         {
+                             [self enableBannerView:bannerAd];
+                             //    [self.bannerAd setAlpha:1];
+                         }
+                         */
                          // self.HUD.tintColor = [UIColor whiteColor];
                          self.scoreLabel.textColor = [UIColor blackColor];
                      }
