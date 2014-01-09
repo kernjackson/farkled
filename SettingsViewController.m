@@ -142,7 +142,7 @@
 
     [self updateControls];
     
-    
+    self.navigationController.navigationBar.tintColor = [UIColor redColor];
 }
 /*
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -447,16 +447,16 @@
 
  - (void)viewWillAppear:(BOOL)animated
  {
-//     [self.navigationController setNavigationBarHidden:NO animated:animated];
-//     [super viewWillAppear:animated];
+     [self.navigationController setNavigationBarHidden:NO animated:animated];
+     [super viewWillAppear:animated];
  }
  
  - (void)viewWillDisappear:(BOOL)animated
  {
      [[NSNotificationCenter defaultCenter] postNotificationName:@"SettingsWillDisappear" object:nil];
 
-//     [self.navigationController setNavigationBarHidden:YES animated:animated];
-//     [super viewWillDisappear:animated];
+     [self.navigationController setNavigationBarHidden:YES animated:animated];
+     [super viewWillDisappear:animated];
  }
 
 @end

@@ -39,6 +39,7 @@
 @property (nonatomic, assign) BOOL nonScoring;
 
 @property (nonatomic, retain) NSNumber *scoreTitle;
+
 @property (nonatomic, retain) NSNumber *passTitle;
 
 @property (nonatomic, retain) NSNumber *memory; // ???

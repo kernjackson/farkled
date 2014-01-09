@@ -15,4 +15,8 @@
 @property (nonatomic) NSNumber *previousScore;
 @property (nonatomic) NSNumber *farkles;
 
+@property (nonatomic) NSInteger careerFarkles;
+@property (nonatomic) NSInteger careerWins;
+@property (nonatomic) NSInteger careerLosses;
+
 @end

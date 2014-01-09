@@ -15,4 +15,8 @@
 @synthesize previousScore;
 @synthesize farkles;
 
+@synthesize careerFarkles;
+@synthesize careerWins;
+@synthesize careerLosses;
+
 @end

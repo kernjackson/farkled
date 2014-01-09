@@ -10,6 +10,7 @@
 #import "Farkle.h"
 //#import "Settings.h"
 #import "Sound.h"
+#import "Player.h"
 
 #import <AdSupport/AdSupport.h>
 #import "GameCenterManager.h"
@@ -21,6 +22,11 @@
     BOOL sounds;
     
     BOOL isBannerVisible;
+    
+    
+    NSInteger careerWins;
+    NSInteger careerLossess;
+    NSInteger careerFarkles;
 }
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *diceButtons;
@@ -493,10 +499,11 @@
 - (void)endGame {
     Sound *sound = [[Sound alloc] init];
     [self disableDice];
+    
     if (sounds) {
         [sound gameOver];
     }
-    
+    [self reportScore]; // GC
     [self gameOver];
 
     }
@@ -913,12 +920,13 @@
 }
 
 - (void)pauseScreen {
-	[UIView animateWithDuration:1.6
+	[UIView animateWithDuration:0.0
                           delay:0.0
                         options: UIViewAnimationOptionCurveEaseIn
                      animations:^{
-                         self.HUD.backgroundColor = [UIColor groupTableViewBackgroundColor];
-                         self.HUD.alpha = 1.0;
+ //                        self.HUD.backgroundColor = [UIColor groupTableViewBackgroundColor];
+ //                        self.HUD.alpha = 1.0;
+                         self.HUD.enabled = NO;
                          [self disableRollButton];
                          [self disablePassButton];
                          //[self disableDice];
@@ -932,27 +940,28 @@
                          }
                          */
                          // self.HUD.tintColor = [UIColor whiteColor];
-                         self.scoreLabel.textColor = [UIColor blackColor];
+           //              self.scoreLabel.textColor = [UIColor blackColor];
                      }
                      completion:nil];
 }
 
 - (void)resumeScreen {
-	[UIView animateWithDuration:0.6
+	[UIView animateWithDuration:0.0
                           delay:0.0
                         options: UIViewAnimationOptionCurveEaseIn
                      animations:^{
-                         self.HUD.backgroundColor = [UIColor whiteColor];
-                         self.HUD.alpha = 0.0;
+     //                    self.HUD.backgroundColor = [UIColor whiteColor];
+//                         self.HUD.alpha = 0.0;
+                         self.HUD.enabled = YES;
                          [self enableRollButton];
                          [self togglePassButton];
-                         
+            /*
                          Farkle *farkle = [Farkle sharedManager];
                          
                          if (farkle.isGameOver) {
                              [self endGame];
                          }
-                         
+             */
                          //[self showDice];
                          // self.tapToPlayButton.alpha = 1.0;
                          //  [self.tapToPlayButton setAlpha:1.0];
@@ -964,7 +973,7 @@
                          }
                          */
                          // self.HUD.tintColor = [UIColor whiteColor];
-                         self.scoreLabel.textColor = [UIColor blackColor];
+             //            self.scoreLabel.textColor = [UIColor blackColor];
                      }
                      completion:nil];
 }
@@ -1350,10 +1359,29 @@
 
 // This doesn't appear to work, hmm...
 - (void)hintMenu {
-    TLContainmentViewController *containment = [[TLContainmentViewController alloc] init];
-    [containment bounceOnAppear];
+    Farkle *farkle = [Farkle sharedManager];
+    if ( (farkle.isGameOver) || (farkle.isNewGame) ){
+        TLContainmentViewController *containment = [[TLContainmentViewController alloc] init];
+        [containment bounceOnAppear];
+    }
 }
 
+- (IBAction)pressedScore:(id)sender {
+    NSLog(@"pressedScore");
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"hintMenu" object:nil];
+}
 
+#pragma mark game center
+
+- (void)reportScore {
+    Farkle *farkle = [Farkle sharedManager];
+    
+    NSInteger myInteger = [farkle.scoreTitle integerValue];
+    
+    NSLog(@"highscore: %d", myInteger);
+    
+    [[GameCenterManager sharedManager] saveAndReportScore:myInteger leaderboard:@"com.kernjackson.most.points.solitaire.defaults" sortOrder:GameCenterSortOrderHighToLow];
+    
+}
 
 @end

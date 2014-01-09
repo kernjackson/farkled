@@ -10,6 +10,7 @@
 #import "TLContentViewController.h"
 
 #import <QuartzCore/QuartzCore.h>
+#import "Farkle.h"
 
 @interface TLContainmentViewController () <TLContentViewControllerDelegate, UIDynamicAnimatorDelegate, UIGestureRecognizerDelegate>
 
@@ -44,7 +45,10 @@
     [self.view addGestureRecognizer:self.rightScreenEdgeGestureRecognizer];
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(bounceOnAppear) name:@"hintMenu" object:nil];
+     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(resumeGame) name:@"singlePlayer" object:nil];
 
+    //[[UINavigationBar appearance] setBarTintColor: [UIColor redColor]];
+    self.navigationController.navigationBar.tintColor = [UIColor redColor];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -105,7 +109,6 @@
     else if (gestureRecognizer == self.rightScreenEdgeGestureRecognizer && self.isMenuOpen == YES) {
         return YES;
     }
-    
     return NO;
 }
 
@@ -170,9 +173,16 @@
 }
 
 - (void)bounceOnAppear {
-    self.pushBehavior.pushDirection = CGVectorMake(45.0f, 0.0f);
-    // active is set to NO once the instantaneous force is applied. All we need to do is reactivate it on each button press.
-    self.pushBehavior.active = YES;
+    Farkle *farkle = [Farkle sharedManager];
+    if ( (farkle.isGameOver) || (farkle.isNewGame) ){
+        self.pushBehavior.pushDirection = CGVectorMake(45.0f, 0.0f);
+        // active is set to NO once the instantaneous force is applied. All we need to do is reactivate it on each button press.
+        self.pushBehavior.active = YES;
+    }
+}
+
+- (void)resumeGame {
+    
 }
 
 @end
