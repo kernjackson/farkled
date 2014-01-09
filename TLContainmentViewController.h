@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <iAd/iAd.h>
 
-@interface TLContainmentViewController : UIViewController
+@interface TLContainmentViewController : UIViewController <ADBannerViewDelegate>
 
 // want to access this from farklecontroller
 - (void)bounceOnAppear;

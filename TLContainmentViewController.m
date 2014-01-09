@@ -42,6 +42,9 @@
     self.rightScreenEdgeGestureRecognizer.edges = UIRectEdgeRight;
     self.rightScreenEdgeGestureRecognizer.delegate = self;
     [self.view addGestureRecognizer:self.rightScreenEdgeGestureRecognizer];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(bounceOnAppear) name:@"hintMenu" object:nil];
+
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -56,7 +59,7 @@
     self.contentView.layer.shadowOffset = CGSizeZero;
     self.contentView.layer.shadowRadius = 5.0f;
     
-    [self bounceOnAppear];
+//    [self bounceOnAppear];
     
 }
 
@@ -167,10 +170,9 @@
 }
 
 - (void)bounceOnAppear {
-    self.pushBehavior.pushDirection = CGVectorMake(285.0f, 0.0f);
+    self.pushBehavior.pushDirection = CGVectorMake(45.0f, 0.0f);
     // active is set to NO once the instantaneous force is applied. All we need to do is reactivate it on each button press.
     self.pushBehavior.active = YES;
-
 }
 
 @end

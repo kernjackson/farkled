@@ -51,13 +51,14 @@
 		481656C8186F2C5A00ABCD33 /* icon-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 481656C5186F2C5A00ABCD33 /* icon-58.png */; };
 		481656CC186F2C7E00ABCD33 /* icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 481656CB186F2C7E00ABCD33 /* icon-120.png */; };
 		481656CF186F34D100ABCD33 /* icon-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 481656CE186F34D100ABCD33 /* icon-80.png */; };
-		481C987A187CE03000257071 /* SwipeForMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 481C9879187CE03000257071 /* SwipeForMenu.png */; };
 		4826B23E1877277000BB3E29 /* SoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4826B23D1877277000BB3E29 /* SoundController.m */; };
 		483939D718739CB9001718D9 /* gameOver1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 483939D618739CB9001718D9 /* gameOver1.caf */; };
 		483939D918739DE3001718D9 /* gameOver2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 483939D818739DE3001718D9 /* gameOver2.caf */; };
 		483939DB18739F48001718D9 /* decay.caf in Resources */ = {isa = PBXBuildFile; fileRef = 483939DA18739F48001718D9 /* decay.caf */; };
 		484846FB187D59CC00151082 /* TLContainmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 484846FA187D59CC00151082 /* TLContainmentViewController.m */; };
 		484846FE187D5A2100151082 /* TLContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 484846FD187D5A2100151082 /* TLContentViewController.m */; };
+		486A1E91187E08BD00F5116C /* upButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 486A1E90187E08BD00F5116C /* upButton.png */; };
+		486A1E93187E093200F5116C /* nextButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 486A1E92187E093200F5116C /* nextButton.png */; };
 		486E7FD7187C81C1008588D5 /* TimeAttackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 486E7FD6187C81C1008588D5 /* TimeAttackViewController.m */; };
 		486E7FDD187C83F7008588D5 /* TimeAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = 486E7FDC187C83F7008588D5 /* TimeAttack.m */; };
 		486E7FE0187CA1D0008588D5 /* MenuTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 486E7FDF187CA1D0008588D5 /* MenuTestViewController.m */; };
@@ -170,7 +171,6 @@
 		481656C5186F2C5A00ABCD33 /* icon-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-58.png"; sourceTree = "<group>"; };
 		481656CB186F2C7E00ABCD33 /* icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-120.png"; sourceTree = "<group>"; };
 		481656CE186F34D100ABCD33 /* icon-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-80.png"; sourceTree = "<group>"; };
-		481C9879187CE03000257071 /* SwipeForMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SwipeForMenu.png; sourceTree = "<group>"; };
 		4826B23C1877277000BB3E29 /* SoundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundController.h; sourceTree = "<group>"; };
 		4826B23D1877277000BB3E29 /* SoundController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundController.m; sourceTree = "<group>"; };
 		483939D618739CB9001718D9 /* gameOver1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gameOver1.caf; sourceTree = "<group>"; };
@@ -180,6 +180,8 @@
 		484846FA187D59CC00151082 /* TLContainmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLContainmentViewController.m; sourceTree = "<group>"; };
 		484846FC187D5A2100151082 /* TLContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLContentViewController.h; sourceTree = "<group>"; };
 		484846FD187D5A2100151082 /* TLContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLContentViewController.m; sourceTree = "<group>"; };
+		486A1E90187E08BD00F5116C /* upButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upButton.png; sourceTree = "<group>"; };
+		486A1E92187E093200F5116C /* nextButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nextButton.png; sourceTree = "<group>"; };
 		486E7FD5187C81C1008588D5 /* TimeAttackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeAttackViewController.h; sourceTree = "<group>"; };
 		486E7FD6187C81C1008588D5 /* TimeAttackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeAttackViewController.m; sourceTree = "<group>"; };
 		486E7FDB187C83F7008588D5 /* TimeAttack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeAttack.h; sourceTree = "<group>"; };
@@ -488,7 +490,8 @@
 		48FFFBD118736906003A5C8C /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				481C9879187CE03000257071 /* SwipeForMenu.png */,
+				486A1E90187E08BD00F5116C /* upButton.png */,
+				486A1E92187E093200F5116C /* nextButton.png */,
 				481656B4186EA55C00ABCD33 /* Icons */,
 				481656AF186EA13C00ABCD33 /* Launch Images */,
 			);
@@ -620,6 +623,7 @@
 				48FFFBDC187374CF003A5C8C /* 1Dice.m4a in Resources */,
 				48E8859D187CC59E004D9D8E /* Randomize11.caf in Resources */,
 				48E88599187CC0B4004D9D8E /* Laser_Shoot11.caf in Resources */,
+				486A1E91187E08BD00F5116C /* upButton.png in Resources */,
 				48FFFBE318737A8F003A5C8C /* nonscoring5.caf in Resources */,
 				480BBB8D1873A821006DB66C /* threePairs.caf in Resources */,
 				48FFFBD818736E2D003A5C8C /* Farkled.aifc in Resources */,
@@ -651,7 +655,7 @@
 				48FFFBE618737A8F003A5C8C /* nonscoring2.caf in Resources */,
 				480BBBDD187463A1006DB66C /* apple-touch-icon-72x72.png in Resources */,
 				48E8859B187CC4C5004D9D8E /* Randomize.caf in Resources */,
-				481C987A187CE03000257071 /* SwipeForMenu.png in Resources */,
+				486A1E93187E093200F5116C /* nextButton.png in Resources */,
 				483939D718739CB9001718D9 /* gameOver1.caf in Resources */,
 				48E88591187CBCF2004D9D8E /* Blip_Select8.caf in Resources */,
 				480BBBEA1874656A006DB66C /* apple-touch-icon-120x120 3.png in Resources */,

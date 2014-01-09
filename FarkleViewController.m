@@ -169,6 +169,11 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(menuDissapeared) name:@"MenuDisappeared" object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(menuAppeared) name:@"MenuAppeared" object:nil];
     
+    [NSTimer scheduledTimerWithTimeInterval:12.0
+                                     target:self
+                                   selector:@selector(hintNotification)
+                                   userInfo:nil
+                                    repeats:NO];
 }
 
 - (void)menuAppeared {
@@ -494,8 +499,7 @@
     
     [self gameOver];
 
-    
-}
+    }
 
 #pragma mark not sure if controller or model
 
@@ -942,6 +946,13 @@
                          self.HUD.alpha = 0.0;
                          [self enableRollButton];
                          [self togglePassButton];
+                         
+                         Farkle *farkle = [Farkle sharedManager];
+                         
+                         if (farkle.isGameOver) {
+                             [self endGame];
+                         }
+                         
                          //[self showDice];
                          // self.tapToPlayButton.alpha = 1.0;
                          //  [self.tapToPlayButton setAlpha:1.0];
@@ -972,11 +983,17 @@
                                    selector:@selector(enableHUD:)
                                    userInfo:nil
                                     repeats:NO];
-    [NSTimer scheduledTimerWithTimeInterval:1.9
+    
+    
+    [NSTimer scheduledTimerWithTimeInterval:12.0
                                      target:self
-                                   selector:@selector(hintMenu)
+                                   selector:@selector(hintNotification)
                                    userInfo:nil
                                     repeats:NO];
+}
+
+- (void)hintNotification {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"hintMenu" object:nil];
 }
 
 - (void)playerWon {
@@ -1336,5 +1353,7 @@
     TLContainmentViewController *containment = [[TLContainmentViewController alloc] init];
     [containment bounceOnAppear];
 }
+
+
 
 @end
