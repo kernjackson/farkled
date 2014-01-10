@@ -12,6 +12,10 @@
 
 @interface Settings : NSUserDefaults
 {
+    BOOL sounds;
+    
+    BOOL iap;
+    
     BOOL penalty;
     BOOL minimum;
     BOOL hotdice;
@@ -21,6 +25,8 @@
     NSNumber *minimumScore;
     NSNumber *difficulty;
 }
+
++ (id)sharedManager;
 /*
 @property (nonatomic, retain) NSNumber penalty;
 @property (nonatomic, retain) NSNumber minimum;
@@ -30,4 +36,9 @@
 @property (nonatomic, retain) NSNumber *minimumScore;
 @property (nonatomic, retain) NSNumber *difficulty;
 */
+
+- (void)factoryDefaults;
+
 @end
+
+

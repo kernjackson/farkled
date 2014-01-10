@@ -14,7 +14,7 @@
 
 #import <AdSupport/AdSupport.h>
 #import "GameCenterManager.h"
-
+#import "Settings.h"
 #import "TLContainmentViewController.h"
 
 @interface FarkleViewController () {
@@ -186,13 +186,16 @@
     
 //    }
 
-    
+ /*
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     if(![defaults objectForKey:@"firstRun"])
     {
         sounds = [defaults boolForKey:@"sounds"];
     }
+  */
+    
+    Settings *settings = [Settings sharedManager];
 }
 
 - (void)menuAppeared {

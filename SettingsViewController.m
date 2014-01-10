@@ -7,6 +7,7 @@
 //
 
 #import "SettingsViewController.h"
+#import "Settings.h"
 
 @interface SettingsViewController ()
 {
@@ -322,6 +323,12 @@
  }
 
 - (void)factoryDefaults {
+    
+    Settings *settings = [Settings sharedManager];
+    
+    [settings factoryDefaults];
+    
+    /*
     // reset all settings to factory default
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
@@ -344,6 +351,7 @@
     [defaults setObject:playTo forKey:@"playTo"];
     [defaults setObject:minimumScore forKey:@"minimumScore"];
     [defaults setObject:difficulty forKey:@"difficulty"];
+     */
 }
 
 - (void)updateControls {
