@@ -504,6 +504,7 @@
         [sound gameOver];
     }
     [self reportScore]; // GC
+    [self reportWinLossRatio];
     [self gameOver];
 
     }
@@ -1088,12 +1089,33 @@
         [self disableDice];
         
     // did this make it slow?
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         if ([farkle didPlayerWin]) {
             
+            
+            // record win to defaults, and push to game center, probably need a model for this
+            NSNumber *wins = [defaults valueForKey:@"wins"];
+
+            NSInteger temp = [wins integerValue];
+            temp++;
+            wins = [NSNumber numberWithInt:temp];
+            
+            [defaults setValue:wins forKey:@"wins"];
+            //[defaults setObject:@1 forKey:@"wins"];
+            NSLog(@"wins: %@", wins);
             [self playerWon];
         } else {
       //      [self disableDice];
            // [self redrawDice]; // new years
+            // record loss to defaults, and push to game center
+            
+            NSNumber *losses = [defaults valueForKey:@"losses"];
+            
+            NSInteger temp = [losses integerValue];
+            temp++;
+            losses = [NSNumber numberWithInt:temp];
+            [defaults setValue:losses forKey:@"losses"];
+            NSLog(@"losses: %@", losses);
             [self endGame];
           //  [self disableDice];
         }
@@ -1381,7 +1403,30 @@
     NSLog(@"highscore: %d", myInteger);
     //com.kernjackson.most.points.solitaire.defaults
     [[GameCenterManager sharedManager] saveAndReportScore:myInteger leaderboard:@"singleplayer.highscore.defaults" sortOrder:GameCenterSortOrderHighToLow];
+}
+
+- (void)reportWinLossRatio {
+//    Farkle *farkle = [Farkle sharedManager];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    NSNumber *wins = [defaults valueForKey:@"wins"];
+    NSNumber *losses = [defaults valueForKey:@"losses"];
+    
+    NSInteger winsInteger = [wins integerValue];
+    NSInteger lossesInteger = [losses integerValue];
+    
+    NSLog(@"wins: %d", winsInteger);
+    NSLog(@"losses: %d", lossesInteger);
+    
+    float ratio = [wins floatValue] / [losses floatValue];
+    
+    NSInteger ratioInt = (ratio * 1000);
+    
+    NSLog(@"ratio %ld", (long)ratioInt);
+
+//    [[GameCenterManager sharedManager] saveAndReportScore:ratioInt leaderboard:@"singleplayer.winlossratio.defaults" sortOrder:GameCenterSortOrderHighToLow];
+    [[GameCenterManager sharedManager] saveAndReportScore:winsInteger leaderboard:@"singleplayer.wins.defaults" sortOrder:GameCenterSortOrderHighToLow];
+    [[GameCenterManager sharedManager] saveAndReportScore:lossesInteger leaderboard:@"singleplayer.losses.defaults" sortOrder:GameCenterSortOrderHighToLow];
 }
 
 @end
