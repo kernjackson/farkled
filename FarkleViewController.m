@@ -1379,8 +1379,8 @@
     NSInteger myInteger = [farkle.scoreTitle integerValue];
     
     NSLog(@"highscore: %d", myInteger);
-    
-    [[GameCenterManager sharedManager] saveAndReportScore:myInteger leaderboard:@"com.kernjackson.most.points.solitaire.defaults" sortOrder:GameCenterSortOrderHighToLow];
+    //com.kernjackson.most.points.solitaire.defaults
+    [[GameCenterManager sharedManager] saveAndReportScore:myInteger leaderboard:@"singleplayer.highscore.defaults" sortOrder:GameCenterSortOrderHighToLow];
     
 }
 
