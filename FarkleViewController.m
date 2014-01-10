@@ -519,7 +519,7 @@
     [self reportScore]; // GC
     [self reportWinLossRatio];
     
-    [NSTimer scheduledTimerWithTimeInterval:30.0
+    [NSTimer scheduledTimerWithTimeInterval:20.0
                                      target:self
                                    selector:@selector(timeOutMenu)
                                    userInfo:nil

@@ -56,7 +56,9 @@
     [super viewDidAppear:animated];
     
     // Important to call this only after our view is on screen (ie: we can trust the view geometry).
-    [self setupContentViewControllerAnimatorProperties];
+    if (self.animator == nil) {
+        [self setupContentViewControllerAnimatorProperties];
+    }
     
     self.contentView.layer.shadowColor = [[UIColor blackColor] CGColor];
     self.contentView.layer.shadowOpacity = 1.0f;
@@ -183,24 +185,29 @@
 }
 
 - (void)resumeGame {
-    
+    [self closeMenu];
 }
 
 - (void)openMenuOnTimeOut {
-    // Open menu
-    self.menuOpen = YES;
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"MenuAppeared" object:nil];
-    self.gravityBehaviour.gravityDirection = CGVectorMake(1, 0);
-
+    
+    if (self.menuOpen == NO) {
+        // Open menu
+        self.menuOpen = YES;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"MenuAppeared" object:nil];
+        self.gravityBehaviour.gravityDirection = CGVectorMake(1, 0);
+    }
     
 }
 
 - (void)closeMenu {
-    self.menuOpen = NO;
-    // possibly send notification here
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"MenuDisappeared" object:nil];
+    if (self.menuOpen == YES) {
+        // Close menu
+        self.menuOpen = NO;
+        // possibly send notification here
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"MenuDisappeared" object:nil];
     
-    self.gravityBehaviour.gravityDirection = CGVectorMake(-1, 0);
+        self.gravityBehaviour.gravityDirection = CGVectorMake(-1, 0);
+    }
 }
 
 @end
