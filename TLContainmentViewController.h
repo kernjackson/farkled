@@ -13,5 +13,6 @@
 
 // want to access this from farklecontroller
 - (void)bounceOnAppear;
+//- (void)timeOutMenu;
 
 @end

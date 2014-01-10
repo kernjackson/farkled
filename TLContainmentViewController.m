@@ -45,7 +45,8 @@
     [self.view addGestureRecognizer:self.rightScreenEdgeGestureRecognizer];
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(bounceOnAppear) name:@"hintMenu" object:nil];
-     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(resumeGame) name:@"singlePlayer" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(openMenuOnTimeOut) name:@"timeOutMenu" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(resumeGame) name:@"singlePlayer" object:nil];
 
     //[[UINavigationBar appearance] setBarTintColor: [UIColor redColor]];
     self.navigationController.navigationBar.tintColor = [UIColor redColor];
@@ -183,6 +184,23 @@
 
 - (void)resumeGame {
     
+}
+
+- (void)openMenuOnTimeOut {
+    // Open menu
+    self.menuOpen = YES;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MenuAppeared" object:nil];
+    self.gravityBehaviour.gravityDirection = CGVectorMake(1, 0);
+
+    
+}
+
+- (void)closeMenu {
+    self.menuOpen = NO;
+    // possibly send notification here
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MenuDisappeared" object:nil];
+    
+    self.gravityBehaviour.gravityDirection = CGVectorMake(-1, 0);
 }
 
 @end

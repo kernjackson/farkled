@@ -174,12 +174,25 @@
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(menuDissapeared) name:@"MenuDisappeared" object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(menuAppeared) name:@"MenuAppeared" object:nil];
-    
+   /*
     [NSTimer scheduledTimerWithTimeInterval:12.0
                                      target:self
                                    selector:@selector(hintNotification)
                                    userInfo:nil
                                     repeats:NO];
+    */
+ //   if (farkle.isGameOver) {
+
+    
+//    }
+
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if(![defaults objectForKey:@"firstRun"])
+    {
+        sounds = [defaults boolForKey:@"sounds"];
+    }
 }
 
 - (void)menuAppeared {
@@ -505,6 +518,13 @@
     }
     [self reportScore]; // GC
     [self reportWinLossRatio];
+    
+    [NSTimer scheduledTimerWithTimeInterval:30.0
+                                     target:self
+                                   selector:@selector(timeOutMenu)
+                                   userInfo:nil
+                                    repeats:NO];
+    
     [self gameOver];
 
     }
@@ -994,21 +1014,29 @@
                                    userInfo:nil
                                     repeats:NO];
     
-    
+/*
     [NSTimer scheduledTimerWithTimeInterval:12.0
                                      target:self
                                    selector:@selector(hintNotification)
                                    userInfo:nil
                                     repeats:NO];
+ */
 }
 
 - (void)hintNotification {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"hintMenu" object:nil];
 }
 
+- (void)timeOutMenu {
+    Farkle *farkle = [Farkle sharedManager];
+    if (farkle.isGameOver) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"timeOutMenu" object:nil];
+    }
+}
+
 - (void)playerWon {
     
-    Farkle *farkle = [Farkle sharedManager];
+//    Farkle *farkle = [Farkle sharedManager];
     
     //[[UINavigationBar appearance] setBarTintColor:[UIColor purpleColor]];
 	[self.rollButton setEnabled:NO];
