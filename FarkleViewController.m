@@ -1133,6 +1133,7 @@
             
             [defaults setValue:wins forKey:@"wins"];
             //[defaults setObject:@1 forKey:@"wins"];
+            [self reportScore]; // this submits score if player won?
             NSLog(@"wins: %@", wins);
             [self playerWon];
         } else {

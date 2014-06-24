@@ -31,7 +31,9 @@
 */
 -(void) coinUp {
     NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"Pickup_Coin69" ofType:@"caf"];
+ 
     SystemSoundID soundID;
+    
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
     AudioServicesPlaySystemSound (soundID);
 }

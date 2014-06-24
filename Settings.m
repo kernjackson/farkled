@@ -48,7 +48,7 @@
     // reset all settings to factory default
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    sounds = YES;
+    sounds = NO;
     penalty = NO;
     minimum = YES;
     hotdice = YES;
